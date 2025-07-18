@@ -1,40 +1,12 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useKeenSlider, KeenSliderInstance } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
 import Image from 'next/image'
+import { products } from '@/data/products'
 
-const slides = [
-  {
-    id: 1,
-    name: 'Product 1',
-    subtitle: 'Product Subtitle 1',
-    description: 'Product Description 1',
-    imgPath: '/images/backgrounds/bg-tr315.svg'
-  },
-  {
-    id: 2,
-    name: 'Product 2',
-    subtitle: 'Product Subtitle 2',
-    description: 'Product Description 2',
-    imgPath: '/images/backgrounds/bg-tr315.svg'
-  },
-  {
-    id: 3,
-    name: 'Product 3',
-    subtitle: 'Product Subtitle 3',
-    description: 'Product Description 3',
-    imgPath: '/images/backgrounds/bg-tr315.svg'
-  },
-  {
-    id: 4,
-    name: 'Product 4',
-    subtitle: 'Product Subtitle 4',
-    description: 'Product Description 4',
-    imgPath: '/images/backgrounds/bg-tr315.svg'
-  }
-]
+const slides = products.slice(0, 4)
 
 function AutoplayPlugin(slider: KeenSliderInstance) {
   let timeout: ReturnType<typeof setTimeout>
@@ -65,6 +37,8 @@ function AutoplayPlugin(slider: KeenSliderInstance) {
 export default function KeenCarousel() {
   const [loaded, setLoaded] = useState(false)
 
+  const [displayedSlide, setDisplayedSlide] = useState(0)
+
   const [currentSlide, setCurrentSlide] = useState(0)
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
     {
@@ -72,6 +46,7 @@ export default function KeenCarousel() {
       mode: 'free-snap',
       slideChanged(slider) {
         setCurrentSlide(slider.track.details.rel)
+        setDisplayedSlide(slider.track.details.rel)
       },
       //   animationStarted(slider) {
       //     setCurrentSlide(slider.track.details.rel)
@@ -133,9 +108,14 @@ export default function KeenCarousel() {
                     <h1 className="text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
                       {slide.name}
                     </h1>
-                    <p className="text-2xl lg:text-3xl text-white/90 mb-6 font-light leading-relaxed">
-                      {slide.subtitle}
-                    </p>
+                    <div className="mb-6">
+                      <p className="text-2xl lg:text-3xl text-white font-semibold leading-relaxed">
+                        {slide.subtitle}
+                      </p>
+                      {/* <p className="text-md lg:text-lg text-white  font-light leading-snug">
+                      {slide.description}
+                    </p> */}
+                    </div>
                     <button className="bg-transparent border-2 border-white text-white px-7 py-3 rounded-full text-lg font-medium hover:bg-white/10 transition-all duration-300 ease-in-out">
                       Learn More
                     </button>
@@ -151,7 +131,12 @@ export default function KeenCarousel() {
       <div className="absolute top-0 left-0 h-full flex items-center z-10">
         <button
           className="h-24 w-14 backdrop-blur-sm text-white hover:bg-black/30 transition-all duration-300 flex items-center justify-center rounded-r-sm group"
-          onClick={() => instanceRef.current?.prev()}
+          onClick={() => {
+            setDisplayedSlide(
+              currentSlide === 0 ? slides.length - 1 : currentSlide - 1
+            )
+            instanceRef.current?.prev()
+          }}
         >
           <svg
             className="w-6 h-6 transform group-hover:scale-110 transition-transform duration-200"
@@ -173,7 +158,12 @@ export default function KeenCarousel() {
       <div className="absolute top-0 right-0 h-full flex items-center z-10">
         <button
           className="h-24 w-14 backdrop-blur-sm text-white hover:bg-black/30 transition-all duration-300 flex items-center justify-center rounded-l-sm group"
-          onClick={() => instanceRef.current?.next()}
+          onClick={() => {
+            setDisplayedSlide(
+              currentSlide === slides.length - 1 ? 0 : currentSlide + 1
+            )
+            instanceRef.current?.next()
+          }}
         >
           <svg
             className="w-6 h-6 transform group-hover:scale-110 transition-transform duration-200"
@@ -192,11 +182,16 @@ export default function KeenCarousel() {
       </div>
 
       {/* Product Name Display */}
-      <div className="absolute bottom-9 left-24 z-10">
+      <div className="absolute bottom-12 right-24 z-10">
         <div className="text-white">
           <button
             className="text-sm font-light text-white/60 mb-1 hover:text-white/90 transition-colors duration-200 cursor-pointer"
-            onClick={() => instanceRef.current?.prev()}
+            onClick={() => {
+              setDisplayedSlide(
+                currentSlide === 0 ? slides.length - 1 : currentSlide - 1
+              )
+              instanceRef.current?.prev()
+            }}
           >
             {slides[previousSlideIndex]?.name}
           </button>
@@ -204,7 +199,7 @@ export default function KeenCarousel() {
           <div className="relative h-16 overflow-hidden">
             <div
               className="transition-transform duration-500 ease-in-out will-change-transform"
-              style={{ transform: `translateY(-${currentSlide * 4}rem)` }}
+              style={{ transform: `translateY(-${displayedSlide * 4}rem)` }}
             >
               {slides.map((slide, idx) => (
                 <div key={idx} className="h-16 flex flex-col justify-center">
@@ -218,7 +213,12 @@ export default function KeenCarousel() {
 
           <button
             className="text-sm font-light text-white/60 mb-1 hover:text-white/90 transition-colors duration-200 cursor-pointer"
-            onClick={() => instanceRef.current?.next()}
+            onClick={() => {
+              setDisplayedSlide(
+                currentSlide === slides.length - 1 ? 0 : currentSlide + 1
+              )
+              instanceRef.current?.next()
+            }}
           >
             {slides[nextSlideIndex]?.name}
           </button>

@@ -1,53 +1,58 @@
 import React from 'react'
 import { Youtube, Mail, Phone, MapPin, Clock, Instagram } from 'lucide-react'
+import { products } from '@/data/products'
+
+// Group products by category
+const categorizedProducts = products.reduce<Record<string, typeof products>>(
+  (acc, product) => {
+    if (!acc[product.category]) acc[product.category] = []
+    acc[product.category].push(product)
+    return acc
+  },
+  {}
+)
+
+const contactPersons = {
+  headOffice: [
+    { name: 'Jusak Budiman', phone: '+62-8111-7587-93' },
+    { name: 'Muliana', phone: '+62-8129-4977-33' },
+    { name: 'Zainudine', phone: '+62-8129-2754-688' }
+  ],
+  surabayaOffice: [
+    { name: 'Satriyadi', phone: '+62-8113-3232-8' },
+    { name: 'Aries', phone: '+62-8155-1002-21' }
+  ]
+}
 
 const Footer: React.FC = () => {
-  const contactPersons = {
-    headOffice: [
-      { name: 'Jusak Budiman', phone: '+62-8111-7587-93' },
-      { name: 'Muliana', phone: '+62-8129-4977-33' },
-      { name: 'Zainudine', phone: '+62-8129-2754-688' }
-    ],
-    surabayaOffice: [
-      { name: 'Satriyadi', phone: '+62-8113-3232-8' },
-      { name: 'Aries', phone: '+62-8155-1002-21' }
-    ]
-  }
-
   return (
-    <footer className="bg-[#272727] text-gray-300 py-12 px-6">
+    <footer className="bg-white text-black py-12 px-6 border-t">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          {/* Popular Products */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">Popular Products</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Product 1
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Product 2
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Product 3
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Product 4
-                </a>
-              </li>
-            </ul>
+          {/* Categorized Products */}
+          <div className="md:col-span-2">
+            <h3 className="text-black font-bold mb-4">Products</h3>
+            <div className="grid grid-cols-2 gap-4 text-sm">
+              {Object.entries(categorizedProducts).map(
+                ([category, categoryProducts]) => (
+                  <div key={category}>
+                    <h4 className="font-semibold mb-2">{category}</h4>
+                    <ul className="space-y-1">
+                      {categoryProducts.map((product) => (
+                        <li key={product.id} className="hover:text-red-400">
+                          <a href={'#'}>{product.name}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )
+              )}
+            </div>
           </div>
 
           {/* Contact Information */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Contact</h3>
+            <h3 className="text-black font-bold mb-4">Contact</h3>
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2">
                 <Mail size={16} />
@@ -68,57 +73,58 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Head Office */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Head Office</h3>
-            <div className="space-y-2 text-sm">
-              <div className="flex items-start gap-2">
-                <MapPin size={16} className="mt-1 flex-shrink-0" />
-                <span>
-                  Ruko Tematic Blok R/50 Jl. CBD Gading Serpong Selatan Curug
-                  Sangereng, Kelapa Dua Kab. Tangerang – Banten
-                </span>
-              </div>
-              <div className="mt-3">
-                <p className="font-medium mb-1">Contact Person:</p>
-                {contactPersons.headOffice.map((person, index) => (
-                  <p key={index}>{`${person.name} (${person.phone})`}</p>
-                ))}
+            {/* Head Office */}
+            <div>
+              <h3 className="text-black font-bold mb-4 ">Head Office</h3>
+              <div className="space-y-2 text-sm">
+                <div className="flex items-start gap-2">
+                  <MapPin size={16} className="mt-1 flex-shrink-0" />
+                  <span>
+                    Ruko Tematic Blok R/50 Jl. CBD Gading Serpong Selatan Curug
+                    Sangereng, Kelapa Dua Kab. Tangerang – Banten
+                  </span>
+                </div>
+                <div className="mt-3">
+                  <p className="font-medium mb-1">Contact Person:</p>
+                  {contactPersons.headOffice.map((person, index) => (
+                    <p key={index}>{`${person.name} (${person.phone})`}</p>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
+            {/* Head Office */}
+            <div className="mt-7">
+              <h3 className="text-black font-bold mb-4">Surabaya</h3>
+              <div className="space-y-2 text-sm">
+                <div className="flex items-start gap-2">
+                  <MapPin size={16} className="mt-1 flex-shrink-0" />
+                  <span>Manggis VIII M-651 Pondok Tjandra Indah Sidoarjo</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone size={16} />
+                  <span>+(6231) 9968-3636</span>
+                </div>
 
-          {/* Surabaya Office */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">Surabaya</h3>
-            <div className="space-y-2 text-sm">
-              <div className="flex items-start gap-2">
-                <MapPin size={16} className="mt-1 flex-shrink-0" />
-                <span>Manggis VIII M-651 Pondok Tjandra Indah Sidoarjo</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone size={16} />
-                <span>+(6231) 9968-3636</span>
-              </div>
-
-              {/* CP */}
-              <div className="mt-3">
-                <p className="font-medium mb-1">Contact Person:</p>
-                {contactPersons.surabayaOffice.map((person, index) => (
-                  <p key={index}>{`${person.name} (${person.phone})`}</p>
-                ))}
+                {/* CP */}
+                <div className="mt-3">
+                  <p className="font-medium mb-1">Contact Person:</p>
+                  {contactPersons.surabayaOffice.map((person, index) => (
+                    <p key={index}>{`${person.name} (${person.phone})`}</p>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gray-700 pt-8">
+        <div className="border-t border-black pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <p className="text-sm text-gray-400">
-                Copyright © {new Date().getFullYear()} Dua Permata Mulia, All
-                Rights Reserved.
+              <p className="text-sm text-black">
+                Copyright &copy; {new Date().getFullYear()} PT. Dua Permata
+                Mulia, All Rights Reserved.
               </p>
             </div>
 
@@ -127,7 +133,7 @@ const Footer: React.FC = () => {
                 href="https://www.instagram.com/duapermatamulia/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-black hover:text-black transition-colors"
               >
                 <Instagram size={24} />
               </a>
@@ -135,7 +141,7 @@ const Footer: React.FC = () => {
                 href="https://www.youtube.com/channel/UCSiJp4kYdug8GYvNSwlRm9A"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-black hover:text-black transition-colors"
               >
                 <Youtube size={24} />
               </a>
