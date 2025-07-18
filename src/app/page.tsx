@@ -6,7 +6,7 @@ export default function HomePage() {
     <>
       <Navbar />
 
-      <main className="bg-gray-800 h-[200vh] pt-16">
+      <main className="bg-gray-50 h-[200vh] pt-16">
         <HeroSection />
 
         {/* <FeaturesSection />
