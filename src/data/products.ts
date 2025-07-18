@@ -7,6 +7,13 @@ export type Product = {
   imgPath: string
   slug: string
   overlay: number
+  productImagePath: string
+  layout?: {
+    imageSize?: number
+    imageAlign?: 'center' | 'right'
+    textAlign?: 'left' | 'right' | 'center'
+    imageClass?: string
+  }
 }
 
 export type Solution = {
@@ -38,17 +45,31 @@ export const products: Product[] = [
     description: '',
     imgPath: '/images/backgrounds/bg-hub30.png',
     slug: 'hub30',
-    overlay: 50
+    overlay: 50,
+    productImagePath: '/images/products/prod-hub30.svg',
+    layout: {
+      imageSize: 400,
+      imageAlign: 'center',
+      textAlign: 'left',
+      imageClass: 'translate-y-4 scale-105'
+    }
   },
   {
     id: 2,
     name: 'MT300N',
     category: 'PRO AV',
-    subtitle: 'NDI® Matrix Tracking Box',
-    description: 'Your AV matrix, streamlined by NDI®',
+    subtitle: 'NDI Matrix Tracking Box',
+    description: 'Your AV matrix, streamlined by NDI',
     imgPath: '/images/backgrounds/bg-mt300n.png',
     slug: 'mt300n',
-    overlay: 70
+    overlay: 70,
+    productImagePath: '/images/products/prod-mt300n.svg',
+    layout: {
+      imageSize: 400,
+      imageAlign: 'center',
+      textAlign: 'left',
+      imageClass: 'translate-y-4 scale-105'
+    }
   },
   {
     id: 3,
@@ -58,7 +79,14 @@ export const products: Product[] = [
     description: 'Superior Pro AV Tracking',
     imgPath: '/images/backgrounds/bg-tr315.svg',
     slug: 'tr-315',
-    overlay: 20
+    overlay: 20,
+    productImagePath: '/images/products/prod-tr315.svg',
+    layout: {
+      imageSize: 400,
+      imageAlign: 'center',
+      textAlign: 'left',
+      imageClass: 'translate-y-4 scale-105'
+    }
   },
   {
     id: 4,
@@ -68,7 +96,14 @@ export const products: Product[] = [
     description: 'The Axis of Education',
     imgPath: '/images/backgrounds/bg-saa5.png',
     slug: 'sa-a5',
-    overlay: 0
+    overlay: 0,
+    productImagePath: '/images/products/prod-saa5.png',
+    layout: {
+      imageSize: 400,
+      imageAlign: 'right',
+      textAlign: 'right',
+      imageClass: 'translate-y-4 scale-105'
+    }
   },
   {
     id: 5,
@@ -78,7 +113,14 @@ export const products: Product[] = [
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
     slug: 'ptz-211',
-    overlay: 0
+    overlay: 0,
+    productImagePath: '/images/products/ptz211.png',
+    layout: {
+      imageSize: 400,
+      imageAlign: 'center',
+      textAlign: 'left',
+      imageClass: 'translate-y-4 scale-105'
+    }
   },
   {
     id: 6,
@@ -88,7 +130,14 @@ export const products: Product[] = [
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
     slug: 'tr-615',
-    overlay: 0
+    overlay: 0,
+    productImagePath: '/images/products/tr615.png',
+    layout: {
+      imageSize: 400,
+      imageAlign: 'center',
+      textAlign: 'left',
+      imageClass: 'translate-y-4 scale-105'
+    }
   },
   {
     id: 7,
@@ -98,7 +147,14 @@ export const products: Product[] = [
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
     slug: 'mt100',
-    overlay: 0
+    overlay: 0,
+    productImagePath: '/images/products/mt100.png',
+    layout: {
+      imageSize: 400,
+      imageAlign: 'center',
+      textAlign: 'left',
+      imageClass: 'translate-y-4 scale-105'
+    }
   },
   {
     id: 8,
@@ -108,7 +164,14 @@ export const products: Product[] = [
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
     slug: 'u70i',
-    overlay: 0
+    overlay: 0,
+    productImagePath: '/images/products/u70i.png',
+    layout: {
+      imageSize: 400,
+      imageAlign: 'center',
+      textAlign: 'left',
+      imageClass: 'translate-y-4 scale-105'
+    }
   },
   {
     id: 9,
@@ -118,7 +181,14 @@ export const products: Product[] = [
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
     slug: 'm70w',
-    overlay: 0
+    overlay: 0,
+    productImagePath: '/images/products/m70w.png',
+    layout: {
+      imageSize: 400,
+      imageAlign: 'center',
+      textAlign: 'left',
+      imageClass: 'translate-y-4 scale-105'
+    }
   },
   {
     id: 10,
@@ -128,7 +198,14 @@ export const products: Product[] = [
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
     slug: 'tr-211',
-    overlay: 0
+    overlay: 0,
+    productImagePath: '/images/products/tr211.png',
+    layout: {
+      imageSize: 400,
+      imageAlign: 'center',
+      textAlign: 'left',
+      imageClass: 'translate-y-4 scale-105'
+    }
   },
   {
     id: 11,
@@ -138,7 +215,14 @@ export const products: Product[] = [
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
     slug: 'vb370a',
-    overlay: 0
+    overlay: 0,
+    productImagePath: '/images/products/vb370a.png',
+    layout: {
+      imageSize: 400,
+      imageAlign: 'center',
+      textAlign: 'left',
+      imageClass: 'translate-y-4 scale-105'
+    }
   },
   {
     id: 12,
@@ -148,7 +232,14 @@ export const products: Product[] = [
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
     slug: 'cam570',
-    overlay: 0
+    overlay: 0,
+    productImagePath: '/images/products/cam570.png',
+    layout: {
+      imageSize: 400,
+      imageAlign: 'center',
+      textAlign: 'left',
+      imageClass: 'translate-y-4 scale-105'
+    }
   },
   {
     id: 13,
@@ -158,7 +249,14 @@ export const products: Product[] = [
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
     slug: 'vb342-pro',
-    overlay: 0
+    overlay: 0,
+    productImagePath: '/images/products/vb342pro.png',
+    layout: {
+      imageSize: 400,
+      imageAlign: 'center',
+      textAlign: 'left',
+      imageClass: 'translate-y-4 scale-105'
+    }
   },
   {
     id: 14,
@@ -168,7 +266,14 @@ export const products: Product[] = [
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
     slug: 'fone-700',
-    overlay: 0
+    overlay: 0,
+    productImagePath: '/images/products/fone700.png',
+    layout: {
+      imageSize: 400,
+      imageAlign: 'center',
+      textAlign: 'left',
+      imageClass: 'translate-y-4 scale-105'
+    }
   },
   {
     id: 15,
@@ -178,6 +283,13 @@ export const products: Product[] = [
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
     slug: 'vb350',
-    overlay: 0
+    overlay: 0,
+    productImagePath: '/images/products/vb350.png',
+    layout: {
+      imageSize: 400,
+      imageAlign: 'center',
+      textAlign: 'left',
+      imageClass: 'translate-y-4 scale-105'
+    }
   }
 ]

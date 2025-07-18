@@ -91,22 +91,19 @@ export default function KeenCarousel() {
                 className="absolute inset-0 z-10 bg-black"
                 style={{ opacity: slide.overlay / 100 }}
               />
-              <div className="relative z-20 flex items-center  h-full">
-                <div className="w-full max-w-7xl mx-auto px-8 lg:px-16">
-                  <div className="max-w-2xl">
-                    <h1 className="text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+              <div className="relative z-20 flex items-center h-full">
+                <div className="w-full max-w-7xl mx-auto px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                  {/* Text Section */}
+                  <div className="text-center lg:text-left">
+                    <h1 className="text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
                       {slide.name}
                     </h1>
-                    <div className="">
-                      <p className="text-2xl lg:text-2xl font-bold leading-relaxed">
-                        {slide.subtitle}
-                      </p>
-                    </div>
-                    <div className="mb-6">
-                      <p className="text-2xl font-light leading-relaxed">
-                        {slide.description}
-                      </p>
-                    </div>
+                    <p className="text-2xl lg:text-2xl font-bold leading-relaxed mt-2">
+                      {slide.subtitle}
+                    </p>
+                    <p className="text-xl font-light leading-relaxed mt-4 mb-6">
+                      {slide.description}
+                    </p>
                     <button
                       className={clsx(
                         'bg-transparent border-2 px-7 py-3 rounded-full text-lg font-medium hover:bg-white/10 transition-all duration-300 ease-in-out',
@@ -115,6 +112,27 @@ export default function KeenCarousel() {
                     >
                       Learn More
                     </button>
+                  </div>
+
+                  {/* Product Image Section */}
+                  <div
+                    className={clsx(
+                      'flex',
+                      slide.layout?.imageAlign === 'right'
+                        ? 'justify-end'
+                        : 'justify-center'
+                    )}
+                  >
+                    <Image
+                      src={slide.productImagePath}
+                      alt={slide.name}
+                      width={slide.layout?.imageSize || 400}
+                      height={slide.layout?.imageSize || 400}
+                      className={clsx(
+                        'object-contain',
+                        slide.layout?.imageClass
+                      )}
+                    />
                   </div>
                 </div>
               </div>
