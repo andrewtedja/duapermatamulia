@@ -1,22 +1,16 @@
 'use client'
 import React, { useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Globe, Menu, Search, X } from 'lucide-react'
 import Logo from '../logo/logo'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
 
-  const navItems = [
-    'Products',
-    'Newsroom',
-    'Insights',
-    'DJI Academy',
-    'Support',
-    'About Us'
-  ]
+  const navItems = ['Solutions', 'Products', 'News', 'About Us', 'Contact Us']
 
   return (
-    <nav className="fixed w-full h-16 bg-white shadow-sm border-b border-gray-200">
+    <nav className="fixed w-full h-16 bg-white shadow-sm border-b border-gray-200 z-1000">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -29,7 +23,7 @@ const Navbar = () => {
                 <a
                   key={item}
                   href="#"
-                  className="relative text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium duration-200 after:absolute after:-bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-transparent hover:after:bg-red-500"
+                  className="relative text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium duration-200 after:absolute after:-bottom-3.5 after:left-0 after:w-full after:h-0.5 after:bg-transparent hover:after:bg-red-500"
                 >
                   {item}
                 </a>
@@ -37,11 +31,48 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Contact Us Button */}
-          <div className="hidden md:block">
-            <button className="bg-[#E53E3E] text-white hover:bg-[#C53030] px-6 py-2 rounded-md text-sm font-medium transition-colors duration-200">
-              Contact Us
-            </button>
+          {/* Search and Globe Icons */}
+          <div className="hidden md:flex items-center space-x-4">
+            {/* Search Section */}
+            <div className="relative flex items-center">
+              <div
+                className={`flex items-center transition-all duration-300 ease-in-out ${
+                  isSearchOpen ? 'w-80' : 'w-auto'
+                }`}
+              >
+                {isSearchOpen ? (
+                  <div className="relative w-full">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <Search className="h-4 w-4 text-gray-400" />
+                    </div>
+                    <input
+                      type="text"
+                      placeholder="Search..."
+                      className="w-full pl-10 pr-12 py-2.5 bg-gray-50 border border-gray-200 rounded-full focus:outline-none focus:ring-1 focus:ring-red-400 focus:border-red-400 focus:bg-white transition-all duration-200 text-sm placeholder-gray-500"
+                      autoFocus
+                    />
+                    <button
+                      onClick={() => setIsSearchOpen(false)}
+                      className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600 transition-colors duration-200"
+                    >
+                      <X className="h-4 w-4" />
+                    </button>
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => setIsSearchOpen(true)}
+                    className="p-2.5 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-full transition-all duration-200 group"
+                  >
+                    <Search className="h-5 w-5 group-hover:scale-110 transition-transform duration-200" />
+                  </button>
+                )}
+              </div>
+
+              {/* Globe Icon */}
+              <button className="p-2.5 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-full transition-all duration-200 group ml-2">
+                <Globe className="h-5 w-5 group-hover:scale-110 transition-transform duration-200" />
+              </button>
+            </div>
           </div>
 
           {/* Mobile menu button */}

@@ -1,7 +1,9 @@
 'use client'
 
 import EmblaCarousel from '../carousel/EmblaCarousel'
+import { EmblaOptionsType } from 'embla-carousel'
 
+const OPTIONS: EmblaOptionsType = { loop: true, duration: 30 }
 const SLIDE_COUNT = 5
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
@@ -10,7 +12,7 @@ export default function HeroSection() {
     <section className="relative h-screen w-full overflow-hidden">
       {/* Background carousel */}
       <div className="absolute inset-0 z-0">
-        <EmblaCarousel slides={SLIDES} options={{ loop: true }} />
+        <EmblaCarousel slides={SLIDES} options={OPTIONS} />
       </div>
 
       {/* Overlay content */}
@@ -22,14 +24,6 @@ export default function HeroSection() {
           <p className="text-lg md:text-xl">
             Powering the future of video conferencing and smart systems.
           </p>
-        </div>
-      </div>
-
-      {/* Controls layer (arrow & dot buttons) */}
-      <div className="absolute bottom-4 left-0 right-0 z-20 flex flex-col items-center">
-        <div className="flex gap-4 mb-2"></div>
-        <div className="flex gap-2">
-          {/* Or you let `EmblaCarousel` handle them inside it */}
         </div>
       </div>
     </section>
