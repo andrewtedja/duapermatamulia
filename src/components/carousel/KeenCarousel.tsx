@@ -1,37 +1,42 @@
 'use client'
 
 import React, { useState } from 'react'
-import { useKeenSlider } from 'keen-slider/react'
+import { useKeenSlider, KeenSliderInstance } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
+import Image from 'next/image'
 
 const slides = [
   {
     id: 1,
-    name: '1 Osmo Pocket 3',
-    subtitle: 'DJI RS 4 Mini',
-    description: 'DJI Matrice 400'
+    name: 'Product 1',
+    subtitle: 'Product Subtitle 1',
+    description: 'Product Description 1',
+    imgPath: '/images/backgrounds/bg-tr315.svg'
   },
   {
     id: 2,
-    name: '2 Mavic Air 3',
-    subtitle: 'DJI Mini 4 Pro',
-    description: 'DJI Action 4'
+    name: 'Product 2',
+    subtitle: 'Product Subtitle 2',
+    description: 'Product Description 2',
+    imgPath: '/images/backgrounds/bg-tr315.svg'
   },
   {
     id: 3,
-    name: '3 Inspire 3',
-    subtitle: 'DJI Air 3',
-    description: 'DJI FPV Combo'
+    name: 'Product 3',
+    subtitle: 'Product Subtitle 3',
+    description: 'Product Description 3',
+    imgPath: '/images/backgrounds/bg-tr315.svg'
   },
   {
     id: 4,
-    name: '4 Ronin 4D',
-    subtitle: 'DJI Avata 2',
-    description: 'DJI Pocket 2'
+    name: 'Product 4',
+    subtitle: 'Product Subtitle 4',
+    description: 'Product Description 4',
+    imgPath: '/images/backgrounds/bg-tr315.svg'
   }
 ]
 
-function AutoplayPlugin(slider: any) {
+function AutoplayPlugin(slider: KeenSliderInstance) {
   let timeout: ReturnType<typeof setTimeout>
   const clearNextTimeout = () => {
     clearTimeout(timeout)
@@ -58,6 +63,8 @@ function AutoplayPlugin(slider: any) {
 }
 
 export default function KeenCarousel() {
+  const [loaded, setLoaded] = useState(false)
+
   const [currentSlide, setCurrentSlide] = useState(0)
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
     {
@@ -66,26 +73,76 @@ export default function KeenCarousel() {
       slideChanged(slider) {
         setCurrentSlide(slider.track.details.rel)
       },
-      animationStarted(slider) {
-        setCurrentSlide(slider.track.details.rel)
+      //   animationStarted(slider) {
+      //     setCurrentSlide(slider.track.details.rel)
+      //   },
+      created() {
+        setLoaded(true)
       }
     },
     [AutoplayPlugin]
   )
+
+  const previousSlideIndex =
+    currentSlide === 0 ? slides.length - 1 : currentSlide - 1
+
+  const nextSlideIndex =
+    currentSlide === slides.length - 1 ? 0 : currentSlide + 1
 
   return (
     <div className="relative">
       {/* Carousel */}
       <div
         ref={sliderRef}
-        className="keen-slider  overflow-hidden h-[calc(100vh-4rem)]"
+        className={`keen-slider overflow-hidden h-[calc(100vh-4rem)] ${
+          !loaded ? 'opacity-0' : 'opacity-100 transition-opacity duration-500'
+        }`}
       >
+        {/* ======================================== CAROUSEL SLIDES ======================================== */}
         {slides.map((slide) => (
           <div
             key={slide.id}
-            className="keen-slider__slide flex items-center justify-center bg-gray-800 text-white text-3xl font-bold"
+            className="keen-slider__slide flex items-center justify-center bg-gray-800 text-white"
           >
-            Slide {slide.id}
+            <div className="relative h-[calc(100vh-4rem)] w-full">
+              {/* Background image via next/image */}
+              <Image
+                src={slide.imgPath}
+                alt={slide.name}
+                fill
+                className="object-cover z-0"
+                priority
+              />
+
+              {/* Dark overlay for better text readability */}
+              <div className="absolute inset-0 bg-black/20 z-10" />
+
+              {/* Product Image */}
+              {/* <Image
+                src="/product.png"
+                alt="Product"
+                width={600}
+                height={600}
+                className="absolute bottom-0 right-8 z-10 object-contain"
+                /> */}
+
+              {/* Text Content */}
+              <div className="relative z-20 flex items-center h-full">
+                <div className="w-full max-w-7xl mx-auto px-8 lg:px-16">
+                  <div className="text-white max-w-2xl">
+                    <h1 className="text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+                      {slide.name}
+                    </h1>
+                    <p className="text-2xl lg:text-3xl text-white/90 mb-6 font-light leading-relaxed">
+                      {slide.subtitle}
+                    </p>
+                    <button className="bg-transparent border-2 border-white text-white px-7 py-3 rounded-full text-lg font-medium hover:bg-white/10 transition-all duration-300 ease-in-out">
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </div>
@@ -93,11 +150,11 @@ export default function KeenCarousel() {
       {/* Left Navigation Button */}
       <div className="absolute top-0 left-0 h-full flex items-center z-10">
         <button
-          className="h-24 w-12 backdrop-blur-sm text-white hover:bg-black/50 transition-all duration-300 flex items-center justify-center rounded-r-2xl group"
+          className="h-24 w-14 backdrop-blur-sm text-white hover:bg-black/30 transition-all duration-300 flex items-center justify-center rounded-r-sm group"
           onClick={() => instanceRef.current?.prev()}
         >
           <svg
-            className="w-8 h-8 transform group-hover:scale-110 transition-transform duration-200"
+            className="w-6 h-6 transform group-hover:scale-110 transition-transform duration-200"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -115,11 +172,11 @@ export default function KeenCarousel() {
       {/* Right Navigation Button */}
       <div className="absolute top-0 right-0 h-full flex items-center z-10">
         <button
-          className="h-24 w-12 backdrop-blur-sm text-white hover:bg-black/50 transition-all duration-300 flex items-center justify-center rounded-l-2xl group"
+          className="h-24 w-14 backdrop-blur-sm text-white hover:bg-black/30 transition-all duration-300 flex items-center justify-center rounded-l-sm group"
           onClick={() => instanceRef.current?.next()}
         >
           <svg
-            className="w-8 h-8 transform group-hover:scale-110 transition-transform duration-200"
+            className="w-6 h-6 transform group-hover:scale-110 transition-transform duration-200"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -135,11 +192,15 @@ export default function KeenCarousel() {
       </div>
 
       {/* Product Name Display */}
-      <div className="absolute bottom-20 left-8 z-10">
+      <div className="absolute bottom-9 left-24 z-10">
         <div className="text-white">
-          <div className="text-sm font-light text-white/70 mb-1">
-            {slides[currentSlide]?.name}
-          </div>
+          <button
+            className="text-sm font-light text-white/60 mb-1 hover:text-white/90 transition-colors duration-200 cursor-pointer"
+            onClick={() => instanceRef.current?.prev()}
+          >
+            {slides[previousSlideIndex]?.name}
+          </button>
+
           <div className="relative h-16 overflow-hidden">
             <div
               className="transition-transform duration-500 ease-in-out will-change-transform"
@@ -147,18 +208,29 @@ export default function KeenCarousel() {
             >
               {slides.map((slide, idx) => (
                 <div key={idx} className="h-16 flex flex-col justify-center">
-                  <div className="text-4xl font-bold text-white leading-tight">
-                    {slide.subtitle}
+                  <div className="text-xl font-bold text-white leading-tight">
+                    | {slide.name}
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          <div className="text-lg font-light text-white/80 mt-2">
-            {slides[currentSlide]?.description}
-          </div>
+
+          <button
+            className="text-sm font-light text-white/60 mb-1 hover:text-white/90 transition-colors duration-200 cursor-pointer"
+            onClick={() => instanceRef.current?.next()}
+          >
+            {slides[nextSlideIndex]?.name}
+          </button>
         </div>
       </div>
+
+      {/* <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20 z-10">
+        <div
+          className="h-full bg-white transition-all duration-500 ease-out"
+          style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
+        />
+      </div> */}
 
       {/* Dot indicators */}
       {/* <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10 transition-transform will-change-transform">
