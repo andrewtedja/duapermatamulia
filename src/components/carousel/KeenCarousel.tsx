@@ -1,11 +1,10 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useKeenSlider, KeenSliderInstance } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
 import Image from 'next/image'
 import { products } from '@/data/products'
-import { solutions } from '@/data/products'
 import clsx from 'clsx'
 
 const slides = products.slice(0, 4)
