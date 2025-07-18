@@ -32,40 +32,40 @@ export const solutions: Solution[] = [
 export const products: Product[] = [
   {
     id: 1,
-    name: 'TR 315',
-    category: 'PRO AV',
-    subtitle: 'Temporary Subtitle',
-    description: '',
-    imgPath: '/images/backgrounds/bg-tr315.svg',
-    slug: 'tr-315',
-    overlay: 10
-  },
-  {
-    id: 2,
     name: 'HUB30',
     category: 'VIDEO CONFERENCING',
-    subtitle: 'Temporary Subtitle',
+    subtitle: '4K BYOM Matrix Switcher',
     description: '',
     imgPath: '/images/backgrounds/bg-hub30.png',
     slug: 'hub30',
     overlay: 50
   },
   {
-    id: 3,
+    id: 2,
     name: 'MT300N',
     category: 'PRO AV',
-    subtitle: 'Temporary Subtitle',
-    description: '',
+    subtitle: 'NDI® Matrix Tracking Box',
+    description: 'Your AV matrix, streamlined by NDI®',
     imgPath: '/images/backgrounds/bg-mt300n.png',
     slug: 'mt300n',
     overlay: 70
   },
   {
+    id: 3,
+    name: 'TR315',
+    category: 'PRO AV',
+    subtitle: 'AI-Driven PTZ Camera for Pro AV & Education',
+    description: 'Superior Pro AV Tracking',
+    imgPath: '/images/backgrounds/bg-tr315.svg',
+    slug: 'tr-315',
+    overlay: 20
+  },
+  {
     id: 4,
     name: 'SA-A5',
     category: 'SMART CLASSROOM',
-    subtitle: 'Temporary Subtitle',
-    description: '',
+    subtitle: 'Streaming Audio System',
+    description: 'The Axis of Education',
     imgPath: '/images/backgrounds/bg-saa5.png',
     slug: 'sa-a5',
     overlay: 0
