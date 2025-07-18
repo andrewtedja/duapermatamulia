@@ -5,6 +5,8 @@ import { useKeenSlider, KeenSliderInstance } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
 import Image from 'next/image'
 import { products } from '@/data/products'
+import { solutions } from '@/data/products'
+import clsx from 'clsx'
 
 const slides = products.slice(0, 4)
 
@@ -77,7 +79,11 @@ export default function KeenCarousel() {
         {slides.map((slide) => (
           <div
             key={slide.id}
-            className="keen-slider__slide flex items-center justify-center bg-gray-800 text-white"
+            className={clsx(
+              'keen-slider__slide flex items-center justify-center',
+              slide.name === 'SA-A5' ? 'text-black' : 'text-white',
+              'bg-gray-800'
+            )}
           >
             <div className="relative h-[calc(100vh-4rem)] w-full">
               {/* Background image via next/image */}
@@ -90,7 +96,10 @@ export default function KeenCarousel() {
               />
 
               {/* Dark overlay for better text readability */}
-              <div className="absolute inset-0 bg-black/20 z-10" />
+              <div
+                className="absolute inset-0 z-10 bg-black"
+                style={{ opacity: slide.overlay / 100 }}
+              />
 
               {/* Product Image */}
               {/* <Image
@@ -104,19 +113,24 @@ export default function KeenCarousel() {
               {/* Text Content */}
               <div className="relative z-20 flex items-center h-full">
                 <div className="w-full max-w-7xl mx-auto px-8 lg:px-16">
-                  <div className="text-white max-w-2xl">
+                  <div className="max-w-2xl">
                     <h1 className="text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
                       {slide.name}
                     </h1>
                     <div className="mb-6">
-                      <p className="text-2xl lg:text-3xl text-white font-semibold leading-relaxed">
+                      <p className="text-2xl lg:text-3xl  font-semibold leading-relaxed">
                         {slide.subtitle}
                       </p>
                       {/* <p className="text-md lg:text-lg text-white  font-light leading-snug">
                       {slide.description}
                     </p> */}
                     </div>
-                    <button className="bg-transparent border-2 border-white text-white px-7 py-3 rounded-full text-lg font-medium hover:bg-white/10 transition-all duration-300 ease-in-out">
+                    <button
+                      className={clsx(
+                        'bg-transparent border-2 px-7 py-3 rounded-full text-lg font-medium hover:bg-white/10 transition-all duration-300 ease-in-out',
+                        slide.name === 'SA-A5' ? 'border-black' : 'border-white'
+                      )}
+                    >
                       Learn More
                     </button>
                   </div>
@@ -130,7 +144,7 @@ export default function KeenCarousel() {
       {/* Left Navigation Button */}
       <div className="absolute top-0 left-0 h-full flex items-center z-10">
         <button
-          className="h-24 w-14 backdrop-blur-sm text-white hover:bg-black/30 transition-all duration-300 flex items-center justify-center rounded-r-sm group"
+          className="h-24 w-12 backdrop-blur-sm text-white hover:bg-black/30 transition-all duration-300 flex items-center justify-center rounded-r-sm group"
           onClick={() => {
             setDisplayedSlide(
               currentSlide === 0 ? slides.length - 1 : currentSlide - 1
@@ -139,7 +153,7 @@ export default function KeenCarousel() {
           }}
         >
           <svg
-            className="w-6 h-6 transform group-hover:scale-110 transition-transform duration-200"
+            className="w-8 h-8 transform group-hover:scale-110 transition-transform duration-200"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -157,7 +171,7 @@ export default function KeenCarousel() {
       {/* Right Navigation Button */}
       <div className="absolute top-0 right-0 h-full flex items-center z-10">
         <button
-          className="h-24 w-14 backdrop-blur-sm text-white hover:bg-black/30 transition-all duration-300 flex items-center justify-center rounded-l-sm group"
+          className="h-24 w-12 backdrop-blur-sm text-white hover:bg-black/30 transition-all duration-300 flex items-center justify-center rounded-l-sm group"
           onClick={() => {
             setDisplayedSlide(
               currentSlide === slides.length - 1 ? 0 : currentSlide + 1
@@ -166,7 +180,7 @@ export default function KeenCarousel() {
           }}
         >
           <svg
-            className="w-6 h-6 transform group-hover:scale-110 transition-transform duration-200"
+            className="w-8 h-8 transform group-hover:scale-110 transition-transform duration-200"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -185,7 +199,7 @@ export default function KeenCarousel() {
       <div className="absolute bottom-12 right-24 z-10">
         <div className="text-white">
           <button
-            className="text-sm font-light text-white/60 mb-1 hover:text-white/90 transition-colors duration-200 cursor-pointer"
+            className="text-sm font-medium text-white/60 mb-1 hover:text-white/90 transition-colors duration-200 cursor-pointer"
             onClick={() => {
               setDisplayedSlide(
                 currentSlide === 0 ? slides.length - 1 : currentSlide - 1
@@ -212,7 +226,7 @@ export default function KeenCarousel() {
           </div>
 
           <button
-            className="text-sm font-light text-white/60 mb-1 hover:text-white/90 transition-colors duration-200 cursor-pointer"
+            className="text-sm font-medium text-white/60 mb-1 hover:text-white/90 transition-colors duration-200 cursor-pointer"
             onClick={() => {
               setDisplayedSlide(
                 currentSlide === slides.length - 1 ? 0 : currentSlide + 1

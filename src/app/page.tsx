@@ -12,12 +12,10 @@ export default function HomePage() {
       <main className="bg-gray-50 flex-1 pt-16">
         <HeroSection />
         <ScrollContainerSection />
-        {/* <FeaturesSection />
-				<ProductShowcase />
-				<TrustedBySection />
-				<CallToAction /> */}
+        {/* <ProductShowcase /> */}
 
         <TrustedBySection />
+        {/* <CallToAction />  */}
       </main>
 
       <Footer />

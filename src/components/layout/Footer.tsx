@@ -1,6 +1,8 @@
 import React from 'react'
 import { Youtube, Mail, Phone, MapPin, Clock, Instagram } from 'lucide-react'
 import { products } from '@/data/products'
+import { solutions } from '@/data/products'
+import Logo from '../logo/logo'
 
 // Group products by category
 const categorizedProducts = products.reduce<Record<string, typeof products>>(
@@ -28,7 +30,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-white text-black py-12 px-6 border-t">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
           {/* Categorized Products */}
           <div className="md:col-span-2">
             <h3 className="text-black font-bold mb-4">Products</h3>
@@ -48,6 +50,17 @@ const Footer: React.FC = () => {
                 )
               )}
             </div>
+          </div>
+
+          <div className="md:col-span-1">
+            <h3 className="text-black font-bold mb-4">Solutions</h3>
+            <ul className="space-y-1 text-sm">
+              {solutions.map((solution) => (
+                <li key={solution.id} className="hover:text-red-400">
+                  <a href={'#'}>{solution.name}</a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Contact Information */}
@@ -121,7 +134,8 @@ const Footer: React.FC = () => {
         {/* Bottom Section */}
         <div className="border-t border-black pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
+            <div className="mb-4 md:mb-0 flex items-center">
+              <Logo size={100} />
               <p className="text-sm text-black">
                 Copyright &copy; {new Date().getFullYear()} PT. Dua Permata
                 Mulia, All Rights Reserved.

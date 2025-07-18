@@ -6,8 +6,30 @@ export type Product = {
   description: string
   imgPath: string
   slug: string
+  overlay: number
 }
-export const products = [
+
+export type Solution = {
+  id: number
+  name: string
+}
+
+export const solutions: Solution[] = [
+  {
+    id: 1,
+    name: 'Aver Shure'
+  },
+  {
+    id: 2,
+    name: 'Aver Bosch'
+  },
+  {
+    id: 3,
+    name: 'Aver Yamaha'
+  }
+]
+
+export const products: Product[] = [
   {
     id: 1,
     name: 'TR 315',
@@ -15,7 +37,8 @@ export const products = [
     subtitle: 'Temporary Subtitle',
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
-    slug: 'tr-315'
+    slug: 'tr-315',
+    overlay: 10
   },
   {
     id: 2,
@@ -23,8 +46,9 @@ export const products = [
     category: 'VIDEO CONFERENCING',
     subtitle: 'Temporary Subtitle',
     description: '',
-    imgPath: '/images/backgrounds/bg-tr315.svg',
-    slug: 'hub30'
+    imgPath: '/images/backgrounds/bg-hub30.png',
+    slug: 'hub30',
+    overlay: 50
   },
   {
     id: 3,
@@ -32,17 +56,19 @@ export const products = [
     category: 'PRO AV',
     subtitle: 'Temporary Subtitle',
     description: '',
-    imgPath: '/images/backgrounds/bg-tr315.svg',
-    slug: 'mt300n'
+    imgPath: '/images/backgrounds/bg-mt300n.png',
+    slug: 'mt300n',
+    overlay: 70
   },
   {
     id: 4,
-    name: 'TR 211',
+    name: 'SA-A5',
     category: 'SMART CLASSROOM',
     subtitle: 'Temporary Subtitle',
     description: '',
-    imgPath: '/images/backgrounds/bg-tr315.svg',
-    slug: 'tr-211'
+    imgPath: '/images/backgrounds/bg-saa5.png',
+    slug: 'sa-a5',
+    overlay: 0
   },
   {
     id: 5,
@@ -51,7 +77,8 @@ export const products = [
     subtitle: 'Temporary Subtitle',
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
-    slug: 'ptz-211'
+    slug: 'ptz-211',
+    overlay: 0
   },
   {
     id: 6,
@@ -60,7 +87,8 @@ export const products = [
     subtitle: 'Temporary Subtitle',
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
-    slug: 'tr-615'
+    slug: 'tr-615',
+    overlay: 0
   },
   {
     id: 7,
@@ -69,7 +97,8 @@ export const products = [
     subtitle: 'Temporary Subtitle',
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
-    slug: 'mt100'
+    slug: 'mt100',
+    overlay: 0
   },
   {
     id: 8,
@@ -78,7 +107,8 @@ export const products = [
     subtitle: 'Temporary Subtitle',
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
-    slug: 'u70i'
+    slug: 'u70i',
+    overlay: 0
   },
   {
     id: 9,
@@ -87,16 +117,18 @@ export const products = [
     subtitle: 'Temporary Subtitle',
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
-    slug: 'm70w'
+    slug: 'm70w',
+    overlay: 0
   },
   {
     id: 10,
-    name: 'SA-A5',
+    name: 'TR 211',
     category: 'SMART CLASSROOM',
     subtitle: 'Temporary Subtitle',
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
-    slug: 'sa-a5'
+    slug: 'tr-211',
+    overlay: 0
   },
   {
     id: 11,
@@ -105,7 +137,8 @@ export const products = [
     subtitle: 'Temporary Subtitle',
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
-    slug: 'vb370a'
+    slug: 'vb370a',
+    overlay: 0
   },
   {
     id: 12,
@@ -114,7 +147,8 @@ export const products = [
     subtitle: 'Temporary Subtitle',
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
-    slug: 'cam570'
+    slug: 'cam570',
+    overlay: 0
   },
   {
     id: 13,
@@ -123,7 +157,8 @@ export const products = [
     subtitle: 'Temporary Subtitle',
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
-    slug: 'vb342-pro'
+    slug: 'vb342-pro',
+    overlay: 0
   },
   {
     id: 14,
@@ -132,7 +167,8 @@ export const products = [
     subtitle: 'Temporary Subtitle',
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
-    slug: 'fone-700'
+    slug: 'fone-700',
+    overlay: 0
   },
   {
     id: 15,
@@ -141,6 +177,7 @@ export const products = [
     subtitle: 'Temporary Subtitle',
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
-    slug: 'vb350'
+    slug: 'vb350',
+    overlay: 0
   }
 ]
