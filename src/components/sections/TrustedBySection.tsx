@@ -30,7 +30,7 @@ const OurUsers: React.FC = () => {
           {partners.map((partner) => (
             <div
               key={partner.id}
-              className="aspect-square bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all flex items-center justify-center"
+              className="aspect-square bg-white rounded-xl border border-gray-200 shadow-sm  transition-all flex items-center justify-center"
             >
               <Image
                 src={partner.logo}

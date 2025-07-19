@@ -1,16 +1,9 @@
 import React from 'react'
-import {
-  Camera,
-  Award,
-  Search,
-  Settings,
-  Headphones,
-  Target
-} from 'lucide-react'
+import { Award, Search, Settings, Headphones } from 'lucide-react'
 
 const AboutSection: React.FC = () => {
   return (
-    <section className="min-h-screen bg-white py-20 px-6">
+    <section className="min-h-screen bg-white py-24 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex flex-col">

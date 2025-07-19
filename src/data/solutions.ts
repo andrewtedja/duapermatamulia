@@ -75,41 +75,6 @@ export const partners: Partner[] = [
     ]
   },
   {
-    id: 'nureva',
-    name: 'Nureva',
-    logo: '/images/solutions/nureva.png',
-    description:
-      "Nureva Inc. is a technology-rich, multiple award-winning private company that imagines and builds audio conferencing solutions that remove barriers to communication.  With Nureva's Microphone Mist technology and AVer's expertise, we are setting new standards that were previously attainable only with traditional Pro AV solutions.",
-    visitLink: 'https://www.nureva.com/',
-    supportedModels: [
-      'Nureva HDL300 Audio Conferencing System',
-      'Nureva Dual HDL300 Audio Conferencing System',
-      'Nureva HDL310 Audio Conferencing System',
-      'Nureva HDL410 Audio Conferencing System'
-    ],
-    resources: [
-      { type: 'demo', text: 'Product Demo >', icon: PlayCircle },
-      { type: 'paper', text: 'Installation Guide', icon: FileText }
-    ]
-  },
-  {
-    id: 'clearone',
-    name: 'ClearOne',
-    logo: '/images/solutions/clearone.png',
-    description:
-      'ClearOne is a global market leader enabling conferencing, collaboration, and network streaming solutions. We design, develop, and sell a range of products and services, including audio solutions, video solutions, and cloud-based collaboration tools, to businesses, educational institutions, and other organizations. ',
-    visitLink: 'https://www.clearone.com/',
-    supportedModels: [
-      'ClearOne BMA 360 Beamforming Microphone Array System',
-      'ClearOne BMA 360D Beamforming Microphone Array System',
-      'ClearOne CONVERGE® Pro 2 Digital Signal Processor (DSP)'
-    ],
-    resources: [
-      { type: 'demo', text: 'Technology Demo >', icon: PlayCircle },
-      { type: 'paper', text: 'Product Datasheet', icon: FileText }
-    ]
-  },
-  {
     id: 'audiotechnica',
     name: 'Audio-Technica',
     logo: '/images/solutions/audiotechnica.png',
@@ -156,6 +121,41 @@ export const partners: Partner[] = [
     resources: [
       { type: 'demo', text: 'System Demo >', icon: PlayCircle },
       { type: 'paper', text: 'Configuration Guide', icon: FileText }
+    ]
+  },
+  {
+    id: 'clearone',
+    name: 'ClearOne',
+    logo: '/images/solutions/clearone.png',
+    description:
+      'ClearOne is a global market leader enabling conferencing, collaboration, and network streaming solutions. We design, develop, and sell a range of products and services, including audio solutions, video solutions, and cloud-based collaboration tools, to businesses, educational institutions, and other organizations. ',
+    visitLink: 'https://www.clearone.com/',
+    supportedModels: [
+      'ClearOne BMA 360 Beamforming Microphone Array System',
+      'ClearOne BMA 360D Beamforming Microphone Array System',
+      'ClearOne CONVERGE® Pro 2 Digital Signal Processor (DSP)'
+    ],
+    resources: [
+      { type: 'demo', text: 'Technology Demo >', icon: PlayCircle },
+      { type: 'paper', text: 'Product Datasheet', icon: FileText }
+    ]
+  },
+  {
+    id: 'nureva',
+    name: 'Nureva',
+    logo: '/images/solutions/nureva.png',
+    description:
+      "Nureva Inc. is a technology-rich, multiple award-winning private company that imagines and builds audio conferencing solutions that remove barriers to communication.  With Nureva's Microphone Mist technology and AVer's expertise, we are setting new standards that were previously attainable only with traditional Pro AV solutions.",
+    visitLink: 'https://www.nureva.com/',
+    supportedModels: [
+      'Nureva HDL300 Audio Conferencing System',
+      'Nureva Dual HDL300 Audio Conferencing System',
+      'Nureva HDL310 Audio Conferencing System',
+      'Nureva HDL410 Audio Conferencing System'
+    ],
+    resources: [
+      { type: 'demo', text: 'Product Demo >', icon: PlayCircle },
+      { type: 'paper', text: 'Installation Guide', icon: FileText }
     ]
   }
 ]

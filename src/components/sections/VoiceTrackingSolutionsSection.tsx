@@ -14,7 +14,7 @@ const VoiceTrackingSolutionsSection = () => {
   }
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white via-[#edeef0] to-white">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="text-center mb-12">
@@ -32,9 +32,9 @@ const VoiceTrackingSolutionsSection = () => {
               {partners.map((partner) => (
                 <div
                   key={partner.id}
-                  className={`bg-white rounded-md cursor-pointer flex items-center justify-center px-2 lg:px-6 py-2 lg:py-0 transition-all duration-200 border ${
+                  className={`bg-white rounded-md cursor-pointer flex items-center justify-center px-2 lg:px-6 py-2 lg:py-0 transition-all duration-200 border border-gray-200 ${
                     selectedPartner === partner.id
-                      ? 'border-red-500 shadow-md shadow-red-100'
+                      ? ' shadow-xl'
                       : 'border-gray-200 hover:shadow-md hover:shadow-gray-200'
                   } h-full`}
                   onClick={() => handlePartnerClick(partner.id)}
@@ -46,7 +46,7 @@ const VoiceTrackingSolutionsSection = () => {
                         alt={partner.name}
                         width={140}
                         height={140}
-                        objectPosition="center"
+                        style={{ objectPosition: 'center' }}
                         loading="lazy"
                       />
                     </div>
@@ -73,12 +73,14 @@ const VoiceTrackingSolutionsSection = () => {
                             alt={partner.name}
                             width={140}
                             height={140}
-                            objectPosition="center"
+                            style={{ objectPosition: 'center' }}
                             loading="lazy"
                           />
                         </div>
                       </div>
-
+                      <h1 className="text-2xl font-bold text-gray-900">
+                        {partner.name}
+                      </h1>
                       <p className="text-gray-600 text-xs lg:text-sm leading-relaxed mb-6">
                         {partner.description}
                       </p>
