@@ -55,7 +55,7 @@ const AboutSection: React.FC = () => {
             </div>
 
             <div className="border-l-4 border-red-700 pl-6">
-              <h4 className="text-lg font-semibold text-gray-900 mb-3">
+              <h4 className="text-md lg:text-lg font-semibold text-gray-900 mb-3">
                 Authorized Partnership
               </h4>
               <p className="text-gray-700 leading-relaxed">
@@ -70,7 +70,7 @@ const AboutSection: React.FC = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-2xl font-semibold text-gray-900 mb-8">
+            <h3 className="text-xl lg:text-2xl font-semibold text-gray-900 mb-8">
               Comprehensive Services
             </h3>
             <div className="space-y-6">
@@ -79,10 +79,10 @@ const AboutSection: React.FC = () => {
                   <Award className="w-6 h-6 text-red-700" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                  <h4 className="text-md lg:text-lg font-semibold text-gray-900 mb-2">
                     Quality Products with Warranty
                   </h4>
-                  <p className="text-gray-600">
+                  <p className="text-xs lg:text-md text-gray-600">
                     Premium telecommunications equipment backed by comprehensive
                     warranty coverage and quality assurance.
                   </p>
@@ -94,10 +94,10 @@ const AboutSection: React.FC = () => {
                   <Search className="w-6 h-6 text-red-700" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                  <h4 className="text-md lg:text-lg font-semibold text-gray-900 mb-2">
                     Survey, Consultation & Design
                   </h4>
-                  <p className="text-gray-600">
+                  <p className="text-xs lg:text-md text-gray-600">
                     Expert site assessment, product consultation, and custom
                     system design tailored to organizational needs.
                   </p>
@@ -109,10 +109,10 @@ const AboutSection: React.FC = () => {
                   <Settings className="w-6 h-6 text-red-700" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                  <h4 className="text-md lg:text-lg font-semibold text-gray-900 mb-2">
                     Professional Implementation
                   </h4>
-                  <p className="text-gray-600">
+                  <p className="text-xs lg:text-md text-gray-600">
                     Complete installation and system integration services
                     delivered by certified technical specialists.
                   </p>
@@ -124,10 +124,10 @@ const AboutSection: React.FC = () => {
                   <Headphones className="w-6 h-6 text-red-700" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                  <h4 className="text-md lg:text-lg font-semibold text-gray-900 mb-2">
                     After-Sales Support
                   </h4>
-                  <p className="text-gray-600">
+                  <p className="text-xs lg:text-md text-gray-600">
                     Ongoing technical support, maintenance services, and system
                     optimization to ensure peak performance.
                   </p>
@@ -138,7 +138,7 @@ const AboutSection: React.FC = () => {
         </div>
 
         {/* Mission Statement */}
-        <div className="border-t border-gray-200 pt-16">
+        {/* <div className="border-t border-gray-200 pt-16">
           <div className="text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-red-700 rounded-full mb-6">
               <Target className="w-8 h-8 text-white" />
@@ -146,7 +146,7 @@ const AboutSection: React.FC = () => {
             <h3 className="text-2xl font-semibold text-gray-900 mb-6">
               Our Mission
             </h3>
-            <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-md lg:text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
               To establish ourselves as the premier provider of reliable and
               effective telecommunications solutions, delivering cutting-edge
               AI-driven camera systems and voice tracking technologies that
@@ -154,7 +154,7 @@ const AboutSection: React.FC = () => {
               our clients.
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )

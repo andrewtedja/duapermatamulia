@@ -80,7 +80,7 @@ export default function KeenCarousel() {
               'bg-gray-800'
             )}
           >
-            <div className="relative h-[calc(100vh-4rem)] w-full">
+            <div className="relative h-[calc(100vh-4rem)] w-full pt-40 md:pt-0">
               <Image
                 src={slide.imgPath}
                 alt={slide.name}
@@ -96,7 +96,7 @@ export default function KeenCarousel() {
                 <div className="w-full max-w-7xl mx-auto px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-[minmax(0,_1fr)_minmax(0,_1fr)] gap-8 items-center">
                   {/* Text Section */}
                   <div className="text-center lg:text-left">
-                    <h1 className="text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
+                    <h1 className="text-4xl lg:text-6xl font-bold leading-tight tracking-tight">
                       {slide.name}
                     </h1>
                     <p className="text-2xl lg:text-2xl font-bold leading-relaxed mt-2">

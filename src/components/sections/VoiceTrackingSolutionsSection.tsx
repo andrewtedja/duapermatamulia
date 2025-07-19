@@ -25,21 +25,21 @@ const VoiceTrackingSolutionsSection = () => {
           </div>
         </div>
 
-        <div className="flex gap-8">
+        <div className="flex gap-4 lg:gap-8">
           {/* Left side - Partner grid */}
-          <div className="w-1/2">
-            <div className="grid grid-cols-2 gap-4">
+          <div className="w-1/2 flex-1 flex flex-col justify-between h-full">
+            <div className="grid grid-cols-2 gap-1 lg:gap-4 flex-grow">
               {partners.map((partner) => (
                 <div
                   key={partner.id}
-                  className={`bg-white rounded-md cursor-pointer flex items-center justify-center px-6 transition-all duration-200 border ${
+                  className={`bg-white rounded-md cursor-pointer flex items-center justify-center px-2 lg:px-6 py-2 lg:py-0 transition-all duration-200 border ${
                     selectedPartner === partner.id
                       ? 'border-red-500 shadow-md shadow-red-100'
                       : 'border-gray-200 hover:shadow-md hover:shadow-gray-200'
-                  }`}
+                  } h-full`}
                   onClick={() => handlePartnerClick(partner.id)}
                 >
-                  <div className="p-4">
+                  <div className="p-0 lg:p-4">
                     <div className="flex items-center justify-center space-x-3 mb-3">
                       <Image
                         src={partner.logo}
@@ -79,7 +79,7 @@ const VoiceTrackingSolutionsSection = () => {
                         </div>
                       </div>
 
-                      <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                      <p className="text-gray-600 text-xs lg:text-sm leading-relaxed mb-6">
                         {partner.description}
                       </p>
 
@@ -101,7 +101,7 @@ const VoiceTrackingSolutionsSection = () => {
                             {partner.supportedModels.map((model, index) => (
                               <li
                                 key={index}
-                                className="text-blue-600  text-sm cursor-pointer"
+                                className="text-blue-600  text-xs lg:text-sm cursor-pointer"
                               >
                                 {model}
                               </li>
