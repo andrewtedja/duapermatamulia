@@ -72,6 +72,7 @@ const ProductShowcaseSection = () => {
                     width={250}
                     height={200}
                     className="rounded-lg hidden lg:block transform group-hover:scale-105 sm:group-hover:scale-115 transition-transform duration-300"
+                    loading="lazy"
                   />
                   <Image
                     src={product.productImagePath}
@@ -79,6 +80,7 @@ const ProductShowcaseSection = () => {
                     width={200}
                     height={200}
                     className="rounded-lg lg:hidden transform group-hover:scale-105 sm:group-hover:scale-115 transition-transform duration-300"
+                    loading="lazy"
                   />
                 </div>
               </div>

@@ -47,6 +47,7 @@ const VoiceTrackingSolutionsSection = () => {
                         width={140}
                         height={140}
                         objectPosition="center"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -73,6 +74,7 @@ const VoiceTrackingSolutionsSection = () => {
                             width={140}
                             height={140}
                             objectPosition="center"
+                            loading="lazy"
                           />
                         </div>
                       </div>

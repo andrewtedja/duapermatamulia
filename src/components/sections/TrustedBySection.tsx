@@ -37,6 +37,7 @@ const OurUsers: React.FC = () => {
                 alt={partner.name}
                 width={80}
                 height={80}
+                loading="lazy"
               />
             </div>
           ))}
