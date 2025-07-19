@@ -94,7 +94,7 @@ const Navbar = () => {
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+          <div className="px-2 pt-2 pb-6 space-y-1 sm:px-3 bg-white border-t border-gray-200 rounded-b-2xl">
             {navItems.map((item) => (
               <a
                 key={item}
@@ -104,9 +104,7 @@ const Navbar = () => {
                 {item}
               </a>
             ))}
-            <button className="bg-gray-900 text-white hover:bg-gray-800 block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 border-t border-gray-200 mt-2 pt-4">
-              Contact Us
-            </button>
+
             {/* <button className="bg-gray-900 text-white hover:bg-gray-800 block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 border-t border-gray-200 mt-2 pt-4">
                                 Contact Us
                             </button> */}

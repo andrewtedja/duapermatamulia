@@ -25,12 +25,13 @@ function AutoplayPlugin(slider: KeenSliderInstance) {
 
 const getThemeClasses = (currentSlideName: string, itemName: string) => {
   const isSA_A5 = currentSlideName === 'AmpliWave SA-A5'
+  const isSpecificItem = itemName === currentSlideName
   return {
     text: isSA_A5 ? 'text-black' : 'text-white',
     textMuted: isSA_A5
       ? 'text-black/60 hover:text-black/90'
       : 'text-white/60 hover:text-white/90',
-    border: isSA_A5 ? 'border-black' : 'border-white',
+    border: isSA_A5 && isSpecificItem ? 'border-black' : 'border-white',
     icon: isSA_A5 ? 'text-black' : 'text-white'
   }
 }

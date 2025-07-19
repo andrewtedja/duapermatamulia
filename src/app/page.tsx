@@ -1,8 +1,10 @@
 import Footer from '@/components/layout/Footer'
 import Navbar from '@/components/layout/Navbar'
 import HeroSection from '@/components/sections/HeroSection'
+import ProductShowcaseSection from '@/components/sections/ProductShowcaseSection'
 import { ScrollContainerSection } from '@/components/sections/ScrollContainerSection'
 import TrustedBySection from '@/components/sections/TrustedBySection'
+import VoiceTrackingSolutionsSection from '@/components/sections/VoiceTrackingSolutionsSection'
 
 export default function HomePage() {
   return (
@@ -11,8 +13,10 @@ export default function HomePage() {
 
       <main className="bg-gray-50 flex-1 pt-16">
         <HeroSection />
+        <ProductShowcaseSection />
+        <VoiceTrackingSolutionsSection />
+
         <ScrollContainerSection />
-        {/* <ProductShowcase /> */}
 
         <TrustedBySection />
         {/* <CallToAction />  */}

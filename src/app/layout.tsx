@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Open_Sans } from 'next/font/google'
 import './globals.css'
 import 'keen-slider/keen-slider.min.css'
+import ScrollToTopButton from '@/components/buttons/ScrollToTopButton'
 
 const openSans = Open_Sans({
   subsets: ['latin'],
@@ -21,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${openSans.variable} antialiased`}>{children}</body>
+      <body className={`${openSans.variable} antialiased`}>
+        {children}
+        <ScrollToTopButton />
+      </body>
     </html>
   )
 }
