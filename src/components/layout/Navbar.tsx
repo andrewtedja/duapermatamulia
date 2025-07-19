@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import { Globe, Menu, Search, X } from 'lucide-react'
+import { Globe, Mail, Menu, Search, X } from 'lucide-react'
 import Logo from '../logo/logo'
 
 const Navbar = () => {
@@ -69,9 +69,15 @@ const Navbar = () => {
               </div>
 
               {/* Globe Icon */}
-              <button className="p-2.5 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-full transition-all duration-200 group ml-2">
+              {/* <button className="p-2.5 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-full transition-all duration-200 group ml-2">
                 <Globe className="h-5 w-5 group-hover:scale-110 transition-transform duration-200" />
-              </button>
+              </button> */}
+              <div className="ml-5 flex items-center justify-center">
+                <p className="hidden lg:flex text-sm text-gray-600 transition-colors duration-200  items-center">
+                  <Mail className=" h-4 w-4 mr-2" />
+                  info@duapermatamulia.com
+                </p>
+              </div>
             </div>
           </div>
 

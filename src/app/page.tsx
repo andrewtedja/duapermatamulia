@@ -1,5 +1,6 @@
 import Footer from '@/components/layout/Footer'
 import Navbar from '@/components/layout/Navbar'
+import AboutSection from '@/components/sections/AboutSection'
 import HeroSection from '@/components/sections/HeroSection'
 import ProductShowcaseSection from '@/components/sections/ProductShowcaseSection'
 import { ScrollContainerSection } from '@/components/sections/ScrollContainerSection'
@@ -14,9 +15,9 @@ export default function HomePage() {
       <main className="bg-gray-50 flex-1 pt-16">
         <HeroSection />
         <ProductShowcaseSection />
-        <VoiceTrackingSolutionsSection />
-
         <ScrollContainerSection />
+        <VoiceTrackingSolutionsSection />
+        <AboutSection />
 
         <TrustedBySection />
         {/* <CallToAction />  */}

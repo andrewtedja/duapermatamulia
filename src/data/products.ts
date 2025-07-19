@@ -16,26 +16,6 @@ export type Product = {
   }
 }
 
-export type Solution = {
-  id: number
-  name: string
-}
-
-export const solutions: Solution[] = [
-  {
-    id: 1,
-    name: 'Aver Shure'
-  },
-  {
-    id: 2,
-    name: 'Aver Bosch'
-  },
-  {
-    id: 3,
-    name: 'Aver Yamaha'
-  }
-]
-
 export const products: Product[] = [
   {
     id: 1,

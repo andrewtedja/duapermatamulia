@@ -5,14 +5,14 @@ import { ContainerScroll } from '../ui/container-scroll-animation'
 
 export function ScrollContainerSection() {
   return (
-    <div className="flex flex-col overflow-hidden">
+    <div className="flex flex-col overflow-hidden bg-white">
       <ContainerScroll
         titleComponent={
           <>
             <h1 className="text-4xl font-semibold text-black dark:text-white">
               Empowering Smarter Collaboration. <br />
               <span className="text-4xl md:text-[5rem] font-bold mt-1 leading-none">
-                Built for Vision. <br></br>Driven by Innovation.
+                Built for Vision, <br></br>Driven by Innovation.
               </span>
             </h1>
           </>

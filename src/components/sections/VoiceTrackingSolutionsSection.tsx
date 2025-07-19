@@ -14,12 +14,12 @@ const VoiceTrackingSolutionsSection = () => {
   }
 
   return (
-    <section className="py-16 bg-[#F8F9FC]">
+    <section className="py-24 bg-gradient-to-b from-white via-[#edeef0] to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Voice Tracking Solutions & Partners
+              Voice Tracking Solutions
             </h2>
             <div className="w-16 h-1 bg-red-400 mx-auto"></div>
           </div>
@@ -32,10 +32,10 @@ const VoiceTrackingSolutionsSection = () => {
               {partners.map((partner) => (
                 <div
                   key={partner.id}
-                  className={`bg-white rounded-lg cursor-pointer flex items-center justify-center transition-all duration-200 border-2 border-gray-50   ${
+                  className={`bg-white rounded-md cursor-pointer flex items-center justify-center px-6 transition-all duration-200 border ${
                     selectedPartner === partner.id
-                      ? '  shadow-md shadow-red-600/100'
-                      : 'hover:shadow-red-600/50 '
+                      ? 'border-red-500 shadow-md shadow-red-100'
+                      : 'border-gray-200 hover:shadow-md hover:shadow-gray-200'
                   }`}
                   onClick={() => handlePartnerClick(partner.id)}
                 >
