@@ -10,7 +10,7 @@ export type Product = {
   productImagePath: string
   layout?: {
     imageSize?: number
-    imageAlign?: 'center' | 'right'
+    imageAlign?: 'left' | 'center' | 'right'
     textAlign?: 'left' | 'right' | 'center'
     imageClass?: string
   }
@@ -42,13 +42,13 @@ export const products: Product[] = [
     name: 'HUB30',
     category: 'VIDEO CONFERENCING',
     subtitle: '4K BYOM Matrix Switcher',
-    description: '',
-    imgPath: '/images/backgrounds/bg-hub30.png',
+    description: 'Seamlessly switch sources and connect personal devices.',
+    imgPath: '/images/backgrounds/bg-hub30new.png',
     slug: 'hub30',
-    overlay: 50,
-    productImagePath: '/images/products/prod-hub30.svg',
+    overlay: 80,
+    productImagePath: '/images/products/prod-hub30.png',
     layout: {
-      imageSize: 400,
+      imageSize: 900,
       imageAlign: 'center',
       textAlign: 'left',
       imageClass: 'translate-y-4 scale-105'
@@ -58,14 +58,14 @@ export const products: Product[] = [
     id: 2,
     name: 'MT300N',
     category: 'PRO AV',
-    subtitle: 'NDI Matrix Tracking Box',
-    description: 'Your AV matrix, streamlined by NDI',
+    subtitle: 'NDI® Matrix Tracking Box',
+    description: 'Your AV matrix, streamlined by NDI®',
     imgPath: '/images/backgrounds/bg-mt300n.png',
     slug: 'mt300n',
     overlay: 70,
     productImagePath: '/images/products/prod-mt300n.svg',
     layout: {
-      imageSize: 400,
+      imageSize: 900,
       imageAlign: 'center',
       textAlign: 'left',
       imageClass: 'translate-y-4 scale-105'
@@ -77,7 +77,7 @@ export const products: Product[] = [
     category: 'PRO AV',
     subtitle: 'AI-Driven PTZ Camera for Pro AV & Education',
     description: 'Superior Pro AV Tracking',
-    imgPath: '/images/backgrounds/bg-tr315.svg',
+    imgPath: '/images/backgrounds/bg-tr315new.svg',
     slug: 'tr-315',
     overlay: 20,
     productImagePath: '/images/products/prod-tr315.svg',
@@ -90,17 +90,17 @@ export const products: Product[] = [
   },
   {
     id: 4,
-    name: 'SA-A5',
+    name: 'AmpliWave SA-A5',
     category: 'SMART CLASSROOM',
-    subtitle: 'Streaming Audio System',
-    description: 'The Axis of Education',
+    subtitle: 'The Axis of Education',
+    description: 'Classroom Streaming Audio System to the Next Level',
     imgPath: '/images/backgrounds/bg-saa5.png',
     slug: 'sa-a5',
     overlay: 0,
     productImagePath: '/images/products/prod-saa5.png',
     layout: {
-      imageSize: 400,
-      imageAlign: 'right',
+      imageSize: 900,
+      imageAlign: 'center',
       textAlign: 'right',
       imageClass: 'translate-y-4 scale-105'
     }

@@ -24,7 +24,7 @@ function AutoplayPlugin(slider: KeenSliderInstance) {
 }
 
 const getThemeClasses = (currentSlideName: string, itemName: string) => {
-  const isSA_A5 = currentSlideName === 'SA-A5'
+  const isSA_A5 = currentSlideName === 'AmpliWave SA-A5'
   return {
     text: isSA_A5 ? 'text-black' : 'text-white',
     textMuted: isSA_A5
@@ -92,7 +92,7 @@ export default function KeenCarousel() {
                 style={{ opacity: slide.overlay / 100 }}
               />
               <div className="relative z-20 flex items-center h-full">
-                <div className="w-full max-w-7xl mx-auto px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div className="w-full max-w-7xl mx-auto px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-[minmax(0,_1fr)_minmax(0,_1fr)] gap-8 items-center">
                   {/* Text Section */}
                   <div className="text-center lg:text-left">
                     <h1 className="text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
@@ -101,7 +101,7 @@ export default function KeenCarousel() {
                     <p className="text-2xl lg:text-2xl font-bold leading-relaxed mt-2">
                       {slide.subtitle}
                     </p>
-                    <p className="text-xl font-light leading-relaxed mt-4 mb-6">
+                    <p className="text-xl font-mono leading-relaxed mt-4 mb-6">
                       {slide.description}
                     </p>
                     <button
@@ -120,7 +120,8 @@ export default function KeenCarousel() {
                       'flex',
                       slide.layout?.imageAlign === 'right'
                         ? 'justify-end'
-                        : 'justify-center'
+                        : 'justify-center',
+                      slide.name === 'TR315' ? 'hidden' : 'flex'
                     )}
                   >
                     <Image
@@ -198,7 +199,7 @@ export default function KeenCarousel() {
       </div>
 
       {/* Product Name Display */}
-      <div className="absolute bottom-12 right-24 z-10 hidden lg:block">
+      <div className="absolute bottom-12 left-16 z-10 hidden lg:block">
         <div>
           <button
             className={clsx(
