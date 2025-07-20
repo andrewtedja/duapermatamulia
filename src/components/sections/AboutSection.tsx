@@ -1,6 +1,5 @@
 import React from 'react'
 import { Award, Search, Settings, Headphones } from 'lucide-react'
-import MapStatic from '../map/MapStatic'
 
 const AboutSection: React.FC = () => {
   return (
