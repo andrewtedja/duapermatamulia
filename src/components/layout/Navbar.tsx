@@ -5,6 +5,9 @@ import Logo from '../logo/logo'
 import { products } from '@/data/products'
 import { partners } from '@/data/solutions'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
+
+const DROPDOWN_CLOSE_DELAY = 300 // milliseconds
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -41,7 +44,7 @@ const Navbar = () => {
   const handleDropdownLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setActiveDropdown(null)
-    }, 150)
+    }, DROPDOWN_CLOSE_DELAY)
   }
 
   const handleDropdownClick = (dropdown: string) => {
@@ -206,8 +209,12 @@ const Navbar = () => {
 
       {/* Full Screen Overlay Dropdowns */}
       {activeDropdown && (
-        <div
-          className="fixed inset-0 bg-white z-50"
+        <motion.div
+          initial={{ clipPath: 'inset(0% 0% 100% 0%)', opacity: 0, y: -20 }}
+          animate={{ clipPath: 'inset(0% 0% 0% 0%)', opacity: 1, y: 0 }}
+          exit={{ clipPath: 'inset(0% 0% 100% 0%)', opacity: 0, y: -20 }}
+          transition={{ duration: 0.6, ease: 'easeInOut' }}
+          className="fixed inset-0 bg-white z-50 overflow-hidden"
           style={{ top: '64px' }}
           onMouseEnter={() => {
             if (timeoutRef.current) {
@@ -272,6 +279,7 @@ const Navbar = () => {
                                 alt={product.name}
                                 fill
                                 className="object-contain group-hover:scale-115 transition-transform duration-300"
+                                loading="lazy"
                               />
                             </div>
                             <div className="p-1">
@@ -332,6 +340,7 @@ const Navbar = () => {
                             width={100}
                             height={100}
                             className="w-full h-full object-contain"
+                            loading="lazy"
                           />
                         </div>
 
@@ -379,7 +388,7 @@ const Navbar = () => {
               </div>
             </div>
           )}
-        </div>
+        </motion.div>
       )}
     </>
   )
