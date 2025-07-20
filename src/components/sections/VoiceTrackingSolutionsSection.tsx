@@ -10,7 +10,7 @@ const VoiceTrackingSolutionsSection = () => {
   const [selectedPartner, setSelectedPartner] = useState<string | null>('shure')
 
   const handlePartnerClick = (partnerId: string) => {
-    setSelectedPartner(selectedPartner === partnerId ? 'null' : partnerId)
+    setSelectedPartner(selectedPartner === partnerId ? null : partnerId)
   }
 
   return (
@@ -18,10 +18,14 @@ const VoiceTrackingSolutionsSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">
               Voice Tracking Solutions
-            </h2>
-            <div className="w-16 h-1 bg-red-400 mx-auto"></div>
+            </h1>
+            <div className="w-16 h-1 bg-red-400 mx-auto mb-4"></div>
+            <p className="text-sm text-gray-600 mb-4">
+              Select a partner to learn more about their voice tracking
+              solutions
+            </p>
           </div>
         </div>
 
@@ -34,7 +38,7 @@ const VoiceTrackingSolutionsSection = () => {
                   key={partner.id}
                   className={`bg-white rounded-md cursor-pointer flex items-center justify-center px-2 lg:px-6 py-2 lg:py-0 transition-all duration-200 border border-gray-200 ${
                     selectedPartner === partner.id
-                      ? ' shadow-2xl border-gray-300'
+                      ? ' shadow-2xl border-gray-400'
                       : 'border-gray-200 hover:shadow-md hover:shadow-gray-200'
                   } h-full`}
                   onClick={() => handlePartnerClick(partner.id)}
@@ -59,7 +63,7 @@ const VoiceTrackingSolutionsSection = () => {
           {/* Right side - Partner details */}
           <div className="w-1/2">
             {selectedPartner ? (
-              <div className="bg-white rounded-lg shadow-2xl p-6 h-full">
+              <div className="bg-white border border-gray-400 rounded-lg shadow-2xl p-6 h-full">
                 {(() => {
                   const partner = partners.find((p) => p.id === selectedPartner)
                   if (!partner) return null
@@ -136,7 +140,8 @@ const VoiceTrackingSolutionsSection = () => {
             ) : (
               <div className="bg-white rounded-lg shadow-lg p-6 flex items-center justify-center h-96">
                 <p className="text-gray-500 text-center">
-                  Select a partner to view details
+                  Select a partner to learn more about their voice tracking
+                  solutions & their supported models
                 </p>
               </div>
             )}
