@@ -7,10 +7,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const VoiceTrackingSolutionsSection = () => {
-  const [selectedPartner, setSelectedPartner] = useState<string | null>(null)
+  const [selectedPartner, setSelectedPartner] = useState<string | null>('shure')
 
   const handlePartnerClick = (partnerId: string) => {
-    setSelectedPartner(selectedPartner === partnerId ? null : partnerId)
+    setSelectedPartner(selectedPartner === partnerId ? 'null' : partnerId)
   }
 
   return (
@@ -34,7 +34,7 @@ const VoiceTrackingSolutionsSection = () => {
                   key={partner.id}
                   className={`bg-white rounded-md cursor-pointer flex items-center justify-center px-2 lg:px-6 py-2 lg:py-0 transition-all duration-200 border border-gray-200 ${
                     selectedPartner === partner.id
-                      ? ' shadow-xl'
+                      ? ' shadow-2xl border-gray-300'
                       : 'border-gray-200 hover:shadow-md hover:shadow-gray-200'
                   } h-full`}
                   onClick={() => handlePartnerClick(partner.id)}
