@@ -36,10 +36,10 @@ const VoiceTrackingSolutionsSection = () => {
               {partners.map((partner) => (
                 <div
                   key={partner.id}
-                  className={`bg-white rounded-md cursor-pointer flex items-center justify-center px-2 lg:px-6 py-2 lg:py-0 transition-all duration-200 border border-gray-200 ${
+                  className={` rounded-md cursor-pointer flex items-center justify-center px-2 lg:px-6 py-2 lg:py-0 transition-all duration-200  ${
                     selectedPartner === partner.id
-                      ? ' shadow-2xl border-gray-400'
-                      : 'border-gray-200 hover:shadow-md hover:shadow-gray-200'
+                      ? ' shadow-2xl bg-white'
+                      : 'border-gray-200 shadow-md hover:shadow-xl  hover:shadow-gray-200 bg-[#F8F9FC]'
                   } h-full`}
                   onClick={() => handlePartnerClick(partner.id)}
                 >
@@ -63,7 +63,7 @@ const VoiceTrackingSolutionsSection = () => {
           {/* Right side - Partner details */}
           <div className="w-1/2">
             {selectedPartner ? (
-              <div className="bg-white border border-gray-400 rounded-lg shadow-2xl p-6 h-full">
+              <div className="bg-white  rounded-lg shadow-2xl p-6 h-full">
                 {(() => {
                   const partner = partners.find((p) => p.id === selectedPartner)
                   if (!partner) return null
