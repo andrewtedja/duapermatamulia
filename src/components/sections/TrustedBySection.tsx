@@ -3,17 +3,17 @@ import React from 'react'
 
 const OurUsers: React.FC = () => {
   // Partner logos with placeholder data
-  const partners = [
-    { id: 1, name: 'Company 1', logo: '/images/partners/company1.png' },
-    { id: 2, name: 'Company 2', logo: '/images/partners/company2.png' },
-    { id: 3, name: 'Company 3', logo: '/images/partners/company3.png' },
-    { id: 4, name: 'Company 4', logo: '/images/partners/company4.png' },
-    { id: 5, name: 'Company 5', logo: '/images/partners/company5.png' },
-    { id: 6, name: 'Company 6', logo: '/images/partners/company6.png' },
-    { id: 7, name: 'Company 7', logo: '/images/partners/company7.png' },
-    { id: 8, name: 'Company 8', logo: '/images/partners/company8.png' },
-    { id: 9, name: 'Company 9', logo: '/images/partners/company9.png' },
-    { id: 10, name: 'Company 10', logo: '/images/partners/company10.png' }
+  const companies = [
+    { id: 1, name: 'Company 1', logo: '/images/logo/logo-dpm.png' },
+    { id: 2, name: 'Company 2', logo: '/images/logo/logo-dpm.png' },
+    { id: 3, name: 'Company 3', logo: '/images/logo/logo-dpm.png' },
+    { id: 4, name: 'Company 4', logo: '/images/logo/logo-dpm.png' },
+    { id: 5, name: 'Company 5', logo: '/images/logo/logo-dpm.png' },
+    { id: 6, name: 'Company 6', logo: '/images/logo/logo-dpm.png' },
+    { id: 7, name: 'Company 7', logo: '/images/logo/logo-dpm.png' },
+    { id: 8, name: 'Company 8', logo: '/images/logo/logo-dpm.png' },
+    { id: 9, name: 'Company 9', logo: '/images/logo/logo-dpm.png' },
+    { id: 10, name: 'Company 10', logo: '/images/logo/logo-dpm.png' }
   ]
 
   return (
@@ -25,12 +25,12 @@ const OurUsers: React.FC = () => {
           <div className="w-16 h-1 bg-red-400 mx-auto"></div>
         </div>
 
-        {/* Partners Grid */}
+        {/* companies Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3">
-          {partners.map((partner) => (
+          {companies.map((partner) => (
             <div
               key={partner.id}
-              className="aspect-square bg-white rounded-xl border border-gray-200 shadow-sm  transition-all flex items-center justify-center"
+              className="aspect-square bg-white  border border-gray-200 shadow-lg  transition-all flex items-center justify-center"
             >
               <Image
                 src={partner.logo}

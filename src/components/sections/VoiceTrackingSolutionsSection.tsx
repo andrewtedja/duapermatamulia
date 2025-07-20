@@ -63,7 +63,7 @@ const VoiceTrackingSolutionsSection = () => {
           {/* Right side - Partner details */}
           <div className="w-1/2">
             {selectedPartner ? (
-              <div className="bg-white  rounded-lg shadow-2xl p-6 h-full">
+              <div className="bg-white  rounded-lg shadow-lg p-6 h-full">
                 {(() => {
                   const partner = partners.find((p) => p.id === selectedPartner)
                   if (!partner) return null

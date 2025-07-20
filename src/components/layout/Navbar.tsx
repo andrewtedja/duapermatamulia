@@ -107,11 +107,14 @@ const Navbar = () => {
                           handleDropdownClick(item.dropdown)
                         }
                       }}
-                      className={`relative text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium duration-200 flex items-center after:absolute after:-bottom-3.5 after:left-0 after:w-full after:h-0.5 after:bg-transparent hover:after:bg-red-500 ${
-                        activeDropdown === item.dropdown
-                          ? 'text-gray-900 after:bg-red-500'
-                          : ''
-                      }`}
+                      className={`relative text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium duration-200 flex items-center
+  after:absolute after:-bottom-3.5 after:left-0 after:w-full after:h-0.5 after:content-['']
+  ${
+    activeDropdown === item.dropdown
+      ? 'text-gray-900 after:bg-red-500'
+      : 'after:bg-transparent hover:after:bg-red-500'
+  }
+`}
                     >
                       {item.name}
                       {item.hasDropdown && (
