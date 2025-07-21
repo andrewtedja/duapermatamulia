@@ -22,7 +22,7 @@ export const products: Product[] = [
     name: 'TR315',
     category: 'PRO AV',
     subtitle: 'AI-Driven PTZ Camera for Pro AV & Education',
-    description: 'Superior Pro AV Tracking',
+    description: 'Camera that remembers the person it is tracking.',
     imgPath: '/images/backgrounds/bg-tr315new.svg',
     slug: 'tr-315',
     overlay: 10,
