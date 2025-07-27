@@ -74,7 +74,7 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={16} />
-                <span>+(6221) 29324647 – 8</span>
+                <span>+(6221) 29324647</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock size={16} />

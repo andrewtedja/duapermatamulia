@@ -1,5 +1,5 @@
 export type Product = {
-  id: number
+  id: string
   name: string
   category: string
   subtitle: string
@@ -18,7 +18,7 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    id: 1,
+    id: '1',
     name: 'TR315',
     category: 'PRO AV',
     subtitle: 'AI-Driven PTZ Camera for Pro AV & Education',
@@ -35,14 +35,14 @@ export const products: Product[] = [
     }
   },
   {
-    id: 2,
+    id: '2',
     name: 'HUB30',
     category: 'VIDEO CONFERENCING',
     subtitle: '4K BYOM Matrix Switcher',
     description: 'Seamlessly switch sources and connect personal devices.',
     imgPath: '/images/backgrounds/bg-hub30new.png',
     slug: 'hub30',
-    overlay: 40,
+    overlay: 60,
     productImagePath: '/images/products/prod-hub30.png',
     layout: {
       imageSize: 900,
@@ -53,11 +53,11 @@ export const products: Product[] = [
   },
 
   {
-    id: 3,
+    id: '3',
     name: 'MT300N',
     category: 'PRO AV',
-    subtitle: 'NDI® Matrix Tracking Box',
-    description: 'Your AV matrix, streamlined by NDI®',
+    subtitle: 'NDI Matrix Tracking Box',
+    description: 'Your AV matrix, streamlined by NDI',
     imgPath: '/images/backgrounds/bg-mt300n.png',
     slug: 'mt300n',
     overlay: 70,
@@ -70,7 +70,7 @@ export const products: Product[] = [
     }
   },
   {
-    id: 4,
+    id: '4',
     name: 'AmpliWave SA-A5',
     category: 'SMART CLASSROOM',
     subtitle: 'Streaming Audio System, \nThe Axis of Education',
@@ -87,7 +87,7 @@ export const products: Product[] = [
     }
   },
   {
-    id: 5,
+    id: '5',
     name: 'CAM570',
     category: 'VIDEO CONFERENCING',
     subtitle:
@@ -107,7 +107,7 @@ export const products: Product[] = [
   },
 
   {
-    id: 6,
+    id: '6',
     name: 'TR 615',
     category: 'PRO AV',
     subtitle: 'Broadcasting-Grade Auto Tracking Camera',
@@ -124,7 +124,7 @@ export const products: Product[] = [
     }
   },
   {
-    id: 7,
+    id: '7',
     name: 'MT100',
     category: 'PRO AV',
     subtitle: 'Matrix Box, Effortless Integration. \nBoundless AV Experiences.',
@@ -141,7 +141,7 @@ export const products: Product[] = [
     }
   },
   {
-    id: 8,
+    id: '8',
     name: 'U70i',
     category: 'SMART CLASSROOM',
     subtitle:
@@ -159,7 +159,7 @@ export const products: Product[] = [
     }
   },
   {
-    id: 9,
+    id: '9',
     name: 'M70W',
     category: 'SMART CLASSROOM',
     subtitle: '4K Mechanical Arm Wireless Visualizer',
@@ -176,7 +176,7 @@ export const products: Product[] = [
     }
   },
   {
-    id: 10,
+    id: '10',
     name: 'TR211',
     category: 'SMART CLASSROOM',
     subtitle: 'Superior AI Auto Tracking PTZ Camera',
@@ -193,7 +193,7 @@ export const products: Product[] = [
     }
   },
   {
-    id: 11,
+    id: '11',
     name: 'VB370A',
     category: 'VIDEO CONFERENCING',
     subtitle: '4K Dual Lens Video Bar \nAndroid Powered. Zoom Rooms Perfected.',
@@ -210,7 +210,7 @@ export const products: Product[] = [
     }
   },
   {
-    id: 12,
+    id: '12',
     name: 'PTZ 211',
     category: 'PRO AV',
     subtitle: 'Professional PTZ Camera',
@@ -227,7 +227,7 @@ export const products: Product[] = [
     }
   },
   {
-    id: 13,
+    id: '13',
     name: 'VB342 Pro',
     category: 'VIDEO CONFERENCING',
     subtitle: '4K PTZ Video Bar for\n Small To Medium Rooms',
@@ -244,7 +244,7 @@ export const products: Product[] = [
     }
   },
   {
-    id: 14,
+    id: '14',
     name: 'FONE 700',
     category: 'VIDEO CONFERENCING',
     subtitle: 'Ceiling Speakerphone System for\n Rooms of Any Size',
@@ -261,7 +261,7 @@ export const products: Product[] = [
     }
   },
   {
-    id: 15,
+    id: '15',
     name: 'VB350',
     category: 'VIDEO CONFERENCING',
     subtitle: 'Dual Lens PTZ Video Bar\n with a Hybrid 18X Zoom Lens',

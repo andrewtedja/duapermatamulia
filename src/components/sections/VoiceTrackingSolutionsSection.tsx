@@ -36,7 +36,7 @@ const VoiceTrackingSolutionsSection = () => {
               {partners.map((partner) => (
                 <div
                   key={partner.id}
-                  className={` rounded-md cursor-pointer flex items-center justify-center px-2 lg:px-6 py-2 lg:py-0 transition-all duration-200  ${
+                  className={`  cursor-pointer flex items-center justify-center px-2 lg:px-6 py-2 lg:py-0 transition-all duration-200  ${
                     selectedPartner === partner.id
                       ? ' shadow-2xl bg-white'
                       : 'border-gray-200 shadow-md hover:shadow-xl  hover:shadow-gray-200 bg-[#F8F9FC]'
@@ -63,7 +63,7 @@ const VoiceTrackingSolutionsSection = () => {
           {/* Right side - Partner details */}
           <div className="w-1/2">
             {selectedPartner ? (
-              <div className="bg-white  rounded-lg shadow-lg p-6 h-full">
+              <div className="bg-white  shadow-lg p-6 h-full">
                 {(() => {
                   const partner = partners.find((p) => p.id === selectedPartner)
                   if (!partner) return null
@@ -138,7 +138,7 @@ const VoiceTrackingSolutionsSection = () => {
                 })()}
               </div>
             ) : (
-              <div className="bg-white rounded-lg shadow-lg p-6 flex items-center justify-center h-96">
+              <div className="bg-white  shadow-lg p-6 flex items-center justify-center h-96">
                 <p className="text-gray-500 text-center">
                   Select a partner to learn more about their voice tracking
                   solutions & their supported models

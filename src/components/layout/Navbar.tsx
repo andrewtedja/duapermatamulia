@@ -1,11 +1,22 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
-import { ChevronDown, ExternalLink, Mail, Menu, Search, X } from 'lucide-react'
+import {
+  ChevronDown,
+  ExternalLink,
+  Globe,
+  Instagram,
+  Mail,
+  Menu,
+  Phone,
+  Search,
+  X
+} from 'lucide-react'
 import Logo from '../logo/logo'
 import { products } from '@/data/products'
 import { partners } from '@/data/solutions'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 const DROPDOWN_CLOSE_DELAY = 300 // milliseconds
 
@@ -15,6 +26,9 @@ const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [activeProductCategory, setActiveProductCategory] =
     useState('Popular Products')
+
+  const [showTopBar, setShowTopBar] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
 
   // const dropdownRefs = useRef({})
   const timeoutRef = useRef<null | NodeJS.Timeout>(null)
@@ -33,6 +47,24 @@ const Navbar = () => {
         : product.category === activeProductCategory
     )
     .slice(0, 6)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+
+      // Show top bar when at the very top, hide when scrolling down
+      if (currentScrollY === 0) {
+        setShowTopBar(true)
+      } else if (currentScrollY > lastScrollY && currentScrollY > 10) {
+        setShowTopBar(false)
+      }
+
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY])
 
   const handleDropdownEnter = (dropdown: string) => {
     if (timeoutRef.current) {
@@ -58,26 +90,91 @@ const Navbar = () => {
       }
     }
   }, [])
-
   const navItems = [
+    { name: 'Home', hasDropdown: false, href: '/' },
+    { name: 'Products', hasDropdown: true, dropdown: 'products' },
+    { name: 'Solutions', hasDropdown: true, dropdown: 'solutions' },
     {
-      name: 'Products',
-      hasDropdown: true,
-      dropdown: 'products'
+      name: 'News',
+      hasDropdown: false,
+      href: 'https://www.aver.com/press-release/AVer-Aligns-with-Shure-to-Empower-Pro-AV-Camera-Voice-Tracking'
     },
-    {
-      name: 'Solutions',
-      hasDropdown: true,
-      dropdown: 'solutions'
-    },
-    { name: 'News', hasDropdown: false },
-    { name: 'About Us', hasDropdown: false },
-    { name: 'Contact Us', hasDropdown: false }
+    { name: 'About Us', hasDropdown: false, href: '/about' },
+    { name: 'Contact Us', hasDropdown: false, href: '/contact' }
   ]
 
   return (
     <>
-      <nav className="fixed w-full h-16 bg-white shadow-sm border-b border-gray-200 z-1000">
+      {/* Top Announcement Bar */}
+      <motion.div
+        className={`fixed w-full bg-red-800 text-white text-sm z-[1001] overflow-hidden transition-all duration-300 ${
+          showTopBar ? 'opacity-100 h-10' : 'opacity-0 h-0 pointer-events-none'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-10">
+            {/* Left side - Announcement */}
+            <div className="flex items-center space-x-4">
+              {/* Instagram */}
+              <Link
+                href="https://www.instagram.com/duapermatamulia/"
+                aria-label="Instagram"
+              >
+                <Instagram size={16} />
+              </Link>
+
+              <div className="h-4 w-px bg-white opacity-50 mx-3" />
+
+              {/* Phone */}
+              <div className="flex items-center space-x-1 text-sm">
+                <Phone size={16} />
+                <span className="hidden sm:inline">+62-21-2932-4647</span>
+              </div>
+
+              <div className="h-4 w-px bg-white opacity-50 mx-3 hidden sm:block" />
+
+              {/* Email */}
+              <div className="flex items-center space-x-1 text-sm">
+                <Mail size={16} />
+                <span className="hidden sm:inline">
+                  info@duapermatamulia.com
+                </span>
+              </div>
+
+              <Link
+                href="/inquiry"
+                className=" text-sm text-white border border-white px-3 py-0.5 rounded hover:bg-white hover:text-red-800 transition"
+              >
+                Inquire Now
+              </Link>
+            </div>
+
+            {/* Right side - Region/Language Selector */}
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-1 text-sm hover:text-gray-300 cursor-pointer transition-colors">
+                <Globe className="h-4 w-4" />
+                <span className="hidden sm:inline">Indonesia</span>
+              </div>
+
+              {/* Close button for mobile */}
+              <button
+                onClick={() => setShowTopBar(false)}
+                className="sm:hidden p-1 hover:bg-gray-800 rounded transition-colors"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Main Navigation */}
+
+      <nav
+        className={`fixed w-full h-16 bg-white shadow-sm border-b border-gray-200 z-1000 ${
+          showTopBar ? 'top-10' : 'top-0'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
@@ -87,44 +184,37 @@ const Navbar = () => {
             <div className="hidden lg:flex flex-1 justify-start">
               <div className="ml-16 flex items-baseline space-x-4">
                 {navItems.map((item) => (
-                  <div
-                    key={item.name}
-                    className="relative"
-                    onMouseEnter={() =>
-                      item.hasDropdown &&
-                      item.dropdown !== undefined &&
-                      handleDropdownEnter(item.dropdown)
-                    }
-                    onMouseLeave={() =>
-                      item.hasDropdown && handleDropdownLeave()
-                    }
-                  >
-                    <a
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault()
-                        if (item.hasDropdown && item.dropdown !== undefined) {
-                          handleDropdownClick(item.dropdown)
-                        }
-                      }}
-                      className={`relative text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium duration-200 flex items-center
-  after:absolute after:-bottom-3.5 after:left-0 after:w-full after:h-0.5 after:content-['']
-  ${
-    activeDropdown === item.dropdown
-      ? 'text-gray-900 after:bg-red-500'
-      : 'after:bg-transparent hover:after:bg-red-500'
-  }
-`}
-                    >
-                      {item.name}
-                      {item.hasDropdown && (
+                  <div key={item.name} className="relative">
+                    {item.hasDropdown ? (
+                      <button
+                        onClick={() => handleDropdownClick(item.dropdown!)}
+                        className={`relative text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium duration-200 flex items-center
+        after:absolute after:-bottom-3.5 after:left-0 after:w-full after:h-0.5 after:content-['']
+        ${
+          activeDropdown === item.dropdown
+            ? 'text-gray-900 after:bg-red-500'
+            : 'after:bg-transparent hover:after:bg-red-500'
+        }`}
+                        onMouseEnter={() => handleDropdownEnter(item.dropdown!)}
+                        onMouseLeave={handleDropdownLeave}
+                      >
+                        {item.name}
                         <ChevronDown
                           className={`ml-1 h-3 w-3 transition-transform duration-200 ${
                             activeDropdown === item.dropdown ? 'rotate-180' : ''
                           }`}
                         />
-                      )}
-                    </a>
+                      </button>
+                    ) : (
+                      <Link
+                        href={item.href!}
+                        className={`relative text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium duration-200
+        after:absolute after:-bottom-3.5 after:left-0 after:w-full after:h-0.5 after:content-['']
+        after:bg-transparent hover:after:bg-red-500`}
+                      >
+                        {item.name}
+                      </Link>
+                    )}
                   </div>
                 ))}
               </div>
@@ -166,13 +256,6 @@ const Navbar = () => {
                     </button>
                   )}
                 </div>
-
-                <div className="ml-5 flex items-center justify-center">
-                  <p className="hidden lg:flex text-sm text-gray-600 transition-colors duration-200 items-center">
-                    <Mail className="h-4 w-4 mr-2" />
-                    info@duapermatamulia.com
-                  </p>
-                </div>
               </div>
             </div>
 
@@ -194,7 +277,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation Menu */}
         {isMenuOpen && (
-          <div className="md:hidden">
+          <div className="md:hidden z-50 relative">
             <div className="px-2 pt-2 pb-6 space-y-1 sm:px-3 bg-white border-t border-gray-200 rounded-b-2xl">
               {navItems.map((item) => (
                 <a
@@ -210,6 +293,14 @@ const Navbar = () => {
         )}
       </nav>
 
+      {/* Full Screen Black Overlay Menu */}
+      {isMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-40"
+          onClick={() => setIsMenuOpen(false)}
+        />
+      )}
+
       {/* Full Screen Overlay Dropdowns */}
       {activeDropdown && (
         <motion.div
@@ -217,8 +308,9 @@ const Navbar = () => {
           animate={{ clipPath: 'inset(0% 0% 0% 0%)', opacity: 1, y: 0 }}
           exit={{ clipPath: 'inset(0% 0% 100% 0%)', opacity: 0, y: -20 }}
           transition={{ duration: 0.6, ease: 'easeInOut' }}
-          className="fixed inset-0 bg-white z-50 overflow-hidden"
-          style={{ top: '64px' }}
+          className={`fixed inset-0 bg-white z-50 overflow-hidden ${
+            showTopBar ? 'top-24 h-[calc(100vh-2.5rem)]' : 'top-16'
+          }`}
           onMouseEnter={() => {
             if (timeoutRef.current) {
               clearTimeout(timeoutRef.current)
@@ -300,14 +392,14 @@ const Navbar = () => {
 
                     {/* View All Products */}
                     {/* <div className="text-center pt-8 border-t border-gray-200">
-                      <a
-                        href="/products"
-                        className="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors duration-200 font-medium"
-                      >
-                        View All Products
-                        <ChevronDown className="ml-2 h-4 w-4 rotate-[-90deg]" />
-                      </a>
-                    </div> */}
+                        <a
+                          href="/products"
+                          className="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors duration-200 font-medium"
+                        >
+                          View All Products
+                          <ChevronDown className="ml-2 h-4 w-4 rotate-[-90deg]" />
+                        </a>
+                      </div> */}
                   </div>
                 </div>
               </div>
@@ -316,7 +408,7 @@ const Navbar = () => {
 
           {/* Solutions Dropdown Content */}
           {activeDropdown === 'solutions' && (
-            <div className="h-full overflow-y-auto">
+            <div className="h-full overflow-hidden">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <div className="mb-8">
                   <h2 className="text-2xl font-bold text-gray-900 mb-2">
@@ -324,14 +416,14 @@ const Navbar = () => {
                   </h2>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-12">
                   {partners.slice(0, 9).map((partner) => (
                     <a
                       key={partner.id}
                       href={partner.visitLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group block p-6 bg-white border-gray-200 border rounded-xl hover:shadow-lg transition-all duration-300  "
+                      className="group block p-6 bg-white border-gray-200 border rounded-xl hover:shadow-lg    "
                     >
                       <ExternalLink className="w-4 h-4 float-right" />
                       <div className="flex items-center justify-center space-x-4 mb-4">
@@ -352,8 +444,8 @@ const Navbar = () => {
                             {partner.name}
                           </h4>
                           {/* <p className="text-sm text-gray-600 line-clamp-2">
-                            {partner.description}
-                          </p> */}
+                              {partner.description}
+                            </p> */}
                         </div>
                       </div>
 
@@ -380,14 +472,14 @@ const Navbar = () => {
 
                 {/* View All Solutions */}
                 {/* <div className="text-center pt-8 border-t border-gray-200">
-                  <a
-                    href="/solutions"
-                    className="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors duration-200 font-medium"
-                  >
-                    View All Solutions
-                    <ChevronDown className="ml-2 h-4 w-4 rotate-[-90deg]" />
-                  </a>
-                </div> */}
+                    <a
+                      href="/solutions"
+                      className="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors duration-200 font-medium"
+                    >
+                      View All Solutions
+                      <ChevronDown className="ml-2 h-4 w-4 rotate-[-90deg]" />
+                    </a>
+                  </div> */}
               </div>
             </div>
           )}
