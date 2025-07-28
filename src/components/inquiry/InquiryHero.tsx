@@ -1,12 +1,17 @@
+import Image from 'next/image'
+
 export default function InquiryHero() {
   return (
     <div className="relative h-64 overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('/images/backgrounds/inquiry.jpg?height=400&width=1200')`
-        }}
-      >
+      <div className="absolute inset-0">
+        <Image
+          src="/images/backgrounds/inquiry.jpg"
+          alt="Inquiry Background"
+          layout="fill"
+          objectFit="cover"
+          quality={90}
+          priority
+        />
         <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
       </div>
       <div className="relative z-10 flex items-center justify-center h-full">

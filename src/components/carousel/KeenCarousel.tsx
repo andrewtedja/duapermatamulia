@@ -137,6 +137,7 @@ export default function KeenCarousel() {
                         'object-contain',
                         slide.layout?.imageClass
                       )}
+                      priority
                     />
                   </div>
                 </div>

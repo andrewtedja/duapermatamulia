@@ -54,6 +54,7 @@ const VoiceTrackingSolutionsSection = () => {
                         width={100}
                         height={60}
                         className="object-contain"
+                        loading="lazy"
                       />
                       <div>
                         <h3 className="text-xl font-bold text-gray-900">
@@ -121,6 +122,7 @@ const VoiceTrackingSolutionsSection = () => {
                         width={120}
                         height={100}
                         className="object-contain mb-2"
+                        loading="lazy"
                       />
                     </CardContent>
                   </Card>
@@ -149,6 +151,7 @@ const VoiceTrackingSolutionsSection = () => {
                                 width={120}
                                 height={60}
                                 className="object-contain"
+                                loading="lazy"
                               />
                               <div>
                                 <h2 className="text-2xl font-bold text-gray-900">
