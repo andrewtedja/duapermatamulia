@@ -30,7 +30,6 @@ const Navbar = () => {
   const [showTopBar, setShowTopBar] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
 
-  // const dropdownRefs = useRef({})
   const timeoutRef = useRef<null | NodeJS.Timeout>(null)
 
   // Product categories
@@ -52,7 +51,6 @@ const Navbar = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
 
-      // Show top bar when at the very top, hide when scrolling down
       if (currentScrollY === 0) {
         setShowTopBar(true)
       } else if (currentScrollY > lastScrollY && currentScrollY > 10) {
@@ -90,6 +88,7 @@ const Navbar = () => {
       }
     }
   }, [])
+
   const navItems = [
     { name: 'Home', hasDropdown: false, href: '/' },
     { name: 'Products', hasDropdown: true, dropdown: 'products' },
@@ -116,12 +115,14 @@ const Navbar = () => {
             {/* Left side - Announcement */}
             <div className="flex items-center space-x-4">
               {/* Instagram */}
-              <Link
+              <a
                 href="https://www.instagram.com/duapermatamulia/"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
               >
                 <Instagram size={16} />
-              </Link>
+              </a>
 
               <div className="h-4 w-px bg-white opacity-50 mx-3" />
 
@@ -169,7 +170,6 @@ const Navbar = () => {
       </motion.div>
 
       {/* Main Navigation */}
-
       <nav
         className={`fixed w-full h-16 bg-white shadow-sm border-b border-gray-200 z-1000 ${
           showTopBar ? 'top-10' : 'top-0'
@@ -209,7 +209,7 @@ const Navbar = () => {
                       <Link
                         href={item.href!}
                         className={`relative text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium duration-200
-        after:absolute after:-bottom-3.5 after:left-0 after:w-full after:h-0.5 after:content-['']
+        after:absolute after:-bottom-[15px] after:left-0 after:w-full after:h-0.5 after:content-['']
         after:bg-transparent hover:after:bg-red-500`}
                       >
                         {item.name}
@@ -389,17 +389,6 @@ const Navbar = () => {
                         </a>
                       ))}
                     </div>
-
-                    {/* View All Products */}
-                    {/* <div className="text-center pt-8 border-t border-gray-200">
-                        <a
-                          href="/products"
-                          className="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors duration-200 font-medium"
-                        >
-                          View All Products
-                          <ChevronDown className="ml-2 h-4 w-4 rotate-[-90deg]" />
-                        </a>
-                      </div> */}
                   </div>
                 </div>
               </div>
@@ -443,9 +432,6 @@ const Navbar = () => {
                           <h4 className="text-lg font-semibold text-gray-900  transition-colors duration-200 mb-2">
                             {partner.name}
                           </h4>
-                          {/* <p className="text-sm text-gray-600 line-clamp-2">
-                              {partner.description}
-                            </p> */}
                         </div>
                       </div>
 
@@ -469,17 +455,6 @@ const Navbar = () => {
                     </a>
                   ))}
                 </div>
-
-                {/* View All Solutions */}
-                {/* <div className="text-center pt-8 border-t border-gray-200">
-                    <a
-                      href="/solutions"
-                      className="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors duration-200 font-medium"
-                    >
-                      View All Solutions
-                      <ChevronDown className="ml-2 h-4 w-4 rotate-[-90deg]" />
-                    </a>
-                  </div> */}
               </div>
             </div>
           )}

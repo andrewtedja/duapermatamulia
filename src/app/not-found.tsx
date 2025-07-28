@@ -16,8 +16,8 @@ export default function NotFound() {
         <p className="text-gray-600 mb-6">
           The page you are looking for doesn&apos;t exist.
         </p>
-        <Link href="/" className="text-blue-500 hover:underline">
-          ← Back to Home
+        <Link href="/">
+          <a className="text-blue-500 hover:underline">← Back to Home</a>
         </Link>
       </div>
     </>

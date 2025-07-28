@@ -1,5 +1,8 @@
 import Image from 'next/image'
 import { Product } from '@/data/products'
+import clsx from 'clsx'
+import Link from 'next/link'
+import { MessageCircle } from 'lucide-react'
 
 interface ProductHeroProps {
   product: Product
@@ -7,7 +10,7 @@ interface ProductHeroProps {
 
 export default function ProductHero({ product }: ProductHeroProps) {
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative w-full h-[80vh] overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -63,21 +66,29 @@ export default function ProductHero({ product }: ProductHeroProps) {
               )}
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <button className="px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-white/90 transition-colors duration-300">
-                  Learn More
-                </button>
-                <button className="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-all duration-300">
-                  Contact Sales
-                </button>
+              <div className="flex justify-start pt-6">
+                <Link
+                  href="/inquiry"
+                  className="group relative inline-flex items-center gap-3 px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-all duration-400 ease-out overflow-hidden"
+                >
+                  {/* Clean slide effect */}
+                  <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out" />
+
+                  <span className="relative z-10 flex items-center gap-3">
+                    <MessageCircle className="w-5 h-5 group-hover:rotate-6 transition-transform duration-300" />
+                    Inquire Now
+                  </span>
+                </Link>
               </div>
             </div>
 
             {/* Right Product Image */}
             <div
-              className={`flex justify-center items-center ${
-                product.layout?.textAlign === 'right' ? 'lg:order-1' : ''
-              }`}
+              className={clsx(
+                'flex justify-center items-center',
+                product.layout?.textAlign === 'right' ? 'lg:order-1' : '',
+                product.name === 'TR315' ? 'hidden' : 'flex'
+              )}
             >
               <div className="relative w-full max-w-2xl">
                 <Image

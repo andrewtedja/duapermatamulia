@@ -6,6 +6,7 @@ import 'keen-slider/keen-slider.min.css'
 import Image from 'next/image'
 import { products } from '@/data/products'
 import clsx from 'clsx'
+import Link from 'next/link'
 
 const slides = products.slice(0, 4)
 
@@ -92,6 +93,7 @@ export default function KeenCarousel() {
                 className="absolute inset-0 z-10 bg-black"
                 style={{ opacity: slide.overlay / 100 }}
               />
+
               <div className="relative z-20 flex items-center h-full">
                 <div className="w-full max-w-7xl mx-auto px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-[minmax(0,_1fr)_minmax(0,_1fr)] gap-8 items-center">
                   {/* Text Section */}
@@ -105,14 +107,15 @@ export default function KeenCarousel() {
                     <p className="text-xl font-mono leading-relaxed mt-4 mb-6">
                       {slide.description}
                     </p>
-                    <button
+                    <Link
+                      href={`/products/${slide.id}`}
                       className={clsx(
-                        'bg-transparent border-2 px-7 py-3 rounded-full text-lg font-medium hover:bg-white/10 transition-all duration-300 ease-in-out',
+                        'inline-block bg-transparent border-2 px-7 py-3 rounded-full text-lg font-medium hover:bg-white/10 transition-all duration-300 ease-in-out',
                         getThemeClasses(currentSlideName, slide.name).border
                       )}
                     >
                       Learn More
-                    </button>
+                    </Link>
                   </div>
 
                   {/* Product Image Section */}
