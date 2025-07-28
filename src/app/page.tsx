@@ -4,7 +4,7 @@ import AboutSection from '@/components/sections/AboutSection'
 import HeroSection from '@/components/sections/HeroSection'
 import ProductShowcaseSection from '@/components/sections/ProductShowcaseSection'
 import { ScrollContainerSection } from '@/components/sections/ScrollContainerSection'
-import TrustedBySection from '@/components/sections/TrustedBySection'
+// import TrustedBySection from '@/components/sections/TrustedBySection'
 import VoiceTrackingSolutionsSection from '@/components/sections/VoiceTrackingSolutionsSection'
 
 export default function HomePage() {
@@ -19,7 +19,7 @@ export default function HomePage() {
         <VoiceTrackingSolutionsSection />
         <AboutSection />
 
-        <TrustedBySection />
+        {/* <TrustedBySection /> */}
         {/* <CallToAction />  */}
       </main>
 

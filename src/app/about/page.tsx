@@ -1,7 +1,9 @@
+import AboutHero from '@/components/about/AboutHero'
+import OfficeLocation from '@/components/about/OfficeLocation'
 import Footer from '@/components/layout/Footer'
 import Navbar from '@/components/layout/Navbar'
 import AboutSection from '@/components/sections/AboutSection'
-import { Target } from 'lucide-react'
+// import { Target } from 'lucide-react'
 import React from 'react'
 
 const AboutPage = () => {
@@ -10,12 +12,13 @@ const AboutPage = () => {
       <Navbar />
 
       <main className="bg-gray-50 flex-1 pt-16">
+        <AboutHero />
         <AboutSection />
 
         {/* <CallToAction />  */}
         {/* Optional: Mission Statement - Translated if needed */}
 
-        <div className="border-t border-gray-200 py-16">
+        {/* <div className="border-t border-gray-200 py-16">
           <div className="text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-red-700 rounded-full mb-6">
               <Target className="w-8 h-8 text-white" />
@@ -30,7 +33,7 @@ const AboutPage = () => {
               jangka panjang.
             </p>
           </div>
-        </div>
+        </div> */}
       </main>
 
       <Footer />

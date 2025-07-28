@@ -308,7 +308,7 @@ const Navbar = () => {
           animate={{ clipPath: 'inset(0% 0% 0% 0%)', opacity: 1, y: 0 }}
           exit={{ clipPath: 'inset(0% 0% 100% 0%)', opacity: 0, y: -20 }}
           transition={{ duration: 0.6, ease: 'easeInOut' }}
-          className={`fixed inset-0 bg-white z-50 overflow-hidden ${
+          className={`fixed inset-0 bg-white z-1000 overflow-hidden ${
             showTopBar ? 'top-24 h-[calc(100vh-2.5rem)]' : 'top-16'
           }`}
           onMouseEnter={() => {

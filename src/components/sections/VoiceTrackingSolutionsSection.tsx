@@ -1,150 +1,212 @@
 'use client'
 import { useState } from 'react'
-import { ExternalLink } from 'lucide-react'
+import { ChevronRight, ExternalLink } from 'lucide-react'
 
 import { partners } from '@/data/solutions'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Card, CardContent } from '../ui/card'
+import { Button } from '../ui/button'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs'
 
 const VoiceTrackingSolutionsSection = () => {
-  const [selectedPartner, setSelectedPartner] = useState<string | null>('shure')
-
-  const handlePartnerClick = (partnerId: string) => {
-    setSelectedPartner(selectedPartner === partnerId ? null : partnerId)
-  }
+  const [selectedPartner, setSelectedPartner] = useState<string>('shure')
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-16 lg:py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <div className="text-center mb-12">
-          <div className="text-center mb-12">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">
-              Voice Tracking Solutions
-            </h1>
-            <div className="w-16 h-1 bg-red-400 mx-auto mb-4"></div>
-            <p className="text-sm text-gray-600 mb-4">
-              Select a partner to learn more about their voice tracking
-              solutions
-            </p>
-          </div>
+          <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            Voice Tracking Solutions
+          </h1>
+          <div className="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Explore our comprehensive range of voice tracking solutions from
+            industry-leading partners. Select a partner to learn more about
+            their technology and supported models.
+          </p>
         </div>
 
-        <div className="flex gap-4 lg:gap-8">
-          {/* Left side - Partner grid */}
-          <div className="w-1/2 flex-1 flex flex-col justify-between h-full">
-            <div className="grid grid-cols-2 gap-1 lg:gap-4 flex-grow">
-              {partners.map((partner) => (
-                <div
+        {/* Mobile Tabs View */}
+        <div className="lg:hidden">
+          <Tabs value={selectedPartner} onValueChange={setSelectedPartner}>
+            <TabsList className="grid w-full grid-cols-3 mb-6 gap-1">
+              {partners.slice(0, 6).map((partner) => (
+                <TabsTrigger
                   key={partner.id}
-                  className={`  cursor-pointer flex items-center justify-center px-2 lg:px-6 py-2 lg:py-0 transition-all duration-200  ${
-                    selectedPartner === partner.id
-                      ? ' shadow-2xl bg-white'
-                      : 'border-gray-200 shadow-md hover:shadow-xl  hover:shadow-gray-200 bg-[#F8F9FC]'
-                  } h-full`}
-                  onClick={() => handlePartnerClick(partner.id)}
+                  value={partner.id}
+                  className="text-xs px-2 bg-gray-200"
                 >
-                  <div className="p-0 lg:p-4">
-                    <div className="flex items-center justify-center space-x-3 mb-3">
-                      <Image
-                        src={partner.logo}
-                        alt={partner.name}
-                        width={140}
-                        height={140}
-                        style={{ objectPosition: 'center' }}
-                        loading="lazy"
-                      />
-                    </div>
-                  </div>
-                </div>
+                  {partner.name}
+                </TabsTrigger>
               ))}
-            </div>
-          </div>
+            </TabsList>
 
-          {/* Right side - Partner details */}
-          <div className="w-1/2">
-            {selectedPartner ? (
-              <div className="bg-white  shadow-lg p-6 h-full">
-                {(() => {
-                  const partner = partners.find((p) => p.id === selectedPartner)
-                  if (!partner) return null
-
-                  return (
-                    <>
-                      <div className="flex items-center space-x-4 mb-4">
-                        <div className="flex items-center justify-center space-x-3 mb-3">
-                          <Image
-                            src={partner.logo}
-                            alt={partner.name}
-                            width={140}
-                            height={140}
-                            style={{ objectPosition: 'center' }}
-                            loading="lazy"
-                          />
-                        </div>
+            {partners.map((partner) => (
+              <TabsContent key={partner.id} value={partner.id}>
+                <Card>
+                  <CardContent className="p-6">
+                    <div className="flex items-center space-x-4 mb-6">
+                      <Image
+                        src={partner.logo || '/placeholder.svg'}
+                        alt={partner.name}
+                        width={100}
+                        height={60}
+                        className="object-contain"
+                      />
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900">
+                          {partner.name}
+                        </h3>
+                        <Link
+                          href={partner.visitLink}
+                          className="text-red-600 hover:text-red-800 text-sm flex items-center space-x-1"
+                        >
+                          <span>Visit Website</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </Link>
                       </div>
-                      <h1 className="text-2xl font-bold text-gray-900">
-                        {partner.name}
-                      </h1>
-                      <p className="text-gray-600 text-xs lg:text-sm leading-relaxed mb-6">
-                        {partner.description}
-                      </p>
+                    </div>
 
-                      <div className="space-y-6">
-                        <div>
-                          <button className="text-blue-600 hover:text-blue-800 font-semibold text-md flex items-center space-x-1">
-                            <Link href={partner.visitLink}>
-                              Visit {partner.name}
-                            </Link>
-                            <ExternalLink className="w-4 h-4" />
-                          </button>
-                        </div>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                      {partner.description}
+                    </p>
 
-                        <div>
-                          <h4 className="font-semibold text-gray-900 mb-2">
-                            Supported Models
-                          </h4>
-                          <ul className="space-y-1">
-                            {partner.supportedModels.map((model, index) => (
-                              <li
-                                key={index}
-                                className="text-blue-600  text-xs lg:text-sm cursor-pointer"
-                              >
-                                {model}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {/* Resources */}
-                        {/* <div>
-                          <h4 className="font-semibold text-gray-900 mb-2">
-                            Resources
-                          </h4>
-                          <div className="space-y-2">
-                            {partner.resources.map((resource, index) => (
-                              <button
-                                key={index}
-                                className="flex items-center space-x-2 text-blue-600 hover:text-blue-800 text-sm"
-                              >
-                                <resource.icon className="w-4 h-4" />
-                                <span>{resource.text}</span>
-                              </button>
-                            ))}
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-3">
+                        Supported Models
+                      </h4>
+                      <div className="grid grid-cols-1 gap-2">
+                        {partner.supportedModels.map((model, index) => (
+                          <div
+                            key={index}
+                            className="bg-gray-100 px-3 py-2 rounded text-sm text-gray-700"
+                          >
+                            {model}
                           </div>
-                        </div> */}
+                        ))}
                       </div>
-                    </>
-                  )
-                })()}
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+            ))}
+          </Tabs>
+        </div>
+
+        {/* Desktop Grid View */}
+        <div className="hidden lg:block">
+          <div className="grid grid-cols-12 gap-8">
+            {/* Partner Selection Grid */}
+            <div className="col-span-5">
+              <h3 className="text-lg font-semibold text-gray-900 mb-6">
+                Select a Partner
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                {partners.map((partner) => (
+                  <Card
+                    key={partner.id}
+                    className={`cursor-pointer transition-all duration-200 hover:shadow-lg ${
+                      selectedPartner === partner.id
+                        ? 'ring-2 ring-red-500 shadow-lg bg-white'
+                        : 'hover:shadow-md bg-white border-gray-200'
+                    }`}
+                    onClick={() => setSelectedPartner(partner.id)}
+                  >
+                    <CardContent className="p-6 flex flex-col items-center text-center h-24">
+                      <Image
+                        src={partner.logo || '/placeholder.svg'}
+                        alt={partner.name}
+                        width={120}
+                        height={100}
+                        className="object-contain mb-2"
+                      />
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
-            ) : (
-              <div className="bg-white  shadow-lg p-6 flex items-center justify-center h-96">
-                <p className="text-gray-500 text-center">
-                  Select a partner to learn more about their voice tracking
-                  solutions & their supported models
-                </p>
-              </div>
-            )}
+            </div>
+
+            {/* Partner Details */}
+            <div className="col-span-7">
+              {selectedPartner && (
+                <Card className="h-full">
+                  <CardContent className="p-8">
+                    {(() => {
+                      const partner = partners.find(
+                        (p) => p.id === selectedPartner
+                      )
+                      if (!partner) return null
+
+                      return (
+                        <>
+                          <div className="flex items-center justify-between mb-6">
+                            <div className="flex items-center space-x-4">
+                              <Image
+                                src={partner.logo || '/placeholder.svg'}
+                                alt={partner.name}
+                                width={120}
+                                height={60}
+                                className="object-contain"
+                              />
+                              <div>
+                                <h2 className="text-2xl font-bold text-gray-900">
+                                  {partner.name}
+                                </h2>
+                                <Link
+                                  href={partner.visitLink}
+                                  className="text-blue-600 hover:text-blue-800 font-medium flex items-center space-x-1 mt-1"
+                                >
+                                  <span>Visit {partner.name}</span>
+                                  <ExternalLink className="w-4 h-4" />
+                                </Link>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="space-y-6">
+                            <div>
+                              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                                About
+                              </h3>
+                              <p className="text-gray-600 leading-relaxed">
+                                {partner.description}
+                              </p>
+                            </div>
+
+                            <div>
+                              <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                                Supported Models
+                              </h3>
+                              <div className="flex flex-wrap gap-2">
+                                {partner.supportedModels.map((model, index) => (
+                                  <span
+                                    key={index}
+                                    className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-1 rounded"
+                                  >
+                                    {model}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+
+                            <div className="pt-4 border-t border-gray-200">
+                              <Button asChild className="w-full sm:w-auto">
+                                <Link href={partner.visitLink}>
+                                  Learn More About {partner.name}
+                                  <ExternalLink className="w-4 h-4 ml-2" />
+                                </Link>
+                              </Button>
+                            </div>
+                          </div>
+                        </>
+                      )
+                    })()}
+                  </CardContent>
+                </Card>
+              )}
+            </div>
           </div>
         </div>
       </div>
