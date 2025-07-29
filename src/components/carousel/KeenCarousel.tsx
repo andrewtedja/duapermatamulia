@@ -108,7 +108,7 @@ export default function KeenCarousel() {
                       {slide.description}
                     </p>
                     <Link
-                      href={`/products/${slide.id}`}
+                      href={`/products/${slide.slug}`}
                       className={clsx(
                         'inline-block bg-transparent border-2 px-7 py-3 rounded-full text-lg font-medium hover:bg-white/10 transition-all duration-300 ease-in-out',
                         getThemeClasses(currentSlideName, slide.name).border

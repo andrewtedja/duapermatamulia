@@ -30,7 +30,7 @@ export function ProductPage({
       <div className="hidden md:block">
         <ProductSidebar />
       </div>
-      <div className="pt-16 relative">
+      <div className="pt-16 relative overflow-x-hidden">
         <ProductHero product={product} />
       </div>
 
