@@ -7,14 +7,18 @@ import { Button } from '@/components/ui/button'
 
 interface ProductOverviewProps {
   productName: string
-  images: string[]
+  title?: string
+  hook?: string
   description: string
+  images: string[]
 }
 
 export function ProductOverview({
   productName,
-  images,
-  description
+  title,
+  hook,
+  description,
+  images
 }: ProductOverviewProps) {
   const [currentImage, setCurrentImage] = useState(0)
 
@@ -33,48 +37,34 @@ export function ProductOverview({
           {/* Left Side - Text Content */}
           <div className="space-y-6 lg:space-y-8">
             <div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
-                Product Overview
-              </h2>
+              {title && (
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
+                  {title}
+                </h2>
+              )}
               <h3 className="text-xl lg:text-2xl font-semibold text-gray-800 mb-3 lg:mb-4">
                 {productName}
               </h3>
+              {hook && (
+                <p className="text-lg text-gray-700 font-medium italic mb-4">
+                  {hook}
+                </p>
+              )}
               <p className="text-base lg:text-lg text-gray-600 leading-relaxed">
                 {description}
               </p>
-            </div>
-
-            {/* Additional product details can go here */}
-            <div className="space-y-3 lg:space-y-4">
-              <div className="flex items-center gap-3 lg:gap-4">
-                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                <span className="text-sm lg:text-base text-gray-700">
-                  Professional grade construction
-                </span>
-              </div>
-              <div className="flex items-center gap-3 lg:gap-4">
-                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                <span className="text-sm lg:text-base text-gray-700">
-                  Advanced AI-powered features
-                </span>
-              </div>
-              <div className="flex items-center gap-3 lg:gap-4">
-                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                <span className="text-sm lg:text-base text-gray-700">
-                  Easy integration and setup
-                </span>
-              </div>
             </div>
           </div>
 
           {/* Right Side - Image Carousel */}
           <div className="relative">
-            <div className="relative aspect-video rounded-2xl overflow-hidden bg-white shadow-2xl">
+            <div className="relative aspect-video rounded-2xl overflow-hidden bg-white backdrop-blur-2xl shadow-2xl">
+              <div className="absolute inset-0 bg-[url('/images/bubbles.png')] bg-repeat-x bg-center mix-blend-multiply opacity-50"></div>
               <Image
                 src={images[currentImage] || '/placeholder.svg'}
                 alt={`${productName} - Image ${currentImage + 1}`}
                 fill
-                className="object-cover"
+                className="object-contain p-5"
               />
 
               {/* Navigation Buttons */}

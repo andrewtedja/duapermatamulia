@@ -13,6 +13,9 @@ import type { ProductResource } from '@/data/productResources'
 interface ProductPageProps {
   product: Product
   overviewImages?: string[]
+  overviewDescription?: string
+  overviewTitle?: string
+  overviewHook?: string
   features?: ProductFeature[]
   specs?: ProductSpec[]
   resources?: ProductResource[]
@@ -21,6 +24,9 @@ interface ProductPageProps {
 export function ProductPage({
   product,
   overviewImages = [],
+  overviewDescription = '',
+  overviewTitle = '',
+  overviewHook = '',
   features = [],
   specs = [],
   resources = []
@@ -37,8 +43,10 @@ export function ProductPage({
       {overviewImages.length > 0 && (
         <ProductOverview
           productName={product.name}
+          title={overviewTitle}
+          hook={overviewHook}
+          description={overviewDescription}
           images={overviewImages}
-          description={product.description}
         />
       )}
 

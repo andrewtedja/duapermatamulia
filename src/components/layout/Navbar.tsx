@@ -152,7 +152,7 @@ const Navbar = () => {
 
             {/* Right side - Region/Language Selector */}
             <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-1 text-sm hover:text-gray-300 cursor-pointer transition-colors">
+              <div className="flex items-center space-x-1 text-sm ">
                 <Globe className="hidden sm:inline h-4 w-4" />
                 <span className="hidden sm:inline">Indonesia</span>
               </div>

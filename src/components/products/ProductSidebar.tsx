@@ -5,7 +5,7 @@ import { Eye, Zap, Settings, MessageCircle, FileText } from 'lucide-react'
 
 const sections = [
   { id: 'inquiry', label: 'Inquire Now', icon: MessageCircle },
-  { id: 'hero', label: 'Overview', icon: Eye },
+  { id: 'overview', label: 'Overview', icon: Eye },
   { id: 'features', label: 'Features', icon: Zap },
   { id: 'specs', label: 'Specifications', icon: Settings },
   { id: 'resources', label: 'Resources', icon: FileText }
@@ -54,7 +54,7 @@ export function ProductSidebar() {
           isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >
-        <div className="bg-white/95 backdrop-blur-md border border-gray-200/50 shadow-xl rounded-2xl p-2 transition-all duration-300 group-hover:min-w-[160px]">
+        <div className="bg-white/90 backdrop-blur-xl border border-gray-200/50 shadow-xl rounded-2xl px-2 py-4 transition-all duration-300 group-hover:min-w-[160px]">
           <nav className="flex flex-col gap-2">
             {sections.map((section) => {
               const IconComponent = section.icon

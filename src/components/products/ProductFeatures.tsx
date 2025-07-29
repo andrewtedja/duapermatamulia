@@ -7,7 +7,7 @@ interface ProductFeaturesProps {
 
 export function ProductFeatures({ features }: ProductFeaturesProps) {
   return (
-    <section className="py-12 lg:py-20">
+    <section id="features" className="py-12 lg:py-20">
       <div className="container mx-auto px-4">
         {features.map((feature, index) => (
           <div

@@ -46,10 +46,10 @@ export default async function ProductDetailPage({
           features={data.features}
           specs={data.specs}
           resources={data.resources}
-          overviewImages={[
-            '/images/placeholder1.svg',
-            '/images/placeholder2.svg'
-          ]}
+          overviewImages={data.overviewImages}
+          overviewDescription={data.overviewDescription}
+          overviewTitle={data.overviewTitle}
+          overviewHook={data.overviewHook}
         />
       </main>
       <Footer />

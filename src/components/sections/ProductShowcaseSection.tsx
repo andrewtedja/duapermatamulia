@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { products } from '@/data/products'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const ProductShowcaseSection = () => {
   const categories = [
@@ -87,9 +88,12 @@ const ProductShowcaseSection = () => {
 
               <div className="mt-7 lg:mt-1">
                 <div className="flex justify-end">
-                  <button className="px-6 py-3 bg-gray-800 text-white rounded-full hover:bg-gray-800/80 transition-colors duration-200 text-sm font-medium">
-                    Learn more
-                  </button>
+                  <Link
+                    href={`/products/${product.slug}`}
+                    className="px-6 py-3 bg-gray-800 text-white rounded-full hover:bg-gray-800/80 transition-colors duration-200 text-md font-medium"
+                  >
+                    Learn More
+                  </Link>
                 </div>
               </div>
             </div>
