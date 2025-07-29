@@ -171,7 +171,7 @@ const Navbar = () => {
 
       {/* Main Navigation */}
       <nav
-        className={`fixed w-full h-16 bg-white shadow-sm border-b border-gray-200 z-1000 ${
+        className={`fixed w-full h-16 bg-white shadow-sm border-b border-gray-200 z-[1001] ${
           showTopBar ? 'top-10' : 'top-0'
         }`}
       >
@@ -277,7 +277,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation Menu */}
         {isMenuOpen && (
-          <div className="md:hidden z-50 relative">
+          <div className="md:hidden z-[100] relative">
             <div className="px-2 pt-2 pb-6 space-y-1 sm:px-3 bg-white border-t border-gray-200 rounded-b-2xl">
               {navItems.map((item) => (
                 <a

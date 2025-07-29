@@ -1,9 +1,11 @@
+import { getProductDetail } from '@/data/getProductDetail'
+import { ProductPage } from '@/components/products/ProductPage'
 import { notFound } from 'next/navigation'
-import { products } from '@/data/products'
-import ProductHero from '@/components/products/ProductHero'
+import Navbar from '@/components/layout/Navbar'
+import Footer from '@/components/layout/Footer'
 import { Metadata } from 'next'
+import { products } from '@/data/products'
 
-// ✅ Fix: make params a Promise and await it
 export async function generateMetadata({
   params
 }: {
@@ -25,16 +27,32 @@ export async function generateMetadata({
   }
 }
 
-// ✅ Fix: make the page component async and await params
-export default async function ProductPage({
+export default async function ProductDetailPage({
   params
 }: {
   params: Promise<{ id: string }>
 }) {
   const { id } = await params
-  const product = products.find((p) => p.id === id)
+  const data = getProductDetail(id)
 
-  if (!product) return notFound()
+  if (!data) return notFound()
 
-  return <ProductHero product={product} />
+  return (
+    <div className="flex flex-col">
+      <Navbar />
+      <main>
+        <ProductPage
+          product={data.product}
+          features={data.features}
+          specs={data.specs}
+          resources={data.resources}
+          overviewImages={[
+            '/images/placeholder1.svg',
+            '/images/placeholder2.svg'
+          ]}
+        />
+      </main>
+      <Footer />
+    </div>
+  )
 }

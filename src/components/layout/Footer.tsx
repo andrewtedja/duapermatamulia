@@ -18,7 +18,6 @@ const categorizedProducts = products.reduce<Record<string, typeof products>>(
 const contactPersons = {
   headOffice: [
     { name: 'Jusak Budiman', phone: '+62-8111-7587-93' },
-    { name: 'Muliana', phone: '+62-8129-4977-33' },
     { name: 'Zainudine', phone: '+62-8129-2754-688' }
   ],
   surabayaOffice: [
