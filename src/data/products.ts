@@ -82,7 +82,7 @@ export const products: Product[] = [
     layout: {
       imageSize: 900,
       imageAlign: 'center',
-      textAlign: 'right',
+      textAlign: 'left',
       imageClass: 'translate-y-4 scale-105'
     }
   },

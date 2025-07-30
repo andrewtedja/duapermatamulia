@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import { Eye, Zap, Settings, MessageCircle, FileText } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const sections = [
   { id: 'inquiry', label: 'Inquire Now', icon: MessageCircle },
@@ -14,6 +16,8 @@ const sections = [
 export function ProductSidebar() {
   const [, setActiveSection] = useState('hero')
   const [isOpen, setIsOpen] = useState(false)
+
+  const router = useRouter()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,7 +58,7 @@ export function ProductSidebar() {
           isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >
-        <div className="bg-white/90 backdrop-blur-xl border border-gray-200/50 shadow-xl rounded-2xl px-2 py-4 transition-all duration-300 group-hover:min-w-[160px]">
+        <div className="bg-white backdrop-blur-xl border border-gray-200/50 shadow-xl rounded-2xl px-2 py-4 transition-all duration-300 group-hover:min-w-[160px]">
           <nav className="flex flex-col gap-2">
             {sections.map((section) => {
               const IconComponent = section.icon
@@ -63,11 +67,18 @@ export function ProductSidebar() {
               return (
                 <button
                   key={section.id}
-                  onClick={() => scrollToSection(section.id)}
+                  onClick={() => {
+                    if (section.id === 'inquiry') {
+                      router.push('/inquiry')
+                    } else {
+                      scrollToSection(section.id)
+                    }
+                    setIsOpen(false)
+                  }}
                   className={`group/item relative flex items-center rounded-md text-sm font-semibold transition-all duration-300 overflow-hidden border ${
                     isInquiry
                       ? 'bg-gradient-to-r from-red-700 to-red-600 text-white shadow-lg border-red-700 hover:bg-gradient-to-r hover:from-red-700 hover:to-red-400'
-                      : 'text-gray-600 hover:border-gray-400 hover:shadow-xl border-gray-200 hover:text-gray-900'
+                      : 'text-gray-600 hover:border-gray-400 hover:shadow-xl border-white hover:text-gray-900'
                   }`}
                 >
                   {/* Icon - always visible */}

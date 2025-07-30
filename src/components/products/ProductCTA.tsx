@@ -54,7 +54,7 @@ export function ProductCTA({ productName }: ProductCTAProps) {
             <Button
               asChild
               size="lg"
-              className="group bg-white text-slate-900 hover:bg-gray-100 text-base lg:text-lg px-8 lg:px-10 py-4 lg:py-6 rounded-xl font-semibold shadow-2xl hover:shadow-white/25 transition-all duration-200 hover:scale-105"
+              className="group bg-white text-slate-900 hover:bg-gray-100 text-base lg:text-lg px-8 lg:px-10 py-4 lg:py-6 rounded-xl font-bold shadow-2xl hover:shadow-white/25 transition-all duration-200 hover:scale-105"
             >
               <Link href="/inquiry" className="inline-flex items-center gap-2">
                 Start Your Inquiry

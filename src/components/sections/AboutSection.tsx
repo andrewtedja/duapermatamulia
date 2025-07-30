@@ -21,12 +21,13 @@ const AboutSection: React.FC = () => {
               <p className="text-gray-700 leading-relaxed mb-4">
                 Dua Permata Mulia adalah distributor terpercaya peralatan
                 telekomunikasi berkualitas tinggi yang berbasis di Indonesia,
-                khusus dalam solusi audio dan video konferensi. Kami menyediakan
-                berbagai produk unggulan dari merek ternama untuk mendukung
-                kebutuhan komunikasi dalam bidang{' '}
+                khususnya dalam solusi audio, video, streaming dan{' '}
+                <i>video conferencing</i>. Kami menyediakan berbagai produk
+                unggulan dari merek ternama untuk mendukung kebutuhan komunikasi
+                modern, seperti{' '}
                 <strong>
-                  AV profesional, alat kelas pintar, streaming, video
-                  konferensi, dan aplikasi pelacakan
+                  Pro AV, Smart Classroom, AI Tracking Cameras, Streaming, dan
+                  Video Conferencing
                 </strong>
                 . Fokus kami adalah memberikan solusi yang efektif dan mudah
                 dijangkau sesuai kebutuhan klien.

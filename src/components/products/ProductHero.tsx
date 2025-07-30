@@ -1,11 +1,27 @@
 import Image from 'next/image'
 import type { Product } from '@/data/products'
+import clsx from 'clsx'
 
 interface ProductHeroProps {
   product: Product
 }
 
 export function ProductHero({ product }: ProductHeroProps) {
+  const getThemeClasses = (currentSlideName: string, itemName: string) => {
+    const isSA_A5 = currentSlideName === 'AmpliWave SA-A5'
+    const isSpecificItem = itemName === currentSlideName
+    return {
+      text: isSA_A5 ? 'text-black' : 'text-white',
+      textMuted: isSA_A5
+        ? 'text-black/60 hover:text-black/90'
+        : 'text-white/60 hover:text-white/90',
+      border: isSA_A5 && isSpecificItem ? 'border-black' : 'border-white',
+      icon: isSA_A5 ? 'text-black' : 'text-white'
+    }
+  }
+
+  const theme = getThemeClasses(product.name, product.name)
+
   const { layout } = product
 
   return (
@@ -24,7 +40,7 @@ export function ProductHero({ product }: ProductHeroProps) {
         />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 py-12 lg:py-20">
+      <div className="relative z-10 container mx-auto px-16 py-12 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Text Content */}
           <div
@@ -36,16 +52,24 @@ export function ProductHero({ product }: ProductHeroProps) {
                 : 'text-left'
             }`}
           >
-            <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 lg:px-4 lg:py-2 text-xs lg:text-sm font-medium mb-4 lg:mb-6">
+            <div
+              className={`inline-block bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 lg:px-4 lg:py-2 text-xs lg:text-sm font-medium mb-4 lg:mb-6 ${theme.text} ${theme.border}`}
+            >
               {product.category}
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-7xl font-bold mb-4 lg:mb-6">
+            <h1
+              className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 ${theme.text}`}
+            >
               {product.name}
             </h1>
-            <h2 className="text-lg sm:text-xl lg:text-2xl font-light mb-6 lg:mb-8 text-white/90">
+            <h2
+              className={`text-lg sm:text-xl lg:text-2xl font-medium mb-6 lg:mb-8  ${theme.text}`}
+            >
               {product.subtitle}
             </h2>
-            <p className="text-base lg:text-lg leading-relaxed text-white/80 max-w-2xl">
+            <p
+              className={`text-base lg:text-xl font-mono leading-relaxed  max-w-2xl ${theme.text}`}
+            >
               {product.description}
             </p>
           </div>
@@ -60,7 +84,15 @@ export function ProductHero({ product }: ProductHeroProps) {
                 : 'justify-start'
             }`}
           >
-            <div className="relative">
+            <div
+              className={clsx(
+                'flex',
+                product.layout?.imageAlign === 'right'
+                  ? 'justify-end'
+                  : 'justify-center',
+                product.name === 'TR315' ? 'hidden' : 'flex'
+              )}
+            >
               <Image
                 src={product.productImagePath || '/placeholder.svg'}
                 alt={product.name}

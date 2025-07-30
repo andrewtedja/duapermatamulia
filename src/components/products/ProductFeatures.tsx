@@ -1,17 +1,40 @@
+'use client'
+
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 import type { ProductFeature } from '@/data/productFeatures'
 
 interface ProductFeaturesProps {
   features: ProductFeature[]
 }
 
+import type { Variants } from 'framer-motion'
+
+const fadeInUp: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 40
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: 'easeOut' // ✅ this is allowed
+    }
+  }
+}
 export function ProductFeatures({ features }: ProductFeaturesProps) {
   return (
     <section id="features" className="py-12 lg:py-20">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 max-w-6xl">
         {features.map((feature, index) => (
-          <div
+          <motion.div
             key={feature.id}
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
             className={`mb-16 lg:mb-32 ${
               index === features.length - 1 ? 'mb-0' : ''
             }`}
@@ -19,10 +42,10 @@ export function ProductFeatures({ features }: ProductFeaturesProps) {
             {feature.layout === 'left' && (
               <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                 <div>
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight mb-4 lg:mb-6">
                     {feature.title}
                   </h3>
-                  <p className="text-base lg:text-lg text-gray-600 leading-relaxed">
+                  <p className="text-xs text-gray-600 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
@@ -30,9 +53,8 @@ export function ProductFeatures({ features }: ProductFeaturesProps) {
                   <Image
                     src={feature.image || '/placeholder.svg'}
                     alt={feature.title}
-                    width={600}
-                    height={400}
-                    className="rounded-2xl shadow-2xl"
+                    width={1000}
+                    height={1000}
                   />
                 </div>
               </div>
@@ -46,14 +68,13 @@ export function ProductFeatures({ features }: ProductFeaturesProps) {
                     alt={feature.title}
                     width={600}
                     height={400}
-                    className="rounded-2xl shadow-2xl"
                   />
                 </div>
                 <div className="lg:order-2">
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight mb-4 lg:mb-6">
                     {feature.title}
                   </h3>
-                  <p className="text-base lg:text-lg text-gray-600 leading-relaxed">
+                  <p className="text-xs text-gray-600 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
@@ -61,25 +82,25 @@ export function ProductFeatures({ features }: ProductFeaturesProps) {
             )}
 
             {feature.layout === 'center' && (
-              <div className="text-center max-w-4xl mx-auto">
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 lg:mb-8">
+              <div className="text-center mx-auto max-w-3xl">
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-medium mb-6">
                   {feature.title}
                 </h3>
-                <div className="relative mb-6 lg:mb-8">
+                <p className="text-xs text-gray-600 leading-relaxed mb-7">
+                  {feature.description}
+                </p>
+                <div className="relative mb-2">
                   <Image
                     src={feature.image || '/placeholder.svg'}
                     alt={feature.title}
                     width={800}
                     height={500}
-                    className="rounded-2xl shadow-2xl mx-auto"
+                    className="mx-auto"
                   />
                 </div>
-                <p className="text-base lg:text-lg text-gray-600 leading-relaxed">
-                  {feature.description}
-                </p>
               </div>
             )}
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

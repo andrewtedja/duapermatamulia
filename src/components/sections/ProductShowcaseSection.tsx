@@ -72,7 +72,7 @@ const ProductShowcaseSection = () => {
                     alt={product.name}
                     width={250}
                     height={200}
-                    className="rounded-lg hidden lg:block transform group-hover:scale-105 sm:group-hover:scale-115 transition-transform duration-300"
+                    className="rounded-lg hidden lg:block transform group-hover:scale-105 sm:group-hover:scale-125 transition-transform duration-300"
                     loading="lazy"
                   />
                   <Image
