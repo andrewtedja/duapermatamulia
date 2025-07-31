@@ -1,5 +1,6 @@
 import React from 'react'
 import { Award, Search, Settings, Headphones } from 'lucide-react'
+import AboutOfficeLocation from '../about/AboutOfficeLocation'
 
 const AboutSection: React.FC = () => {
   return (
@@ -98,7 +99,7 @@ const AboutSection: React.FC = () => {
                   </h4>
                   <p className="text-xs lg:text-md text-gray-600">
                     Instalasi dan integrasi sistem dilakukan oleh teknisi
-                    bersertifikat.
+                    berpengalaman.
                   </p>
                 </div>
               </div>
@@ -137,6 +138,7 @@ const AboutSection: React.FC = () => {
           </div>
         </div> 
         */}
+        <AboutOfficeLocation />
       </div>
     </section>
   )

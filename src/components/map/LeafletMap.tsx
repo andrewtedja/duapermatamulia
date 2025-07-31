@@ -20,7 +20,7 @@ export default function LeafletMap() {
   return (
     <MapContainer
       center={tangerangPosition}
-      zoom={4}
+      zoom={6}
       scrollWheelZoom={false}
       className="w-full h-full z-50"
       style={{ height: '100%', width: '100%' }}

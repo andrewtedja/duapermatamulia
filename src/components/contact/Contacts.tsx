@@ -1,6 +1,5 @@
-import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { Mail, Phone, Clock, Send, PhoneCall } from 'lucide-react'
+import { Mail, Phone, Clock, Send, PhoneCall, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import ContactsHero from './ContactsHero'
 import OfficeLocation from '../about/OfficeLocation'
@@ -28,7 +27,7 @@ export default function ContactUsPage() {
               <div className="flex items-center mb-8">
                 <Send className="h-6 w-6 text-red-800 mr-3" />
                 <h2 className="text-2xl font-semibold text-gray-900">
-                  Kirim Pertanyaan
+                  Ajukan Pertanyaan
                 </h2>
               </div>
               <div className="bg-gray-50 p-16 border border-gray-200 border-l-4 border-l-red-800 text-center">
@@ -36,10 +35,20 @@ export default function ContactUsPage() {
                   Minta penawaran harga atau tanyakan tentang produk. Tim kami
                   akan menghubungi Anda dalam 24-48 jam.
                 </p>
-                <Link href="/inquiry">
-                  <Button className="bg-red-800 hover:bg-red-900 text-white px-8 py-3 text-lg">
-                    Go to Inquiry Form
-                  </Button>
+                <Link
+                  href="/inquiry"
+                  className="group relative inline-flex items-center px-8 py-4 bg-red-800 text-white font-semibold rounded-lg shadow-lg hover:bg-red-900 hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 ease-out"
+                >
+                  <div className="flex items-center space-x-3">
+                    <span>Go to Inquiry Form</span>
+                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </div>
+
+                  {/* Subtle glow effect */}
+                  <div className="absolute inset-0 rounded-lg bg-red-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+
+                  {/* Bottom accent */}
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-red-400 group-hover:w-[97%] transition-all duration-300"></div>
                 </Link>
               </div>
             </section>
