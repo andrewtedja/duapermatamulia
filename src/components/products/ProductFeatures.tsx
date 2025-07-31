@@ -27,7 +27,7 @@ const fadeInUp: Variants = {
 export function ProductFeatures({ features }: ProductFeaturesProps) {
   return (
     <section id="features" className="py-12 lg:py-20">
-      <div className="container mx-auto px-4 max-w-6xl">
+      <div className="container  mx-auto px-4 max-w-6xl">
         {features.map((feature, index) => (
           <motion.div
             key={feature.id}
@@ -35,7 +35,7 @@ export function ProductFeatures({ features }: ProductFeaturesProps) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className={`mb-16 lg:mb-32 ${
+            className={`mb-16 lg:mb-28 ${
               index === features.length - 1 ? 'mb-0' : ''
             }`}
           >
@@ -45,7 +45,7 @@ export function ProductFeatures({ features }: ProductFeaturesProps) {
                   <h3 className="text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight mb-4 lg:mb-6">
                     {feature.title}
                   </h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">
+                  <p className="text-base text-gray-600 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
@@ -55,6 +55,7 @@ export function ProductFeatures({ features }: ProductFeaturesProps) {
                     alt={feature.title}
                     width={1000}
                     height={1000}
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -68,13 +69,14 @@ export function ProductFeatures({ features }: ProductFeaturesProps) {
                     alt={feature.title}
                     width={600}
                     height={400}
+                    loading="lazy"
                   />
                 </div>
                 <div className="lg:order-2">
                   <h3 className="text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight mb-4 lg:mb-6">
                     {feature.title}
                   </h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">
+                  <p className="text-base text-gray-600 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
@@ -82,19 +84,22 @@ export function ProductFeatures({ features }: ProductFeaturesProps) {
             )}
 
             {feature.layout === 'center' && (
-              <div className="text-center mx-auto max-w-3xl">
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-medium mb-6">
-                  {feature.title}
-                </h3>
-                <p className="text-xs text-gray-600 leading-relaxed mb-7">
-                  {feature.description}
-                </p>
+              <div className="text-center">
+                <div className="mx-auto max-w-4xl mb-7">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-medium mb-6">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
                 <div className="relative mb-2">
                   <Image
                     src={feature.image || '/placeholder.svg'}
                     alt={feature.title}
                     width={800}
-                    height={500}
+                    height={750}
+                    loading="lazy"
                     className="mx-auto"
                   />
                 </div>

@@ -19,6 +19,24 @@ export type Product = {
 export const products: Product[] = [
   {
     id: '1',
+    name: 'TR615',
+    category: 'PRO AV',
+    subtitle: 'Broadcasting-Grade Auto Tracking Camera',
+    description:
+      '4K AI Auto Tracking PTZ Camera for professional broadcasting, live event production, and premium live streaming',
+    imgPath: '/images/products/tr615/f3.png',
+    slug: 'tr-615',
+    overlay: 80,
+    productImagePath: '/images/products/prod-tr615.png',
+    layout: {
+      imageSize: 2000,
+      imageAlign: 'center',
+      textAlign: 'left',
+      imageClass: 'translate-y-4 scale-105'
+    }
+  },
+  {
+    id: '3',
     name: 'TR315',
     category: 'PRO AV',
     subtitle: 'AI-Driven PTZ Camera for Pro AV & Education',
@@ -41,7 +59,7 @@ export const products: Product[] = [
     subtitle: '4K BYOM Matrix Switcher',
     description: 'Seamlessly switch sources and connect personal devices.',
     imgPath: '/images/backgrounds/bg-hub30new.png',
-    slug: 'hub30',
+    slug: 'hub-30',
     overlay: 60,
     productImagePath: '/images/products/prod-hub30.png',
     layout: {
@@ -53,24 +71,24 @@ export const products: Product[] = [
   },
 
   {
-    id: '3',
+    id: '4',
     name: 'MT300N',
     category: 'PRO AV',
     subtitle: 'NDI Matrix Tracking Box',
     description: 'Your AV matrix, streamlined by NDI',
     imgPath: '/images/backgrounds/bg-mt300n.png',
-    slug: 'mt300n',
-    overlay: 70,
+    slug: 'mt-300n',
+    overlay: 80,
     productImagePath: '/images/products/prod-mt300n.svg',
     layout: {
-      imageSize: 1000,
+      imageSize: 1400,
       imageAlign: 'center',
       textAlign: 'left',
       imageClass: 'translate-y-4 scale-105'
     }
   },
   {
-    id: '4',
+    id: '5',
     name: 'AmpliWave SA-A5',
     category: 'SMART CLASSROOM',
     subtitle: 'Streaming Audio System, \nThe Axis of Education',
@@ -86,38 +104,21 @@ export const products: Product[] = [
       imageClass: 'translate-y-4 scale-105'
     }
   },
+
   {
-    id: '5',
+    id: '6',
     name: 'CAM570',
     category: 'VIDEO CONFERENCING',
     subtitle:
       '4K Dual Lens Audio Tracking Camera\n  Perfectly Track and Capture Attendees',
     description:
       '4K Dual Lens Audio Tracking Camera for Medium and Large Rooms',
-    imgPath: '/images/backgrounds/bg-tr315.svg',
-    slug: 'cam570',
+    imgPath: '/images/backgrounds/bg-cam570.png',
+    slug: 'cam-570',
     overlay: 0,
-    productImagePath: '/images/products/prod-cam570.png',
+    productImagePath: '/images/products/cam570-1.png',
     layout: {
-      imageSize: 400,
-      imageAlign: 'center',
-      textAlign: 'left',
-      imageClass: 'translate-y-4 scale-105'
-    }
-  },
-
-  {
-    id: '6',
-    name: 'TR 615',
-    category: 'PRO AV',
-    subtitle: 'Broadcasting-Grade Auto Tracking Camera',
-    description: '',
-    imgPath: '/images/backgrounds/bg-tr315.svg',
-    slug: 'tr-615',
-    overlay: 0,
-    productImagePath: '/images/products/prod-tr615.png',
-    layout: {
-      imageSize: 400,
+      imageSize: 1200,
       imageAlign: 'center',
       textAlign: 'left',
       imageClass: 'translate-y-4 scale-105'
@@ -129,13 +130,13 @@ export const products: Product[] = [
     category: 'PRO AV',
     subtitle: 'Matrix Box, Effortless Integration. \nBoundless AV Experiences.',
     description: '',
-    imgPath: '/images/backgrounds/bg-tr315.svg',
-    slug: 'mt100',
+    imgPath: '/images/backgrounds/bg-mt100.avif',
+    slug: 'mt-100',
     overlay: 0,
     productImagePath: '/images/products/prod-mt100.png',
     layout: {
-      imageSize: 400,
-      imageAlign: 'center',
+      imageSize: 1200,
+      imageAlign: 'left',
       textAlign: 'left',
       imageClass: 'translate-y-4 scale-105'
     }
@@ -146,13 +147,13 @@ export const products: Product[] = [
     category: 'SMART CLASSROOM',
     subtitle:
       'USB Plug-and-Play Visualizer,\n AI Optimized Noise and Image Control ',
-    description: '',
-    imgPath: '/images/backgrounds/bg-tr315.svg',
-    slug: 'u70i',
+    description: 'Portable Makes Incredible Happen',
+    imgPath: '/images/backgrounds/bg-u70i.png',
+    slug: 'u70-i',
     overlay: 0,
     productImagePath: '/images/products/prod-u70i.png',
     layout: {
-      imageSize: 400,
+      imageSize: 500,
       imageAlign: 'center',
       textAlign: 'left',
       imageClass: 'translate-y-4 scale-105'
@@ -165,11 +166,11 @@ export const products: Product[] = [
     subtitle: '4K Mechanical Arm Wireless Visualizer',
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
-    slug: 'm70w',
+    slug: 'm70-w',
     overlay: 0,
     productImagePath: '/images/products/prod-m70w.png',
     layout: {
-      imageSize: 400,
+      imageSize: 1000,
       imageAlign: 'center',
       textAlign: 'left',
       imageClass: 'translate-y-4 scale-105'
@@ -186,7 +187,7 @@ export const products: Product[] = [
     overlay: 0,
     productImagePath: '/images/products/prod-tr211.png',
     layout: {
-      imageSize: 400,
+      imageSize: 1000,
       imageAlign: 'center',
       textAlign: 'left',
       imageClass: 'translate-y-4 scale-105'
@@ -199,11 +200,11 @@ export const products: Product[] = [
     subtitle: '4K Dual Lens Video Bar \nAndroid Powered. Zoom Rooms Perfected.',
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
-    slug: 'vb370a',
+    slug: 'vb-370a',
     overlay: 0,
     productImagePath: '/images/products/prod-vb370a.png',
     layout: {
-      imageSize: 400,
+      imageSize: 1000,
       imageAlign: 'center',
       textAlign: 'left',
       imageClass: 'translate-y-4 scale-105'
@@ -211,16 +212,17 @@ export const products: Product[] = [
   },
   {
     id: '12',
-    name: 'PTZ 211',
+    name: 'PTZ211',
     category: 'PRO AV',
     subtitle: 'Professional PTZ Camera',
-    description: '',
-    imgPath: '/images/backgrounds/bg-tr315.svg',
+    description:
+      'Advanced PTZ camera that gives you complete control over your streaming content.',
+    imgPath: '/images/backgrounds/bg-ptz211.png',
     slug: 'ptz-211',
-    overlay: 0,
+    overlay: 30,
     productImagePath: '/images/products/prod-ptz211.png',
     layout: {
-      imageSize: 400,
+      imageSize: 1000,
       imageAlign: 'center',
       textAlign: 'left',
       imageClass: 'translate-y-4 scale-105'
@@ -237,7 +239,7 @@ export const products: Product[] = [
     overlay: 0,
     productImagePath: '/images/products/prod-vb342pro.png',
     layout: {
-      imageSize: 400,
+      imageSize: 1000,
       imageAlign: 'center',
       textAlign: 'left',
       imageClass: 'translate-y-4 scale-105'
@@ -245,7 +247,7 @@ export const products: Product[] = [
   },
   {
     id: '14',
-    name: 'FONE 700',
+    name: 'FONE700',
     category: 'VIDEO CONFERENCING',
     subtitle: 'Ceiling Speakerphone System for\n Rooms of Any Size',
     description: '',
@@ -254,7 +256,7 @@ export const products: Product[] = [
     overlay: 0,
     productImagePath: '/images/products/prod-fone700.png',
     layout: {
-      imageSize: 400,
+      imageSize: 1000,
       imageAlign: 'center',
       textAlign: 'left',
       imageClass: 'translate-y-4 scale-105'
@@ -267,11 +269,11 @@ export const products: Product[] = [
     subtitle: 'Dual Lens PTZ Video Bar\n with a Hybrid 18X Zoom Lens',
     description: '',
     imgPath: '/images/backgrounds/bg-tr315.svg',
-    slug: 'vb350',
+    slug: 'vb-350',
     overlay: 0,
     productImagePath: '/images/products/prod-vb350.png',
     layout: {
-      imageSize: 400,
+      imageSize: 1000,
       imageAlign: 'center',
       textAlign: 'left',
       imageClass: 'translate-y-4 scale-105'

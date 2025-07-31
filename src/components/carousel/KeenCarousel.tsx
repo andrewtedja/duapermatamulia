@@ -8,7 +8,7 @@ import { products } from '@/data/products'
 import clsx from 'clsx'
 import Link from 'next/link'
 
-const slides = products.slice(0, 4)
+const slides = products.slice(0, 5)
 
 function AutoplayPlugin(slider: KeenSliderInstance) {
   let timeout: ReturnType<typeof setTimeout>

@@ -8,15 +8,19 @@ interface ProductHeroProps {
 
 export function ProductHero({ product }: ProductHeroProps) {
   const getThemeClasses = (currentSlideName: string, itemName: string) => {
-    const isSA_A5 = currentSlideName === 'AmpliWave SA-A5'
+    const isLight =
+      currentSlideName === 'AmpliWave SA-A5' ||
+      currentSlideName === 'CAM570' ||
+      currentSlideName === 'U70i'
     const isSpecificItem = itemName === currentSlideName
     return {
-      text: isSA_A5 ? 'text-black' : 'text-white',
-      textMuted: isSA_A5
+      text: isLight ? 'text-black' : 'text-white',
+      textMuted: isLight
         ? 'text-black/60 hover:text-black/90'
         : 'text-white/60 hover:text-white/90',
-      border: isSA_A5 && isSpecificItem ? 'border-black' : 'border-white',
-      icon: isSA_A5 ? 'text-black' : 'text-white'
+      border: isLight && isSpecificItem ? 'border-black' : 'border-white',
+      icon: isLight ? 'text-black' : 'text-white',
+      bg: isLight ? 'bg-black' : 'bg-white'
     }
   }
 
@@ -27,7 +31,7 @@ export function ProductHero({ product }: ProductHeroProps) {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative h-[95vh] flex items-center overflow-hidden"
     >
       {/* Background Image */}
       <div
@@ -40,8 +44,8 @@ export function ProductHero({ product }: ProductHeroProps) {
         />
       </div>
 
-      <div className="relative z-10 container mx-auto px-16 py-12 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div className="relative z-10 container mx-auto px-20  py-8 lg:py-12">
+        <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 items-center">
           {/* Text Content */}
           <div
             className={`text-white ${
@@ -53,12 +57,12 @@ export function ProductHero({ product }: ProductHeroProps) {
             }`}
           >
             <div
-              className={`inline-block bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 lg:px-4 lg:py-2 text-xs lg:text-sm font-medium mb-4 lg:mb-6 ${theme.text} ${theme.border}`}
+              className={`inline-block bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 lg:px-4 lg:py-2 text-xs lg:text-sm font-medium mb-4 lg:mb-6 ${theme.text} ${theme.border} border`}
             >
               {product.category}
             </div>
             <h1
-              className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 ${theme.text}`}
+              className={`text-3xl sm:text-4xl lg:text-7xl font-bold mb-4 lg:mb-6 ${theme.text}`}
             >
               {product.name}
             </h1>
@@ -90,41 +94,39 @@ export function ProductHero({ product }: ProductHeroProps) {
                 product.layout?.imageAlign === 'right'
                   ? 'justify-end'
                   : 'justify-center',
-                product.name === 'TR315' ? 'hidden' : 'flex'
+                product.name === 'TR315' ||
+                  product.name === 'CAM570' ||
+                  product.name === 'U70i'
+                  ? 'hidden'
+                  : 'flex'
               )}
             >
               <Image
                 src={product.productImagePath || '/placeholder.svg'}
                 alt={product.name}
-                width={
-                  layout?.imageSize
-                    ? Math.min(layout.imageSize * 0.8, 400)
-                    : 400
-                }
-                height={
-                  layout?.imageSize
-                    ? Math.min(layout.imageSize * 0.8, 400)
-                    : 400
-                }
+                width={product.layout?.imageSize || 600}
+                height={product.layout?.imageSize || 600}
                 className={`object-contain lg:w-auto lg:h-auto ${
                   layout?.imageClass || ''
                 }`}
                 style={{
-                  width: `${
-                    layout?.imageSize
-                      ? Math.min(layout.imageSize * 0.8, 400)
-                      : 400
-                  }px`,
-                  height: `${
-                    layout?.imageSize
-                      ? Math.min(layout.imageSize * 0.8, 400)
-                      : 400
-                  }px`
+                  width: `${layout?.imageSize || 600}px`,
+                  height: `${layout?.imageSize || 600}px`
                 }}
                 priority
               />
             </div>
           </div>
+        </div>
+      </div>
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-10">
+        <div
+          className={`w-6 h-10 border-2 ${theme.border} rounded-full flex justify-center`}
+        >
+          <div
+            className={`w-1 h-3 ${theme.bg}/90 rounded-full mt-2 animate-bounce`}
+          ></div>
         </div>
       </div>
     </section>

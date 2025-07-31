@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const sections = [
-  { id: 'inquiry', label: 'Inquire Now', icon: MessageCircle },
+  { id: 'inquiry', label: 'Sales Inquiry', icon: MessageCircle },
   { id: 'overview', label: 'Overview', icon: Eye },
   { id: 'features', label: 'Features', icon: Zap },
   { id: 'specs', label: 'Specifications', icon: Settings },

@@ -7,7 +7,7 @@ interface ProductSpecsProps {
   previewCount?: number // Number of specs to show when collapsed
 }
 
-export function ProductSpecs({ specs, previewCount = 1 }: ProductSpecsProps) {
+export function ProductSpecs({ specs, previewCount = 2 }: ProductSpecsProps) {
   const [isExpanded, setIsExpanded] = useState(false)
 
   const displayedSpecs = isExpanded ? specs : specs.slice(0, previewCount)

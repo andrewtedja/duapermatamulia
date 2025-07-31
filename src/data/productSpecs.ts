@@ -342,5 +342,669 @@ export const productSpecs: Record<string, ProductSpec[]> = {
         }
       ]
     }
+  ],
+  'hub-30': [
+    {
+      category: 'Host',
+      items: [
+        { label: 'Input 1', value: 'USB Type-C x 1 (PD Charging, 100W Max)' },
+        { label: 'Input 2', value: 'USB Type-C x 1' },
+        { label: 'Input 3', value: 'USB Type-B x 1, HDMI x 1' },
+        { label: 'Input 4', value: 'USB Type-B x 1, HDMI x 1' },
+        { label: 'USB-C Charging', value: 'Yes' }
+      ]
+    },
+    {
+      category: 'USB Devices',
+      items: [
+        { label: 'Connections', value: 'USB Type-A x 4' },
+        { label: 'USB Pass-Through', value: 'Yes' }
+      ]
+    },
+    {
+      category: 'HDMI Display Outputs',
+      items: [
+        { label: 'Output', value: '2' },
+        { label: 'HDMI Display Output Modes', value: '2' },
+        { label: 'Audio HDMI', value: 'Yes' }
+      ]
+    },
+    {
+      category: 'Video',
+      items: [
+        { label: 'Resolution', value: 'Up to 4K Ultra HD' },
+        { label: 'Signal Type', value: 'DP Alt Mode, HDMI 2.0' },
+        { label: 'HDMI CEC', value: 'Yes' },
+        { label: 'Color Space', value: 'RGB, YCbCr' }
+      ]
+    },
+    {
+      category: 'Audio',
+      items: [
+        {
+          label: 'Transmit Mode',
+          value: 'Audio Pass-Through from Input to Output'
+        },
+        { label: 'Format', value: 'HDMI 2.0' }
+      ]
+    },
+    {
+      category: 'Control Interfaces',
+      items: [
+        { label: 'Ethernet', value: '1' },
+        { label: 'RS-232', value: '1' },
+        {
+          label: 'Touch Control Panel',
+          value: 'Yes, can be paired with AVer CP10 G2 via BYOD Controller App'
+        }
+      ]
+    },
+    {
+      category: 'General',
+      items: [
+        { label: 'Power Requirement', value: 'AC 100~240V to DC 24V/7.5A' },
+        { label: 'Power Consumption', value: '150W' },
+        { label: 'Powering', value: 'External 180W Power Supply' },
+        { label: 'Dimensions (W x H x D)', value: '270.0 x 42.4 x 175.0 mm' },
+        { label: 'Net Weight', value: '1.34 (±0.1) kg' },
+        { label: 'Security', value: 'Kensington Slot' },
+        {
+          label: 'Operating Conditions',
+          value: 'Temperature: 0°C to +45°C; Humidity: 20% to 80%'
+        },
+        {
+          label: 'Storage Conditions',
+          value: 'Temperature: -20°C to +60°C; Humidity: 20% to 95%'
+        },
+        {
+          label: 'Installation Methods',
+          value:
+            'Rack Mounted, Under the Table, Inside the Podium, Behind the Display'
+        }
+      ]
+    },
+    {
+      category: 'LED Indicators',
+      items: [
+        {
+          label: 'Power/Status LED',
+          value: [
+            'Orange: Standby',
+            'Green: Operating',
+            'Green (Flashing): Firmware Upgrading'
+          ]
+        },
+        { label: 'Input 1/2/3/4', value: 'Green: Connected' },
+        { label: 'USB Type-C Charging/Status LED', value: 'Green: Charging' },
+        { label: 'Output 1/2', value: 'Green: Connected' }
+      ]
+    },
+    {
+      category: 'Interfaces',
+      items: [
+        { label: 'USB Type-A', value: '4' },
+        { label: 'USB Type-C', value: '2' },
+        { label: 'USB Type-B', value: '2' },
+        { label: 'HDMI Out', value: '2' },
+        { label: 'HDMI In', value: '2' },
+        { label: 'RS-232', value: '1' },
+        { label: 'RJ-45', value: '1' },
+        { label: 'Power Input', value: '1' },
+        { label: 'Button', value: '2 (Power, Reset)' },
+        { label: 'Warranty', value: '3 Years' }
+      ]
+    },
+    {
+      category: 'Package Contents',
+      items: [
+        {
+          label: 'Package Contents',
+          value:
+            'HUB30, Power Adapter, Power Cord, Cable Fixing Plate (x2), Cable Tie (x17), M3 x 5.0 mm Truss Head Screw (x8), M3 x 10 mm Screw (x4), Rack Mount Bracket (x2), USB 3.0 Type-A to Type-B Cable, USB 3.1 Type-C to Type-C Cable, Terminal Block 3-Pole, Quick Start Guide'
+        }
+      ]
+    },
+    {
+      category: 'Optional Accessories',
+      items: [
+        {
+          label: 'Optional Accessories',
+          value: 'AVer CP10 G2 Collaboration Touch Panel'
+        }
+      ]
+    }
+  ],
+  'mt-300n': [
+    {
+      category: 'General',
+      items: [
+        { label: 'Power', value: 'DC 12V' },
+        { label: 'Weight', value: '1.5 kg' },
+        { label: 'Dimensions', value: '180 x 160 x 120 mm' }
+      ]
+    },
+    {
+      category: 'Camera',
+      items: [
+        { label: 'Resolution', value: '1080p / 4K' },
+        { label: 'Zoom', value: '12X Optical' },
+        { label: 'Focus', value: 'Auto / Manual' }
+      ]
+    },
+    {
+      category: 'Connectivity',
+      items: [
+        { label: 'Outputs', value: ['HDMI', 'USB', 'IP'] },
+        { label: 'Control', value: ['RS-232', 'IP'] },
+        { label: 'Streaming', value: 'RTSP, RTMP' }
+      ]
+    },
+    {
+      category: 'Features',
+      items: [
+        { label: 'AI Tracking', value: 'Yes' },
+        { label: 'Preset Positions', value: 'Up to 255' },
+        { label: 'Control Protocols', value: ['VISCA', 'PELCO'] }
+      ]
+    },
+    {
+      category: 'Environment',
+      items: [
+        { label: 'Operating Temp', value: '0\u00b0C to 40\u00b0C' },
+        { label: 'Humidity', value: '20% to 80%' }
+      ]
+    }
+  ],
+  'sa-a5': [
+    {
+      category: 'General',
+      items: [
+        { label: 'Power', value: 'DC 12V' },
+        { label: 'Weight', value: '1.5 kg' },
+        { label: 'Dimensions', value: '180 x 160 x 120 mm' }
+      ]
+    },
+    {
+      category: 'Camera',
+      items: [
+        { label: 'Resolution', value: '1080p / 4K' },
+        { label: 'Zoom', value: '12X Optical' },
+        { label: 'Focus', value: 'Auto / Manual' }
+      ]
+    },
+    {
+      category: 'Connectivity',
+      items: [
+        { label: 'Outputs', value: ['HDMI', 'USB', 'IP'] },
+        { label: 'Control', value: ['RS-232', 'IP'] },
+        { label: 'Streaming', value: 'RTSP, RTMP' }
+      ]
+    },
+    {
+      category: 'Features',
+      items: [
+        { label: 'AI Tracking', value: 'Yes' },
+        { label: 'Preset Positions', value: 'Up to 255' },
+        { label: 'Control Protocols', value: ['VISCA', 'PELCO'] }
+      ]
+    },
+    {
+      category: 'Environment',
+      items: [
+        { label: 'Operating Temp', value: '0\u00b0C to 40\u00b0C' },
+        { label: 'Humidity', value: '20% to 80%' }
+      ]
+    }
+  ],
+  'cam-570': [
+    {
+      category: 'General',
+      items: [
+        { label: 'Power', value: 'DC 12V' },
+        { label: 'Weight', value: '1.5 kg' },
+        { label: 'Dimensions', value: '180 x 160 x 120 mm' }
+      ]
+    },
+    {
+      category: 'Camera',
+      items: [
+        { label: 'Resolution', value: '1080p / 4K' },
+        { label: 'Zoom', value: '12X Optical' },
+        { label: 'Focus', value: 'Auto / Manual' }
+      ]
+    },
+    {
+      category: 'Connectivity',
+      items: [
+        { label: 'Outputs', value: ['HDMI', 'USB', 'IP'] },
+        { label: 'Control', value: ['RS-232', 'IP'] },
+        { label: 'Streaming', value: 'RTSP, RTMP' }
+      ]
+    },
+    {
+      category: 'Features',
+      items: [
+        { label: 'AI Tracking', value: 'Yes' },
+        { label: 'Preset Positions', value: 'Up to 255' },
+        { label: 'Control Protocols', value: ['VISCA', 'PELCO'] }
+      ]
+    },
+    {
+      category: 'Environment',
+      items: [
+        { label: 'Operating Temp', value: '0\u00b0C to 40\u00b0C' },
+        { label: 'Humidity', value: '20% to 80%' }
+      ]
+    }
+  ],
+  'tr-615': [
+    {
+      category: 'General',
+      items: [
+        { label: 'Power', value: 'DC 12V' },
+        { label: 'Weight', value: '1.5 kg' },
+        { label: 'Dimensions', value: '180 x 160 x 120 mm' }
+      ]
+    },
+    {
+      category: 'Camera',
+      items: [
+        { label: 'Resolution', value: '1080p / 4K' },
+        { label: 'Zoom', value: '12X Optical' },
+        { label: 'Focus', value: 'Auto / Manual' }
+      ]
+    },
+    {
+      category: 'Connectivity',
+      items: [
+        { label: 'Outputs', value: ['HDMI', 'USB', 'IP'] },
+        { label: 'Control', value: ['RS-232', 'IP'] },
+        { label: 'Streaming', value: 'RTSP, RTMP' }
+      ]
+    },
+    {
+      category: 'Features',
+      items: [
+        { label: 'AI Tracking', value: 'Yes' },
+        { label: 'Preset Positions', value: 'Up to 255' },
+        { label: 'Control Protocols', value: ['VISCA', 'PELCO'] }
+      ]
+    },
+    {
+      category: 'Environment',
+      items: [
+        { label: 'Operating Temp', value: '0\u00b0C to 40\u00b0C' },
+        { label: 'Humidity', value: '20% to 80%' }
+      ]
+    }
+  ],
+  'mt-100': [
+    {
+      category: 'General',
+      items: [
+        { label: 'Power', value: 'DC 12V' },
+        { label: 'Weight', value: '1.5 kg' },
+        { label: 'Dimensions', value: '180 x 160 x 120 mm' }
+      ]
+    },
+    {
+      category: 'Camera',
+      items: [
+        { label: 'Resolution', value: '1080p / 4K' },
+        { label: 'Zoom', value: '12X Optical' },
+        { label: 'Focus', value: 'Auto / Manual' }
+      ]
+    },
+    {
+      category: 'Connectivity',
+      items: [
+        { label: 'Outputs', value: ['HDMI', 'USB', 'IP'] },
+        { label: 'Control', value: ['RS-232', 'IP'] },
+        { label: 'Streaming', value: 'RTSP, RTMP' }
+      ]
+    },
+    {
+      category: 'Features',
+      items: [
+        { label: 'AI Tracking', value: 'Yes' },
+        { label: 'Preset Positions', value: 'Up to 255' },
+        { label: 'Control Protocols', value: ['VISCA', 'PELCO'] }
+      ]
+    },
+    {
+      category: 'Environment',
+      items: [
+        { label: 'Operating Temp', value: '0\u00b0C to 40\u00b0C' },
+        { label: 'Humidity', value: '20% to 80%' }
+      ]
+    }
+  ],
+  'u70-i': [
+    {
+      category: 'General',
+      items: [
+        { label: 'Power', value: 'DC 12V' },
+        { label: 'Weight', value: '1.5 kg' },
+        { label: 'Dimensions', value: '180 x 160 x 120 mm' }
+      ]
+    },
+    {
+      category: 'Camera',
+      items: [
+        { label: 'Resolution', value: '1080p / 4K' },
+        { label: 'Zoom', value: '12X Optical' },
+        { label: 'Focus', value: 'Auto / Manual' }
+      ]
+    },
+    {
+      category: 'Connectivity',
+      items: [
+        { label: 'Outputs', value: ['HDMI', 'USB', 'IP'] },
+        { label: 'Control', value: ['RS-232', 'IP'] },
+        { label: 'Streaming', value: 'RTSP, RTMP' }
+      ]
+    },
+    {
+      category: 'Features',
+      items: [
+        { label: 'AI Tracking', value: 'Yes' },
+        { label: 'Preset Positions', value: 'Up to 255' },
+        { label: 'Control Protocols', value: ['VISCA', 'PELCO'] }
+      ]
+    },
+    {
+      category: 'Environment',
+      items: [
+        { label: 'Operating Temp', value: '0\u00b0C to 40\u00b0C' },
+        { label: 'Humidity', value: '20% to 80%' }
+      ]
+    }
+  ],
+  'm70-w': [
+    {
+      category: 'General',
+      items: [
+        { label: 'Power', value: 'DC 12V' },
+        { label: 'Weight', value: '1.5 kg' },
+        { label: 'Dimensions', value: '180 x 160 x 120 mm' }
+      ]
+    },
+    {
+      category: 'Camera',
+      items: [
+        { label: 'Resolution', value: '1080p / 4K' },
+        { label: 'Zoom', value: '12X Optical' },
+        { label: 'Focus', value: 'Auto / Manual' }
+      ]
+    },
+    {
+      category: 'Connectivity',
+      items: [
+        { label: 'Outputs', value: ['HDMI', 'USB', 'IP'] },
+        { label: 'Control', value: ['RS-232', 'IP'] },
+        { label: 'Streaming', value: 'RTSP, RTMP' }
+      ]
+    },
+    {
+      category: 'Features',
+      items: [
+        { label: 'AI Tracking', value: 'Yes' },
+        { label: 'Preset Positions', value: 'Up to 255' },
+        { label: 'Control Protocols', value: ['VISCA', 'PELCO'] }
+      ]
+    },
+    {
+      category: 'Environment',
+      items: [
+        { label: 'Operating Temp', value: '0\u00b0C to 40\u00b0C' },
+        { label: 'Humidity', value: '20% to 80%' }
+      ]
+    }
+  ],
+  'tr-211': [
+    {
+      category: 'General',
+      items: [
+        { label: 'Power', value: 'DC 12V' },
+        { label: 'Weight', value: '1.5 kg' },
+        { label: 'Dimensions', value: '180 x 160 x 120 mm' }
+      ]
+    },
+    {
+      category: 'Camera',
+      items: [
+        { label: 'Resolution', value: '1080p / 4K' },
+        { label: 'Zoom', value: '12X Optical' },
+        { label: 'Focus', value: 'Auto / Manual' }
+      ]
+    },
+    {
+      category: 'Connectivity',
+      items: [
+        { label: 'Outputs', value: ['HDMI', 'USB', 'IP'] },
+        { label: 'Control', value: ['RS-232', 'IP'] },
+        { label: 'Streaming', value: 'RTSP, RTMP' }
+      ]
+    },
+    {
+      category: 'Features',
+      items: [
+        { label: 'AI Tracking', value: 'Yes' },
+        { label: 'Preset Positions', value: 'Up to 255' },
+        { label: 'Control Protocols', value: ['VISCA', 'PELCO'] }
+      ]
+    },
+    {
+      category: 'Environment',
+      items: [
+        { label: 'Operating Temp', value: '0\u00b0C to 40\u00b0C' },
+        { label: 'Humidity', value: '20% to 80%' }
+      ]
+    }
+  ],
+  'vb-370a': [
+    {
+      category: 'General',
+      items: [
+        { label: 'Power', value: 'DC 12V' },
+        { label: 'Weight', value: '1.5 kg' },
+        { label: 'Dimensions', value: '180 x 160 x 120 mm' }
+      ]
+    },
+    {
+      category: 'Camera',
+      items: [
+        { label: 'Resolution', value: '1080p / 4K' },
+        { label: 'Zoom', value: '12X Optical' },
+        { label: 'Focus', value: 'Auto / Manual' }
+      ]
+    },
+    {
+      category: 'Connectivity',
+      items: [
+        { label: 'Outputs', value: ['HDMI', 'USB', 'IP'] },
+        { label: 'Control', value: ['RS-232', 'IP'] },
+        { label: 'Streaming', value: 'RTSP, RTMP' }
+      ]
+    },
+    {
+      category: 'Features',
+      items: [
+        { label: 'AI Tracking', value: 'Yes' },
+        { label: 'Preset Positions', value: 'Up to 255' },
+        { label: 'Control Protocols', value: ['VISCA', 'PELCO'] }
+      ]
+    },
+    {
+      category: 'Environment',
+      items: [
+        { label: 'Operating Temp', value: '0\u00b0C to 40\u00b0C' },
+        { label: 'Humidity', value: '20% to 80%' }
+      ]
+    }
+  ],
+  'ptz-211': [
+    {
+      category: 'General',
+      items: [
+        { label: 'Power', value: 'DC 12V' },
+        { label: 'Weight', value: '1.5 kg' },
+        { label: 'Dimensions', value: '180 x 160 x 120 mm' }
+      ]
+    },
+    {
+      category: 'Camera',
+      items: [
+        { label: 'Resolution', value: '1080p / 4K' },
+        { label: 'Zoom', value: '12X Optical' },
+        { label: 'Focus', value: 'Auto / Manual' }
+      ]
+    },
+    {
+      category: 'Connectivity',
+      items: [
+        { label: 'Outputs', value: ['HDMI', 'USB', 'IP'] },
+        { label: 'Control', value: ['RS-232', 'IP'] },
+        { label: 'Streaming', value: 'RTSP, RTMP' }
+      ]
+    },
+    {
+      category: 'Features',
+      items: [
+        { label: 'AI Tracking', value: 'Yes' },
+        { label: 'Preset Positions', value: 'Up to 255' },
+        { label: 'Control Protocols', value: ['VISCA', 'PELCO'] }
+      ]
+    },
+    {
+      category: 'Environment',
+      items: [
+        { label: 'Operating Temp', value: '0\u00b0C to 40\u00b0C' },
+        { label: 'Humidity', value: '20% to 80%' }
+      ]
+    }
+  ],
+  'vb342-pro': [
+    {
+      category: 'General',
+      items: [
+        { label: 'Power', value: 'DC 12V' },
+        { label: 'Weight', value: '1.5 kg' },
+        { label: 'Dimensions', value: '180 x 160 x 120 mm' }
+      ]
+    },
+    {
+      category: 'Camera',
+      items: [
+        { label: 'Resolution', value: '1080p / 4K' },
+        { label: 'Zoom', value: '12X Optical' },
+        { label: 'Focus', value: 'Auto / Manual' }
+      ]
+    },
+    {
+      category: 'Connectivity',
+      items: [
+        { label: 'Outputs', value: ['HDMI', 'USB', 'IP'] },
+        { label: 'Control', value: ['RS-232', 'IP'] },
+        { label: 'Streaming', value: 'RTSP, RTMP' }
+      ]
+    },
+    {
+      category: 'Features',
+      items: [
+        { label: 'AI Tracking', value: 'Yes' },
+        { label: 'Preset Positions', value: 'Up to 255' },
+        { label: 'Control Protocols', value: ['VISCA', 'PELCO'] }
+      ]
+    },
+    {
+      category: 'Environment',
+      items: [
+        { label: 'Operating Temp', value: '0\u00b0C to 40\u00b0C' },
+        { label: 'Humidity', value: '20% to 80%' }
+      ]
+    }
+  ],
+  'fone-700': [
+    {
+      category: 'General',
+      items: [
+        { label: 'Power', value: 'DC 12V' },
+        { label: 'Weight', value: '1.5 kg' },
+        { label: 'Dimensions', value: '180 x 160 x 120 mm' }
+      ]
+    },
+    {
+      category: 'Camera',
+      items: [
+        { label: 'Resolution', value: '1080p / 4K' },
+        { label: 'Zoom', value: '12X Optical' },
+        { label: 'Focus', value: 'Auto / Manual' }
+      ]
+    },
+    {
+      category: 'Connectivity',
+      items: [
+        { label: 'Outputs', value: ['HDMI', 'USB', 'IP'] },
+        { label: 'Control', value: ['RS-232', 'IP'] },
+        { label: 'Streaming', value: 'RTSP, RTMP' }
+      ]
+    },
+    {
+      category: 'Features',
+      items: [
+        { label: 'AI Tracking', value: 'Yes' },
+        { label: 'Preset Positions', value: 'Up to 255' },
+        { label: 'Control Protocols', value: ['VISCA', 'PELCO'] }
+      ]
+    },
+    {
+      category: 'Environment',
+      items: [
+        { label: 'Operating Temp', value: '0\u00b0C to 40\u00b0C' },
+        { label: 'Humidity', value: '20% to 80%' }
+      ]
+    }
+  ],
+  'vb-350': [
+    {
+      category: 'General',
+      items: [
+        { label: 'Power', value: 'DC 12V' },
+        { label: 'Weight', value: '1.5 kg' },
+        { label: 'Dimensions', value: '180 x 160 x 120 mm' }
+      ]
+    },
+    {
+      category: 'Camera',
+      items: [
+        { label: 'Resolution', value: '1080p / 4K' },
+        { label: 'Zoom', value: '12X Optical' },
+        { label: 'Focus', value: 'Auto / Manual' }
+      ]
+    },
+    {
+      category: 'Connectivity',
+      items: [
+        { label: 'Outputs', value: ['HDMI', 'USB', 'IP'] },
+        { label: 'Control', value: ['RS-232', 'IP'] },
+        { label: 'Streaming', value: 'RTSP, RTMP' }
+      ]
+    },
+    {
+      category: 'Features',
+      items: [
+        { label: 'AI Tracking', value: 'Yes' },
+        { label: 'Preset Positions', value: 'Up to 255' },
+        { label: 'Control Protocols', value: ['VISCA', 'PELCO'] }
+      ]
+    },
+    {
+      category: 'Environment',
+      items: [
+        { label: 'Operating Temp', value: '0\u00b0C to 40\u00b0C' },
+        { label: 'Humidity', value: '20% to 80%' }
+      ]
+    }
   ]
 }
