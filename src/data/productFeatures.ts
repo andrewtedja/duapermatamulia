@@ -339,27 +339,114 @@ export const productFeatures: Record<string, ProductFeature[]> = {
   'm70-w': [
     {
       id: 'f1',
-      title: 'Feature 1',
-      description: `Description for feature 1 of M70-W.`,
-      image: '/images/products/m70-w/f1.png',
+      title: '230X Total Zoom',
+      description: `Capture every shot with the M70W’s 10X optical zoom plus 23X digital zoom. The power of close-ups enhances the learning experience by letting teachers show every little detail.`,
+      image: '/images/products/m70w/f1.png',
+      layout: 'right'
+    },
+    {
+      id: 'f2',
+      title: 'Outstanding 4K Video Quality',
+      description: `Embracing 4K Ultra HD output resolution with its 13-megapixel camera, the M70W’s impressive smooth and steady 60fps performance is a delight.`,
+      image: '/images/products/m70w/f2.png',
       layout: 'center'
+    },
+    {
+      id: 'f3',
+      title: 'Durable, Adjustable & Portable',
+      description: `The sturdy, adjustable mechanical arm and portable handle offer users flexibility to apply the M70W in different fields. Additionally, the position indicator on the camera head allows for precise visualizing of A3-sized documents.`,
+      image: '/images/products/m70w/f3.png',
+      layout: 'left'
+    },
+    {
+      id: 'f4',
+      title: 'Wired or Wireless',
+      description: `Integrating the benefits of stand-alone and wireless visualizers, the M70W gives teachers options. Armed with HDMI and USB connectivity, idea sharing has never been this easy.`,
+      image: '/images/products/m70w/f4.png',
+      layout: 'right'
+    },
+    {
+      id: 'f5',
+      title: 'One-Touch Capturing & Recording',
+      description: `Irresistible 4K video recording and capturing functions completely fulfill the needs of flipped teaching. Simply capture all your favorite moments and express your creativity during classes with the M70W.`,
+      image: '/images/products/m70w/f5.png',
+      layout: 'left'
     }
   ],
   'tr-211': [
     {
       id: 'f1',
-      title: 'Feature 1',
-      description: `Description for feature 1 of TR-211.`,
-      image: '/images/products/tr-211/f1.png',
+      title: '12X Optical Zoom Magnifies Details',
+      description: `Experience the exceptional power of the TR211 camera's astounding 12X optical zoom. This feature seamlessly operates even while the camera is panning and tilting, granting you the ability to accentuate content and quickly shift between shooting perspectives. Embrace the advantage of dynamic, crystal-clear video feeds through the TR211’s unparalleled PTZ performance.`,
+      image: '/images/products/tr211/f1.png',
+      layout: 'center'
+    },
+    {
+      id: 'f2',
+      title: 'HDMI/USB/IP. 60 FPS.',
+      description: `Leverage the TR211's Full HD 1080p 60 fps streaming potential through HDMI, USB, and IP outputs. Free from intricate configurations and cable entanglements, you can effortlessly use multiple devices simultaneously to produce fluid video streams.`,
+      image: '/images/products/tr211/f2.png',
+      layout: 'left'
+    },
+    {
+      id: 'f3',
+      title: 'AI Auto Tracking Makes Streaming Smart & Effortless',
+      description: `Powered by highly precise processing, AVer's cutting-edge AI Auto Tracking algorithms easily identify and capture human figures and moving objects. You’ll never lose track of your target again with the TR211's unmatched tracking precision.`,
+      image: '/images/products/tr211/f3.png',
+      layout: 'right'
+    },
+    {
+      id: 'f4',
+      title: 'Presenter Mode',
+      description: `Get unparalleled tracking performance with Presenter Mode. This dynamic feature empowers presenters to venture beyond the stage to engage with their audience while the camera maintains seamless tracking.`,
+      image: '/images/products/tr211/f4.png',
+      layout: 'center'
+    },
+    {
+      id: 'f5',
+      title: 'Zone Mode',
+      description: `Zone Mode elevates your ability to capture content across multiple displays. Generate up to four dedicated Content Zones to consistently capture displayed information or items, prioritizing important presentation materials over the presenter's movements.`,
+      image: '/images/products/tr211/f5.png',
+      layout: 'center'
+    },
+    {
+      id: 'f6',
+      title: 'Hybrid Mode',
+      description: `Free your performers by enabling unrestricted movement with Hybrid Mode. Use preset areas for zone tracking, letting the camera seamlessly switch to a full view of each pre-defined location as performers move through the areas. If they move beyond these zones, the camera seamlessly adapts, switching to presenter mode to effortlessly and precisely track their movements.`,
+      image: '/images/products/tr211/f6.png',
       layout: 'center'
     }
+    /*************  ✨ Windsurf Command 🌟  *************/
   ],
   'vb-370a': [
     {
       id: 'f1',
-      title: 'Feature 1',
-      description: `Description for feature 1 of VB-370A.`,
-      image: '/images/products/vb-370a/f1.png',
+      title: 'Synergy in Action, Android™-Driven, Zoom-Optimized.',
+      description: `Android™-powered for a seamless Zoom Rooms experience. Designed for enterprise reliability & compliance. Single-touch meeting join. Certified by Zoom for crisp video & audio quality. Supports Zoom Rooms features like content sharing. Hassle-free from start to finish.`,
+      image: '/images/products/vb370a/f1.png',
+      layout: 'center'
+    },
+    {
+      id: 'f2',
+      title: 'AI Voice Tracking: Your Voice. Our Focus.',
+      description: `Experience the power of AI with the VB370A's intelligent Voice Tracking technology. This technology automatically shifts the camera to focus on whoever is speaking, creating a distraction-free experience. By keeping the speaker in clear view, it makes virtual meetings feel more personal and supports a team-focused atmosphere.
+* Available in next firmware upgrade.`,
+      image: '/images/products/vb370a/f2.png',
+      layout: 'center'
+    },
+    {
+      id: 'f3',
+      title: 'Versatile Meetings in Your Ways.',
+      description: `The VB370A easily expands your audio capabilities by connecting additional speakerphone and microphone option, ensuring optimal sound quality in any environment. When combined with a touch panel, the VB370A transforms into a comprehensive conferencing solution without the hassle of complicated setups.`,
+      image: '/images/products/vb370a/f3.png',
+      layout: 'center'
+    },
+    {
+      id: 'f4',
+      title:
+        'Stunning Video, Captivating Sound, Double Screens, Double your Impacts.',
+      description: `Experience seamless communication with VB370A's 4K cameras and advanced audio technology, ensuring clear visuals and audio. Dual-screen support enhances collaboration by allowing simultaneous viewing of speakers and content, making it perfect for modern workspaces.`,
+      image: '/images/products/vb370a/f4.png',
       layout: 'center'
     }
   ],
@@ -375,27 +462,106 @@ export const productFeatures: Record<string, ProductFeature[]> = {
   'vb342-pro': [
     {
       id: 'f1',
-      title: 'Feature 1',
-      description: `Description for feature 1 of VB342-PRO.`,
-      image: '/images/products/vb342-pro/f1.png',
+      title: 'All-in-One 4K PTZ Technology Offers Vivid Imagery',
+      description: `The VB342 Pro is equipped with a comprehensive 4K PTZ camera; delivering vivid images in any meeting. 92° FOV optical lens with 15X zoom delivers true-to-life video quality. 6W*2 speakers provide outstanding sound for small and mid-size rooms`,
+      image: '/images/products/vb342pro/f1.png',
       layout: 'center'
+    },
+    {
+      id: 'f2',
+      title: 'Auto Frame and Audio Tracking Enhance Meeting Efficiency',
+      description: `Audio Tracking and Auto Frame smart AVer AI automatically focuses and detects all groups and speakers in the room, offering optimal performance for any virtual business meeting. Sound detection technology singles out human voices and enables intelligent AI functionality.`,
+      image: '/images/products/vb342pro/f2.png',
+      layout: 'center'
+    },
+    {
+      id: 'f3',
+      title: 'Deliver Detail-Oriented Presentations with Presentation Tracking',
+      description: `Through a combination of audio tracking and audio preset tracking AI technology, when the presenter speaks, the VB342 Pro will locate and frame the area. Should the presenter move, the VB342 Pro will track and zoom to provide the best possible image, even outside of the preset location.`,
+      image: '/images/products/vb342pro/f3.png',
+      layout: 'left'
+    },
+    {
+      id: 'f4',
+      title: 'Smart Gallery Upgrades the Meeting Experience',
+      description: `Offer the remote site clear views of every participant with Smart Gallery, which enables AI face and body detection technology to crop participants’ faces and make sure everyone is looking great. You can choose between headshot and half body mode to adapt to any situation without compromise.`,
+      image: '/images/products/vb342pro/f4.png',
+      layout: 'center'
+    },
+    {
+      id: 'f5',
+      title:
+        'Uninterrupted Clarity created by Audio Fence and Beamforming Technology',
+      description: `Silence any distraction outside of the viewing angle with AVer Audio Fence technology and turn any space into an uninterrupted meeting zone. Combine with Beamforming Technology to ensure resonant sound and clear participant voices. Virtual conference better with the VB342 Pro.`,
+      image: '/images/products/vb342pro/f5.png',
+      layout: 'right'
     }
   ],
   'fone-700': [
     {
       id: 'f1',
-      title: 'Feature 1',
-      description: `Description for feature 1 of FONE-700.`,
+      title: 'Transform Any Space into a Pro Conference Room',
+      description: `The FONE700 takes any room pro in seconds. It connects with just one cable, eliminating tangled wires and complex configurations. No tech expertise needed - simply plug in and go. No technical expertise is required - simply connect and experience a seamless conferencing upgrade.`,
       image: '/images/products/fone-700/f1.png',
       layout: 'center'
+    },
+    {
+      id: 'f2',
+      title: 'Focus on the Conversation, Not the Setup',
+      description: `The FONE700 connects in seconds, letting you focus on the conversation, not the equipment. Intuitive controls and seamless device integration keep the meeting flowing, maximizing your efficiency and fostering effortless collaboration. Let you focus on what matters most important.`,
+      image: '/images/products/fone-700/f2.png',
+      layout: 'left'
+    },
+    {
+      id: 'f3',
+      title: 'Single Cable, Diverse Configuration',
+      description: `The FONE700 requires just one RJ45 cable for both power and internet. It supports up to four speakerphones with a maximum range of 40 meters, enabling optimal adaptability for different-sized conference rooms.`,
+      image: '/images/products/fone-700/f3.png',
+      layout: 'right'
+    },
+    {
+      id: 'f4',
+      title: 'Seamless Integration with Numerous Devices',
+      description: `The FONE700 connectivity hub enables seamless integration of our full suite of audio-visual products, including external speakers and cameras, as well as external devices such as monitors and Bluetooth equipment.`,
+      image: '/images/products/fone-700/f4.png',
+      layout: 'left'
     }
   ],
-  vb350: [
+  'vb-350': [
     {
       id: 'f1',
-      title: 'Feature 1',
-      description: `Description for feature 1 of VB350.`,
+      title: 'Hybrid 18X Zoom Captures Farther and Clearer',
+      description: `Elevate your video meeting experience with the VB350 and its dual 4K lens technology. Boasting a 113° field of view and hybrid 18X zoom, the VB350 captures crystal-clear images of the foreground and background in meeting rooms up to 7 meters deep.`,
       image: '/images/products/vb350/f1.png',
+      layout: 'right'
+    },
+    {
+      id: 'f2',
+      title:
+        'Stable Lens Switching Enables Inclusive and Engaging Hybrid Teamwork',
+      description: `Don’t let jarring lens transitions interrupt your meetings. The VB350’s stable lens switching captures attendees in sharp detail, even when they sit far from the camera. Enjoy seamless conversations thanks to ultra-smooth lens shifting`,
+      image: '/images/products/vb350/f2.png',
+      layout: 'left'
+    },
+    {
+      id: 'f3',
+      title: 'Smart ViewShift Reduces Movement Sensitivity',
+      description: `The VB350 has just become even smarter with the latest firmware upgrade! The new Smart ViewShift function is designed to enhance your video conferencing experience by reducing movement sensitivity during audio tracking. With various transition effects, the camera smoothly shifts focus to the target person, providing remote participants with a more comfortable and stress-free call experience. Say goodbye to jarring movements and hello to seamless transitions.`,
+      image: '/images/products/vb350/f3.gif',
+      layout: 'right'
+    },
+    {
+      id: 'f4',
+      title: 'Audio Fence Eliminates Background Noise',
+      description: `Say goodbye to unwanted noise with AVer’s audio fence technology. This feature blocks out background distractions and captures only the voices within the camera’s viewing area. Now you can have uninterrupted remote collaboration even in open workspaces.`,
+      image: '/images/products/vb350/f4.png',
+      layout: 'left'
+    },
+    {
+      id: 'f5',
+      title: '14-Microphone Array Delivers Lifelike Audio',
+      description: `Enjoy clear and natural-sounding voices in your meetings. The VB350 is equipped with a 14-element microphone array pickup that precisely reproduces resonant sound from up to 10 meters away. Experience seamless conversations and lifelike audio that makes your remote meetings feel like in-person gatherings.`,
+      image: '/images/products/vb350/f5.png',
       layout: 'center'
     }
   ]

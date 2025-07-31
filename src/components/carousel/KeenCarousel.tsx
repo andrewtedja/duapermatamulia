@@ -15,7 +15,7 @@ function AutoplayPlugin(slider: KeenSliderInstance) {
   const clearNextTimeout = () => clearTimeout(timeout)
   const nextTimeout = () => {
     clearTimeout(timeout)
-    timeout = setTimeout(() => slider.next(), 5000)
+    timeout = setTimeout(() => slider.next(), 4000)
   }
 
   slider.on('created', nextTimeout)

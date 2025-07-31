@@ -110,26 +110,44 @@ export const productOverviews: Record<
       '/images/products/u70i/u70i-5.png'
     ]
   },
-  m70w: {
-    title: '4K Mechanical Arm Wireless Visualizer',
+  'm70-w': {
+    title: 'Mechanical Arm Wireless Visualizer (Document Camera)',
     hook: 'Wireless freedom, mechanical precision.',
     description:
-      'The M70W combines mechanical flexibility and wireless connectivity in a 4K document camera that allows educators to teach from anywhere in the room.',
-    images: ['/images/products/m70w/m70w-1.png']
+      'The M70W is a 4K wireless visualizer that transforms eLearning by enhancing interactive discussions between teachers and students. A versatile mechanical arm and solid body support a 13-megapixel camera with vividly detailed 4K, 60fps imaging and powerful 230X total zoom capacity. The overall design is meant to reflect the embedded technology that users can creatively put to work engaging the classroom with ease.',
+    images: [
+      '/images/products/m70w/m70w-1.png',
+      '/images/products/m70w/m70w-2.png',
+      '/images/products/m70w/m70w-3.png',
+      '/images/products/m70w/m70w-4.png',
+      '/images/products/m70w/m70w-5.png',
+      '/images/products/m70w/m70w-6.png'
+    ]
   },
   'tr-211': {
     title: 'AI Auto Tracking PTZ Camera',
     hook: 'Smart tracking with flexible mounting.',
     description:
-      'The TR211 is a compact, AI-driven PTZ camera offering precise presenter tracking, hybrid learning support, and simple setup in any classroom or boardroom.',
-    images: ['/images/products/tr211/tr211-1.png']
+      'AVer’s new TR211 AI Auto Tracking PTZ Camera extends powerful and dependable Pro AV prowess to users across the spectrum of industries. The TR211 showcases proprietary functions — including Presenter Mode, Zone Mode, and Hybrid Mode tracking — driven by advanced AI processing. Seamlessly blending a 12X Optical Zoom lens, FHD 60 fps resolution, and the finesse of hybrid auto tracking and smooth PTZ operations, it’s already the quintessential choice for broadcasting, streaming, or recording.',
+    images: [
+      '/images/products/tr211/tr211-2.png',
+      '/images/products/tr211/tr211-1.png',
+      '/images/products/tr211/tr211-3.png',
+      '/images/products/tr211/tr211-4.png'
+    ]
   },
   'vb-370a': {
     title: '4K Dual Lens Video Bar',
-    hook: 'Zoom Room-ready with Android smarts.',
+    hook: 'Android™ Powered. Zoom Rooms Perfected.',
     description:
-      'The VB370A features dual lenses for speaker tracking, integrated Android OS, and a sleek design perfect for modern Zoom Rooms and conference setups.',
-    images: ['/images/products/vb370a/vb370a-1.png']
+      'The AVer VB370A 4K dual-lens video conferencing bar delivers superior video and audio quality, ensuring every participant feels present. Smart AI-driven Voice Tracking* guarantees clear communication, while the ready-to-go setup makes connecting simple. Designed for mid-to-large spaces, the VB370A supports dual-screen displays and can easily scale to accommodate growing teams. Being certified by Zoom and powered by Android™ allows the VB370A to deliver truly engaging and productive virtual meetings.',
+    images: [
+      '/images/products/vb370a/vb370a-1.png',
+      '/images/products/vb370a/vb370a-2.png',
+      '/images/products/vb370a/vb370a-3.png',
+      '/images/products/vb370a/vb370a-4.png',
+      '/images/products/vb370a/vb370a-5.png'
+    ]
   },
   'ptz-211': {
     title: 'PTZ211',
@@ -144,24 +162,44 @@ export const productOverviews: Record<
     ]
   },
   'vb342-pro': {
-    title: '4K PTZ Video Bar',
+    title: '4K PTZ Video',
     hook: 'All-in-one bar for small to medium rooms.',
     description:
-      'The VB342 Pro brings studio-level audio and video quality in a compact form with PTZ support, ideal for huddle rooms and smart collaboration.',
-    images: ['/images/products/vb342pro/vb342pro-1.png']
+      'The VB342 Pro’s high quality 4K PTZ lens delivers unprecedentedly vivid images and clear details. Intelligent AVer AI features come together to create a crystal-clear AI powered meeting experience. Auto Framing re-frames the meeting view to keep everyone in picture and works together with Smart Gallery to deliver great-looking images of everyone. With Presentation Tracking, never miss a detail of a work presentation again, and combine it with AVer Audio Fence to block out annoying distractions and deliver uninterrupted presentations. Virtual conference interruption-free with the VB342 Pro.',
+    images: [
+      '/images/products/vb342pro/vb342pro-2.png',
+      '/images/products/vb342pro/vb342pro-1.png',
+      '/images/products/vb342pro/vb342pro-3.png',
+      '/images/products/vb342pro/vb342pro-4.png',
+      '/images/products/vb342pro/vb342pro-5.png',
+      '/images/products/vb342pro/vb342pro-6.png'
+    ]
   },
   'fone-700': {
     title: 'Ceiling Speakerphone System',
     hook: '360° audio for any size room.',
     description:
-      'The FONE 700 is a ceiling-mounted microphone and speaker array system that delivers crystal-clear, evenly distributed audio — perfect for boardrooms and classrooms alike.',
-    images: ['/images/products/fone700/fone700-1.png']
+      'Elevate your conference experience with the AVer FONE700, the perfect ceiling speakerphone system. With its cutting-edge technology, the FONE700 allows for seamless integration of our suite of audio-visual products, ensuring the highest-quality sound and picture to meet your conference needs. This includes connecting two cameras, a display, an external speaker, and Bluetooth devices, creating a truly unified AV hub for your conference needs.',
+    images: [
+      '/images/products/fone700/fone700-1.png',
+      '/images/products/fone700/fone700-2.png',
+      '/images/products/fone700/fone700-3.png',
+      '/images/products/fone700/fone700-4.png',
+      '/images/products/fone700/fone700-5.png'
+    ]
   },
   'vb-350': {
     title: 'Dual Lens PTZ Video Bar',
-    hook: '18X hybrid zoom, zero compromise.',
+    hook: '18X Hybrid Zoom for Medium and Large Rooms, Zero Compromise.',
     description:
-      'The VB350 features dual-lens technology with hybrid zoom, giving you incredible flexibility in medium to large video conference rooms.',
-    images: ['/images/products/vb350/vb350-1.png']
+      'With a streamlined design, dual 4K lenses, seamless lens switching, upgraded audio technology, and simple setup, the VB350 is the ultimate all-in-one solution for next-level video meetings. Level up to premium audio and video by using this powerful new video bar in your mid-to-large conference rooms.',
+    images: [
+      '/images/products/vb350/vb350-1.png',
+      '/images/products/vb350/vb350-2.png',
+      '/images/products/vb350/vb350-3.png',
+      '/images/products/vb350/vb350-4.png',
+      '/images/products/vb350/vb350-5.png',
+      '/images/products/vb350/vb350-6.png'
+    ]
   }
 }

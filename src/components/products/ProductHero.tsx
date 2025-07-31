@@ -11,7 +11,8 @@ export function ProductHero({ product }: ProductHeroProps) {
     const isLight =
       currentSlideName === 'AmpliWave SA-A5' ||
       currentSlideName === 'CAM570' ||
-      currentSlideName === 'U70i'
+      currentSlideName === 'U70i' ||
+      currentSlideName === 'M70W'
     const isSpecificItem = itemName === currentSlideName
     return {
       text: isLight ? 'text-black' : 'text-white',
@@ -96,7 +97,9 @@ export function ProductHero({ product }: ProductHeroProps) {
                   : 'justify-center',
                 product.name === 'TR315' ||
                   product.name === 'CAM570' ||
-                  product.name === 'U70i'
+                  product.name === 'U70i' ||
+                  product.name === 'M70W' ||
+                  product.name === 'VB350'
                   ? 'hidden'
                   : 'flex'
               )}
@@ -125,7 +128,7 @@ export function ProductHero({ product }: ProductHeroProps) {
           className={`w-6 h-10 border-2 ${theme.border} rounded-full flex justify-center`}
         >
           <div
-            className={`w-1 h-3 ${theme.bg}/90 rounded-full mt-2 animate-bounce`}
+            className={`w-1 h-3 ${theme.bg} rounded-full mt-2 animate-bounce`}
           ></div>
         </div>
       </div>
