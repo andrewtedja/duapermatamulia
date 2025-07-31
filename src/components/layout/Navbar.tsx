@@ -279,15 +279,24 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden z-[100] relative">
             <div className="px-2 pt-2 pb-6 space-y-1 sm:px-3 bg-white border-t border-gray-200 rounded-b-2xl">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href="#"
-                  className="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium transition-colors duration-200"
-                >
-                  {item.name}
-                </a>
-              ))}
+              {navItems.map(
+                (item) =>
+                  !item.hasDropdown && (
+                    <Link
+                      key={item.name}
+                      href={item.href!}
+                      className="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium transition-colors duration-200"
+                    >
+                      {item.name}
+                    </Link>
+                  )
+              )}
+              <Link
+                href="/inquiry"
+                className="bg-red-500 hover:bg-red-700 text-white block px-3 py-2 text-base font-medium rounded-md shadow-sm transition-colors duration-200"
+              >
+                Sales Inquiry
+              </Link>
             </div>
           </div>
         )}

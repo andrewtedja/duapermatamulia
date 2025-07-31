@@ -57,11 +57,15 @@ const Footer: React.FC = () => {
 
           <div className="md:col-span-1">
             <h3 className="text-black font-bold mb-4">Solutions</h3>
-            <ul className="space-y-1 text-sm">
+            <ul className="space-y-1 text-sm grid">
               {partners.map((solution) => (
-                <li key={solution.id} className="hover:text-red-400">
-                  <a href={'#'}>{solution.name}</a>
-                </li>
+                <Link
+                  key={solution.id}
+                  className="hover:text-red-400"
+                  href={solution.visitLink}
+                >
+                  {solution.name}
+                </Link>
               ))}
             </ul>
           </div>

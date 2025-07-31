@@ -4,7 +4,7 @@ import AboutOfficeLocation from '../about/AboutOfficeLocation'
 
 const AboutSection: React.FC = () => {
   return (
-    <section className="min-h-screen bg-white py-24 px-6">
+    <section className="min-h-screen bg-white py-24 px-8 ">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex flex-col">

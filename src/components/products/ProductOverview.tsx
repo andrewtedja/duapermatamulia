@@ -46,7 +46,7 @@ export function ProductOverview({
         id="overview"
         className="py-12 bg-gradient-to-b from-white to-gray-50"
       >
-        <div className="container mx-auto px-24">
+        <div className="container mx-auto px-7 lg:px-24 ">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center max-w-7xl mx-auto">
             {/* Left Side - Text Content */}
             <div className="space-y-6 lg:space-y-8">

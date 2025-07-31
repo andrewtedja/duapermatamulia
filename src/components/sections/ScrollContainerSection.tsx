@@ -12,7 +12,9 @@ export function ScrollContainerSection() {
             <h1 className="text-4xl font-semibold text-black dark:text-white">
               Empowering Smarter Collaboration. <br />
               <span className="text-4xl md:text-[5rem] font-bold mt-1 leading-none">
-                Built for Vision, <br></br>Driven by Innovation.
+                Built for <span className="text-red-600">Vision</span>,{' '}
+                <br></br>Driven by{' '}
+                <span className="text-indigo-600">Innovation</span>.
               </span>
             </h1>
           </>

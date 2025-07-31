@@ -32,7 +32,7 @@ export function ProductHero({ product }: ProductHeroProps) {
   return (
     <section
       id="hero"
-      className="relative h-[95vh] flex items-center overflow-hidden"
+      className="relative min-h-[95vh] flex items-center overflow-hidden"
     >
       {/* Background Image */}
       <div
@@ -45,11 +45,11 @@ export function ProductHero({ product }: ProductHeroProps) {
         />
       </div>
 
-      <div className="relative z-10 container mx-auto px-20  py-8 lg:py-12">
-        <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 items-center">
+      <div className="relative z-10 container mx-auto px-16 sm:px-6 lg:px-24 py-20 lg:py-12 ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
           {/* Text Content */}
           <div
-            className={`text-white ${
+            className={`text-white  ${
               layout?.textAlign === 'center'
                 ? 'text-center'
                 : layout?.textAlign === 'right'
@@ -63,17 +63,17 @@ export function ProductHero({ product }: ProductHeroProps) {
               {product.category}
             </div>
             <h1
-              className={`text-3xl sm:text-4xl lg:text-7xl font-bold mb-4 lg:mb-6 ${theme.text}`}
+              className={`text-2xl sm:text-3xl md:text-4xl lg:text-7xl font-bold mb-4 lg:mb-6 ${theme.text}`}
             >
               {product.name}
             </h1>
             <h2
-              className={`text-lg sm:text-xl lg:text-2xl font-medium mb-6 lg:mb-8  ${theme.text}`}
+              className={`text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 ${theme.text}`}
             >
               {product.subtitle}
             </h2>
             <p
-              className={`text-base lg:text-xl font-mono leading-relaxed  max-w-2xl ${theme.text}`}
+              className={`text-sm sm:text-base lg:text-lg font-mono leading-relaxed max-w-2xl ${theme.text}`}
             >
               {product.description}
             </p>
@@ -81,7 +81,7 @@ export function ProductHero({ product }: ProductHeroProps) {
 
           {/* Product Image */}
           <div
-            className={`flex ${
+            className={`flex mt-8 lg:mt-0 ${
               layout?.imageAlign === 'center'
                 ? 'justify-center'
                 : layout?.imageAlign === 'right'
@@ -109,12 +109,12 @@ export function ProductHero({ product }: ProductHeroProps) {
                 alt={product.name}
                 width={product.layout?.imageSize || 600}
                 height={product.layout?.imageSize || 600}
-                className={`object-contain lg:w-auto lg:h-auto ${
+                className={`object-contain w-full max-w-sm lg:w-auto lg:h-auto lg:max-w-none ${
                   layout?.imageClass || ''
                 }`}
                 style={{
-                  width: `${layout?.imageSize || 600}px`,
-                  height: `${layout?.imageSize || 600}px`
+                  width: `min(100%, ${layout?.imageSize || 600}px)`,
+                  height: 'auto'
                 }}
                 priority
               />
@@ -122,8 +122,9 @@ export function ProductHero({ product }: ProductHeroProps) {
           </div>
         </div>
       </div>
+
       {/* Scroll Indicator */}
-      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-10">
+      <div className="absolute bottom-12 hidden lg:block left-1/2 transform -translate-x-1/2 z-10">
         <div
           className={`w-6 h-10 border-2 ${theme.border} rounded-full flex justify-center`}
         >

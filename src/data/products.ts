@@ -22,25 +22,26 @@ export const products: Product[] = [
     name: 'TR615',
     category: 'PRO AV',
     subtitle: 'Broadcasting-Grade Auto Tracking Camera',
-    description:
-      '4K AI Auto Tracking PTZ Camera for professional broadcasting, live event production, and premium live streaming',
+    description: '4K AI PTZ Camera for Pro Broadcasting & Live Events',
     imgPath: '/images/products/tr615/f3.png',
     slug: 'tr-615',
-    overlay: 80,
-    productImagePath: '/images/products/prod-tr615.png',
+    overlay: 87,
+    productImagePath: '/images/products/tr615/prod-tr615.png',
     layout: {
-      imageSize: 2000,
+      imageSize: 1000,
       imageAlign: 'center',
       textAlign: 'left',
       imageClass: 'translate-y-4 scale-105'
     }
   },
+
   {
-    id: '3',
+    id: '2',
     name: 'TR315',
     category: 'PRO AV',
-    subtitle: 'AI-Driven PTZ Camera for Pro AV & Education',
-    description: 'Camera that remembers the person it is tracking.',
+    subtitle: 'AI Auto-Tracking PTZ Camera',
+    description:
+      'AI Tracking Camera that remembers your presenter — not just motion.',
     imgPath: '/images/backgrounds/bg-tr315new.svg',
     slug: 'tr-315',
     overlay: 10,
@@ -53,14 +54,50 @@ export const products: Product[] = [
     }
   },
   {
-    id: '2',
+    id: '3',
+    name: 'PTZ211',
+    category: 'PRO AV',
+    subtitle: '12X HD AI PTZ Camera',
+    description:
+      'Advanced professional-grade PTZ camera that gives you complete control over your streaming content.',
+    imgPath: '/images/backgrounds/bg-ptz211.png',
+    slug: 'ptz-211',
+    overlay: 60,
+    productImagePath: '/images/products/ptz211/prod-ptz211-2.png',
+    layout: {
+      imageSize: 1000,
+      imageAlign: 'center',
+      textAlign: 'left',
+      imageClass: 'translate-y-4 scale-105'
+    }
+  },
+  {
+    id: '4',
+    name: 'MT300N',
+    category: 'PRO AV',
+    subtitle: 'NDI\u00AE Matrix Tracking Box',
+    description: 'Your AV matrix, streamlined by NDI\u00AE',
+    imgPath: '/images/backgrounds/bg-mt300n-3.png',
+    slug: 'mt-300n',
+    overlay: 85,
+    productImagePath: '/images/products/prod-mt300n.svg',
+    layout: {
+      imageSize: 1400,
+      imageAlign: 'center',
+      textAlign: 'left',
+      imageClass: 'translate-y-4 scale-105'
+    }
+  },
+
+  {
+    id: '5',
     name: 'HUB30',
     category: 'VIDEO CONFERENCING',
     subtitle: '4K BYOM Matrix Switcher',
     description: 'Seamlessly switch sources and connect personal devices.',
     imgPath: '/images/backgrounds/bg-hub30new.png',
     slug: 'hub-30',
-    overlay: 60,
+    overlay: 30,
     productImagePath: '/images/products/prod-hub30.png',
     layout: {
       imageSize: 900,
@@ -71,24 +108,7 @@ export const products: Product[] = [
   },
 
   {
-    id: '4',
-    name: 'MT300N',
-    category: 'PRO AV',
-    subtitle: 'NDI Matrix Tracking Box',
-    description: 'Your AV matrix, streamlined by NDI',
-    imgPath: '/images/backgrounds/bg-mt300n.png',
-    slug: 'mt-300n',
-    overlay: 80,
-    productImagePath: '/images/products/prod-mt300n.svg',
-    layout: {
-      imageSize: 1400,
-      imageAlign: 'center',
-      textAlign: 'left',
-      imageClass: 'translate-y-4 scale-105'
-    }
-  },
-  {
-    id: '5',
+    id: '6',
     name: 'AmpliWave SA-A5',
     category: 'SMART CLASSROOM',
     subtitle: 'Streaming Audio System, \nThe Axis of Education',
@@ -106,7 +126,7 @@ export const products: Product[] = [
   },
 
   {
-    id: '6',
+    id: '7',
     name: 'CAM570',
     category: 'VIDEO CONFERENCING',
     subtitle:
@@ -125,7 +145,7 @@ export const products: Product[] = [
     }
   },
   {
-    id: '7',
+    id: '8',
     name: 'MT100',
     category: 'PRO AV',
     subtitle: 'Matrix Box, Effortless Integration. \nBoundless AV Experiences.',
@@ -142,7 +162,7 @@ export const products: Product[] = [
     }
   },
   {
-    id: '8',
+    id: '9',
     name: 'U70i',
     category: 'SMART CLASSROOM',
     subtitle:
@@ -160,7 +180,7 @@ export const products: Product[] = [
     }
   },
   {
-    id: '9',
+    id: '10',
     name: 'M70W',
     category: 'SMART CLASSROOM',
     subtitle: '4K Mechanical Arm Wireless Visualizer',
@@ -177,7 +197,7 @@ export const products: Product[] = [
     }
   },
   {
-    id: '10',
+    id: '11',
     name: 'TR211',
     category: 'SMART CLASSROOM',
     subtitle: 'Superior AI Auto Tracking PTZ Camera',
@@ -194,7 +214,7 @@ export const products: Product[] = [
     }
   },
   {
-    id: '11',
+    id: '12',
     name: 'VB370A',
     category: 'VIDEO CONFERENCING',
     subtitle: '4K Dual Lens Video Bar \nAndroid Powered. Zoom Rooms Perfected.',
@@ -210,24 +230,7 @@ export const products: Product[] = [
       imageClass: 'translate-y-4 scale-105'
     }
   },
-  {
-    id: '12',
-    name: 'PTZ211',
-    category: 'PRO AV',
-    subtitle: 'Professional PTZ Camera',
-    description:
-      'Advanced PTZ camera that gives you complete control over your streaming content.',
-    imgPath: '/images/backgrounds/bg-ptz211.png',
-    slug: 'ptz-211',
-    overlay: 30,
-    productImagePath: '/images/products/prod-ptz211.png',
-    layout: {
-      imageSize: 1000,
-      imageAlign: 'center',
-      textAlign: 'left',
-      imageClass: 'translate-y-4 scale-105'
-    }
-  },
+
   {
     id: '13',
     name: 'VB342 Pro',

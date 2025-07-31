@@ -104,7 +104,7 @@ export default function KeenCarousel() {
                     <p className="text-2xl lg:text-2xl font-bold leading-relaxed mt-2">
                       {slide.subtitle}
                     </p>
-                    <p className="text-xl font-mono leading-relaxed mt-4 mb-6">
+                    <p className="text-lg font-medium leading-relaxed mt-4 mb-6">
                       {slide.description}
                     </p>
                     <Link
