@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import { Eye, Zap, Settings, MessageCircle, FileText } from 'lucide-react'
 import { useRouter } from 'next/navigation'
-import { motion, AnimatePresence } from 'framer-motion'
 
 const sections = [
   { id: 'inquiry', label: 'Sales Inquiry', icon: MessageCircle },
