@@ -44,7 +44,7 @@ export function ProductOverview({
     <>
       <section
         id="overview"
-        className="py-12 bg-gradient-to-r from-rose-200 via-sky-100 to-white-50"
+        className="py-12 bg-gradient-to-r from-indigo-100    to-sky-100"
       >
         <div className="container mx-auto px-24">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center max-w-7xl mx-auto">

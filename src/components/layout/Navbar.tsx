@@ -363,7 +363,8 @@ const Navbar = () => {
 
                     <div className="grid grid-cols-1 lg:grid-cols-3    gap-3 mb-12">
                       {filteredProducts.map((product) => (
-                        <a
+                        <Link
+                          href={`/products/${product.slug}`}
                           key={product.id}
                           className="group block  rounded-xl transition-all duration-300 overflow-hidden  px-4 py-4 bg-[#F8F9FC]"
                         >
@@ -386,7 +387,7 @@ const Navbar = () => {
                               </p>
                             </div>
                           </div>
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </div>

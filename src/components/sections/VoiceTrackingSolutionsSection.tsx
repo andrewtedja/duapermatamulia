@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { ChevronRight, ExternalLink } from 'lucide-react'
+import { ExternalLink } from 'lucide-react'
 
 import { partners } from '@/data/solutions'
 import Image from 'next/image'
@@ -13,7 +13,7 @@ const VoiceTrackingSolutionsSection = () => {
   const [selectedPartner, setSelectedPartner] = useState<string>('shure')
 
   return (
-    <section className="py-16 lg:py-24 bg-gray-50">
+    <section className="py-16 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -21,7 +21,7 @@ const VoiceTrackingSolutionsSection = () => {
             Voice Tracking Solutions
           </h1>
           <div className="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base text-gray-600 max-w-3xl mx-auto">
             Explore our comprehensive range of voice tracking solutions from
             industry-leading partners. Select a partner to learn more about
             their technology and supported models.
@@ -101,7 +101,7 @@ const VoiceTrackingSolutionsSection = () => {
           <div className="grid grid-cols-12 gap-8">
             {/* Partner Selection Grid */}
             <div className="col-span-5">
-              <h3 className="text-lg font-semibold text-gray-900 mb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
                 Select a Partner
               </h3>
               <div className="grid grid-cols-2 gap-4">

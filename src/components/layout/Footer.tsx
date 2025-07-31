@@ -4,6 +4,7 @@ import { products } from '@/data/products'
 import { partners } from '@/data/solutions'
 
 import Logo from '../logo/logo'
+import Link from 'next/link'
 
 // Group products by category
 const categorizedProducts = products.reduce<Record<string, typeof products>>(
@@ -42,7 +43,9 @@ const Footer: React.FC = () => {
                     <ul className="space-y-1">
                       {categoryProducts.map((product) => (
                         <li key={product.id} className="hover:text-red-400">
-                          <a href={'#'}>{product.name}</a>
+                          <Link href={`products/${product.slug}`}>
+                            {product.name}
+                          </Link>
                         </li>
                       ))}
                     </ul>
