@@ -1,6 +1,10 @@
 import { NextResponse, NextRequest } from 'next/server'
+import { Resend } from 'resend'
 
 const VERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify'
+const resend = new Resend(process.env.RESEND_API_KEY)
+
+const now = Date.now()
 
 export const runtime = 'nodejs'
 
@@ -77,6 +81,38 @@ export async function POST(req: NextRequest) {
         { error: 'Invalid CAPTCHA', details: vr },
         { status: 400 }
       )
+    }
+
+    // ================= EMAIL ===================
+    const to = process.env.NOTIFY_TO!
+    const from = process.env.FROM_EMAIL! // gunakan domain yang sudah diverifikasi di Resend
+
+    const subject = `New Inquiry (DPM) — ${fullName} (${productCategory})`
+    const html = `
+      <h2>Pengajuan Barang - ${now}}</h2>
+      <table>
+        <tr><td><b>Full Name</b></td><td>${fullName}</td></tr>
+        <tr><td><b>Email</b></td><td>${email}</td></tr>
+        <tr><td><b>Organization</b></td><td>${organization}</td></tr>
+        <tr><td><b>Location</b></td><td>${city}, ${country}</td></tr>
+        <tr><td><b>Phone</b></td><td>${phone}</td></tr>
+        <tr><td><b>Product Category</b></td><td>${productCategory}</td></tr>
+        <tr><td><b>Referral</b></td><td>${referral ?? '-'}</td></tr>
+      </table>
+      <p><b>Message:</b></p>
+      <pre style="white-space:pre-wrap;font-family:ui-monospace,monospace">${message}</pre>
+    `
+
+    const { error } = await resend.emails.send({
+      from,
+      to,
+      subject,
+      html
+    })
+
+    if (error) {
+      console.error('Resend error:', error)
+      return NextResponse.json({ error: 'email_send_failed' }, { status: 502 })
     }
 
     // 5) Lanjut proses…

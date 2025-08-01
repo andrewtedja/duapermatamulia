@@ -3,7 +3,7 @@ import { ProductOverview } from './ProductOverview'
 import { ProductFeatures } from './ProductFeatures'
 import { ProductSpecs } from './ProductSpecs'
 import { ProductCTA } from './ProductCTA'
-import { ProductResources } from './ProductResources'
+// import { ProductResources } from './ProductResources'
 import { ProductSidebar } from './ProductSidebar'
 import type { Product } from '@/data/products'
 import type { ProductFeature } from '@/data/productFeatures'
@@ -28,8 +28,8 @@ export function ProductPage({
   overviewTitle = '',
   overviewHook = '',
   features = [],
-  specs = [],
-  resources = []
+  specs = []
+  // resources = []
 }: ProductPageProps) {
   return (
     <div className="relative">
@@ -56,7 +56,7 @@ export function ProductPage({
 
       <ProductCTA productName={product.name} />
 
-      {resources.length > 0 && <ProductResources resources={resources} />}
+      {/* {resources.length > 0 && <ProductResources resources={resources} />} */}
     </div>
   )
 }
