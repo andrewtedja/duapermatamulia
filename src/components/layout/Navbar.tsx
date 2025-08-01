@@ -467,7 +467,7 @@ const Navbar = () => {
                             alt={partner.name}
                             width={260}
                             height={360}
-                            className="w-full border border-gray-400 rounded h-full object-cover aspect-[2/3]"
+                            className="w-full border shadow-lg border-gray-400 rounded h-full object-cover aspect-[2/3]"
                             loading="lazy"
                           />{' '}
                         </div>
