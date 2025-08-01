@@ -1,7 +1,7 @@
 import { ProductHero } from './ProductHero'
 import { ProductOverview } from './ProductOverview'
 import { ProductFeatures } from './ProductFeatures'
-import { ProductSpecs } from './ProductSpecs'
+// import { ProductSpecs } from './ProductSpecs'
 import { ProductCTA } from './ProductCTA'
 // import { ProductResources } from './ProductResources'
 import { ProductSidebar } from './ProductSidebar'
@@ -27,8 +27,8 @@ export function ProductPage({
   overviewDescription = '',
   overviewTitle = '',
   overviewHook = '',
-  features = [],
-  specs = []
+  features = []
+  // specs = []
   // resources = []
 }: ProductPageProps) {
   return (
@@ -52,7 +52,7 @@ export function ProductPage({
 
       {features.length > 0 && <ProductFeatures features={features} />}
 
-      {specs.length > 0 && <ProductSpecs specs={specs} />}
+      {/* {specs.length > 0 && <ProductSpecs specs={specs} />} */}
 
       <ProductCTA productName={product.name} />
 
