@@ -1,5 +1,5 @@
 import React from 'react'
-import { Youtube, Mail, Phone, MapPin, Clock, Instagram } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 import { products } from '@/data/products'
 import { partners } from '@/data/solutions'
 
@@ -147,25 +147,6 @@ const Footer: React.FC = () => {
                 Copyright &copy; {new Date().getFullYear()} PT. Dua Permata
                 Mulia, All Rights Reserved.
               </p>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <a
-                href="https://www.instagram.com/duapermatamulia/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black hover:text-black transition-colors"
-              >
-                <Instagram size={24} />
-              </a>
-              <a
-                href="https://www.youtube.com/channel/UCSiJp4kYdug8GYvNSwlRm9A"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black hover:text-black transition-colors"
-              >
-                <Youtube size={24} />
-              </a>
             </div>
           </div>
         </div>

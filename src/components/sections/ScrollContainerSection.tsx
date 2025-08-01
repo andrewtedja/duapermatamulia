@@ -9,12 +9,12 @@ export function ScrollContainerSection() {
       <ContainerScroll
         titleComponent={
           <>
-            <h1 className="text-4xl font-semibold text-black dark:text-white">
+            <h1 className="text-md md:text-4xl font-semibold text-black dark:text-white">
               Empowering Smarter Collaboration. <br />
-              <span className="text-4xl md:text-[5rem] font-bold mt-1 leading-none">
+              <span className="text-3xl md:text-[5rem] font-bold mt-1 leading-none">
                 Built for <span className="text-red-600">Vision</span>,{' '}
-                <br></br>Driven by{' '}
-                <span className="text-indigo-600">Innovation</span>.
+                <br></br> Driven by{' '}
+                <span className="text-rose-500">Innovation</span>.
               </span>
             </h1>
           </>

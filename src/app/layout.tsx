@@ -3,6 +3,7 @@ import { Open_Sans } from 'next/font/google'
 import './globals.css'
 import 'keen-slider/keen-slider.min.css'
 import ScrollToTopButton from '@/components/buttons/ScrollToTopButton'
+import WhatsAppButton from '@/components/buttons/WAButton'
 
 const openSans = Open_Sans({
   subsets: ['latin'],
@@ -24,6 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${openSans.variable} antialiased`}>
         {children}
+        <WhatsAppButton />
         <ScrollToTopButton />
       </body>
     </html>

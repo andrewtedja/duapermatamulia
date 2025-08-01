@@ -18,6 +18,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import DownloadSolutionButton from '../buttons/DownloadSolutionsButton'
+import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip'
 
 const DROPDOWN_CLOSE_DELAY = 300 // milliseconds
 
@@ -239,12 +240,19 @@ const Navbar = () => {
               </div>
 
               {/* Inquire Now Button */}
-              <Link
-                href="/inquiry"
-                className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 shadow-sm hover:shadow-md transform hover:scale-105 active:scale-95"
-              >
-                Inquire Now
-              </Link>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href="/inquiry"
+                    className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 shadow-sm hover:shadow-md transform hover:scale-105 active:scale-95"
+                  >
+                    Inquire Now
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent side="bottom" sideOffset={8}>
+                  Send us a message
+                </TooltipContent>
+              </Tooltip>
             </div>
 
             {/* Mobile menu button */}
