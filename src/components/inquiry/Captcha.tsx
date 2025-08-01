@@ -8,7 +8,11 @@ export default function Captcha({ onToken }: { onToken: (t: string) => void }) {
       onSuccess={(t) => {
         onToken(t)
       }}
-      options={{ action: 'submit_form', appearance: 'always' }}
+      options={{
+        action: 'submit_form',
+        appearance: 'always',
+        execution: 'render'
+      }}
     />
   )
 }

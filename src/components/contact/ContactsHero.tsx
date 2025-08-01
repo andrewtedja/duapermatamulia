@@ -6,7 +6,8 @@ export default function ContactsHero() {
       <Image
         src="/images/backgrounds/sales.png"
         alt="Sales Background"
-        layout="fill"
+        fill
+        fetchPriority="high"
         objectFit="cover"
         objectPosition="center"
         placeholder="blur"

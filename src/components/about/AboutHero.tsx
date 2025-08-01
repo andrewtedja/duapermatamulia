@@ -6,10 +6,11 @@ export default function AboutHero() {
       <Image
         src="/images/backgrounds/contacts.avif"
         alt="About Us Background"
-        layout="fill"
-        objectFit="cover"
-        quality={90}
-        priority={true}
+        fill
+        priority
+        fetchPriority="high"
+        sizes="100vw"
+        className="object-cover"
       />
       <div className="absolute inset-0 bg-black/10 backdrop-blur-sm"></div>
       <div className="relative z-10 flex items-center justify-center h-full">
