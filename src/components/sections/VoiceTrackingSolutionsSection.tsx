@@ -7,6 +7,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import DownloadSolutionButton from '../buttons/DownloadSolutionsButton'
 
 const VoiceTrackingSolutionsSection = () => {
   const [selectedPartner, setSelectedPartner] = useState<string>('shure')
@@ -231,20 +232,7 @@ const VoiceTrackingSolutionsSection = () => {
                               </div>
                             </div>
 
-                            {/* CTA Section */}
-                            {/* <div className="pt-6 border-t border-gray-100">
-                              <div className="flex flex-col sm:flex-row gap-4">
-                                <Button
-                                  asChild
-                                  className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/30 transition-all duration-300 py-7"
-                                >
-                                  <Link href={partner.visitLink}>
-                                    Explore {partner.name} Solutions
-                                    <ArrowRight className="w-4 h-4 ml-2" />
-                                  </Link>
-                                </Button>
-                              </div>
-                            </div> */}
+                            <DownloadSolutionButton partner={partner} />
                           </div>
                         </CardContent>
                       </>

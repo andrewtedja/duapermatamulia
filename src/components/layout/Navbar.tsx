@@ -17,6 +17,7 @@ import { partners } from '@/data/solutions'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import DownloadSolutionButton from '../buttons/DownloadSolutionsButton'
 
 const DROPDOWN_CLOSE_DELAY = 300 // milliseconds
 
@@ -395,59 +396,80 @@ const Navbar = () => {
 
           {/* Solutions Dropdown Content */}
           {activeDropdown === 'solutions' && (
-            <div className="h-full overflow-hidden">
+            <div className="h-full overflow-y-auto">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <div className="mb-8">
                   <h2 className="text-2xl font-bold text-gray-900 mb-2">
                     Solutions & Partners
                   </h2>
+                  <p className="text-gray-600 text-sm">
+                    Discover our comprehensive solutions and trusted partner
+                    integrations
+                  </p>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-12">
-                  {partners.slice(0, 9).map((partner) => (
-                    <a
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
+                  {partners.slice(0, 8).map((partner) => (
+                    <div
                       key={partner.id}
-                      href={partner.visitLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group block p-6 bg-white border-gray-200 border rounded-xl hover:shadow-lg    "
+                      className="group relative bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl hover:border-gray-300 transition-all duration-300 transform hover:-translate-y-1"
                     >
-                      <ExternalLink className="w-4 h-4 float-right" />
-                      <div className="flex items-center justify-center space-x-4 mb-4">
-                        {/* Placeholder image */}
+                      {/* External Link Button */}
+                      {partner.visitLink && (
+                        <a
+                          href={partner.visitLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full transition-all duration-200"
+                          aria-label={`Visit ${partner.name} website`}
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      )}
+
+                      {/* Partner Logo and Name */}
+                      <div className="flex items-center space-x-4 mb-6">
                         <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center overflow-hidden">
                           <Image
                             src={partner.logo || '/placeholder.svg'}
-                            alt={partner.name}
-                            width={100}
-                            height={100}
-                            className="w-full h-full object-contain"
+                            alt={`${partner.name} logo`}
+                            width={64}
+                            height={64}
+                            className="w-full h-full object-contain transition-all duration-300"
                             loading="lazy"
                           />
                         </div>
-                        <div className="flex-1  min-w-0">
-                          <h4 className="text-lg font-semibold text-gray-900  transition-colors duration-200 mb-2">
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-lg font-semibold text-gray-900 mb-1 line-clamp-2">
                             {partner.name}
                           </h4>
+                          {partner.description && (
+                            <p className="text-xs text-gray-600 line-clamp-2">
+                              {partner.description}
+                            </p>
+                          )}
                         </div>
                       </div>
-                      <div className="space-y-2">
-                        <h5 className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                          Supported Models
-                        </h5>
-                        <div className="flex flex-wrap gap-2">
-                          {partner.supportedModels
-                            .slice(0, 3)
-                            .map((model, index) => (
-                              <span
-                                key={index}
-                                className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700"
-                              >
-                                {model}
-                              </span>
-                            ))}
+
+                      {/* PDF Thumbnail Area */}
+                      <div className="mb-4 flex items-center justify-center">
+                        <div className="w-24 h-36 flex-shrink-0 flex items-center justify-center overflow-hidden">
+                          {' '}
+                          <Image
+                            src={partner.pdfThumbnail || '/placeholder.svg'}
+                            alt={partner.name}
+                            width={260}
+                            height={360}
+                            className="w-full border border-gray-400 rounded h-full object-cover aspect-[2/3]"
+                            loading="lazy"
+                          />{' '}
                         </div>
                       </div>
-                    </a>
+
+                      {/* Download Button */}
+                      <div className="flex justify-center">
+                        <DownloadSolutionButton partner={partner} />
+                      </div>
+                    </div>
                   ))}
                 </div>
               </div>

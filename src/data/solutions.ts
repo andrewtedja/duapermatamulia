@@ -14,6 +14,8 @@ export type Partner = {
   visitLink: string
   supportedModels: string[]
   resources: PartnerResource[]
+  pdfPath: string
+  pdfThumbnail: string
 }
 
 export const partners: Partner[] = [
@@ -37,7 +39,9 @@ export const partners: Partner[] = [
         text: 'Shure AV&r Multi-Camera Voice Tracking Solutions Paper',
         icon: FileText
       }
-    ]
+    ],
+    pdfThumbnail: '/images/thumbnails/tn-shure.png',
+    pdfPath: '/pdfs/pdf-shure.pdf'
   },
   {
     id: 'sennheiser',
@@ -53,7 +57,9 @@ export const partners: Partner[] = [
     resources: [
       { type: 'demo', text: 'Product Demo >', icon: PlayCircle },
       { type: 'paper', text: 'Integration Guide', icon: FileText }
-    ]
+    ],
+    pdfThumbnail: '/images/thumbnails/tn-sennheiser.png',
+    pdfPath: '/pdfs/pdf-sennheiser.pdf'
   },
   {
     id: 'yamaha',
@@ -72,7 +78,9 @@ export const partners: Partner[] = [
     resources: [
       { type: 'demo', text: 'Solution Overview >', icon: PlayCircle },
       { type: 'paper', text: 'Technical Specifications', icon: FileText }
-    ]
+    ],
+    pdfThumbnail: '/images/thumbnails/tn-yamaha.png',
+    pdfPath: '/pdfs/pdf-yamaha.pdf'
   },
   {
     id: 'audiotechnica',
@@ -88,7 +96,9 @@ export const partners: Partner[] = [
     resources: [
       { type: 'demo', text: 'Product Overview >', icon: PlayCircle },
       { type: 'paper', text: 'Technical Documentation', icon: FileText }
-    ]
+    ],
+    pdfThumbnail: '/images/thumbnails/tn-audiotechnica.png',
+    pdfPath: '/pdfs/pdf-audiotechnica.pdf'
   },
   {
     id: 'biamp',
@@ -104,7 +114,9 @@ export const partners: Partner[] = [
     resources: [
       { type: 'demo', text: 'Solution Demo >', icon: PlayCircle },
       { type: 'paper', text: 'Integration Manual', icon: FileText }
-    ]
+    ],
+    pdfThumbnail: '/images/thumbnails/tn-biamp.png',
+    pdfPath: '/pdfs/pdf-biamp.pdf'
   },
   {
     id: 'bosch',
@@ -121,7 +133,9 @@ export const partners: Partner[] = [
     resources: [
       { type: 'demo', text: 'System Demo >', icon: PlayCircle },
       { type: 'paper', text: 'Configuration Guide', icon: FileText }
-    ]
+    ],
+    pdfThumbnail: '/images/thumbnails/tn-bosch.png',
+    pdfPath: '/pdfs/pdf-bosch.pdf'
   },
   {
     id: 'clearone',
@@ -138,7 +152,9 @@ export const partners: Partner[] = [
     resources: [
       { type: 'demo', text: 'Technology Demo >', icon: PlayCircle },
       { type: 'paper', text: 'Product Datasheet', icon: FileText }
-    ]
+    ],
+    pdfThumbnail: '/images/thumbnails/tn-clearone.png',
+    pdfPath: '/pdfs/pdf-clearone.pdf'
   },
   {
     id: 'nureva',
@@ -156,6 +172,8 @@ export const partners: Partner[] = [
     resources: [
       { type: 'demo', text: 'Product Demo >', icon: PlayCircle },
       { type: 'paper', text: 'Installation Guide', icon: FileText }
-    ]
+    ],
+    pdfThumbnail: '/images/thumbnails/tn-nureva.png',
+    pdfPath: '/pdfs/pdf-nureva.pdf'
   }
 ]

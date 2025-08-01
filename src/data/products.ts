@@ -21,7 +21,7 @@ export const products: Product[] = [
     id: '1',
     name: 'TR615',
     category: 'PRO AV',
-    subtitle: 'Broadcasting-Grade Auto Tracking Camera',
+    subtitle: `Broadcasting-Grade Auto Tracking 20 MP Camera, Premium 1-Inch Exmor RS® CMOS Sensor`,
     description: '4K AI PTZ Camera for Pro Broadcasting & Live Events',
     imgPath: '/images/products/tr615/f3.png',
     slug: 'tr-615',

@@ -25,7 +25,8 @@ function AutoplayPlugin(slider: KeenSliderInstance) {
 }
 
 const getThemeClasses = (currentSlideName: string, itemName: string) => {
-  const isSA_A5 = currentSlideName === 'AmpliWave SA-A5'
+  const isSA_A5 =
+    currentSlideName === 'AmpliWave SA-A5' || currentSlideName === 'CAM570'
   const isSpecificItem = itemName === currentSlideName
   return {
     text: isSA_A5 ? 'text-black' : 'text-white',
@@ -78,7 +79,7 @@ export default function KeenCarousel() {
             className={clsx(
               'keen-slider__slide flex items-center justify-center',
               getThemeClasses(currentSlideName, slide.name).text,
-              'bg-gray-800'
+              'bg-white'
             )}
           >
             <div className="relative h-[calc(100vh-4rem)] w-full pt-40 md:pt-0">
@@ -101,7 +102,7 @@ export default function KeenCarousel() {
                     <h1 className="text-4xl lg:text-6xl font-bold leading-tight tracking-tight">
                       {slide.name}
                     </h1>
-                    <p className="text-2xl lg:text-2xl font-bold leading-relaxed mt-2">
+                    <p className="text-xl  font-bold leading-relaxed mt-2">
                       {slide.subtitle}
                     </p>
                     <p className="text-lg font-medium leading-relaxed mt-4 mb-6">
@@ -125,7 +126,9 @@ export default function KeenCarousel() {
                       slide.layout?.imageAlign === 'right'
                         ? 'justify-end'
                         : 'justify-center',
-                      slide.name === 'TR315' ? 'hidden' : 'flex'
+                      slide.name === 'TR315' || slide.name === 'CAM570'
+                        ? 'hidden'
+                        : 'flex'
                     )}
                   >
                     <Image
