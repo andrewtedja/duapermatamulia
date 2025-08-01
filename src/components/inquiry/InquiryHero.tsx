@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function InquiryHero() {
   return (
-    <div className="relative h-64 overflow-hidden">
+    <div className="relative h-64 overflow-hidden w-full">
       <div className="absolute inset-0">
         <Image
           src="/images/backgrounds/inquiry.jpg"

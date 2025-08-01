@@ -5,7 +5,7 @@ import { ContainerScroll } from '../ui/container-scroll-animation'
 
 export function ScrollContainerSection() {
   return (
-    <div className="flex flex-col overflow-hidden py-24 bg-gradient-to-t from-white via-indigo-100 to-white ">
+    <div className="flex flex-col overflow-hidden py-24 bg-gradient-to-b from-white via-indigo-50 to-white ">
       <ContainerScroll
         titleComponent={
           <>

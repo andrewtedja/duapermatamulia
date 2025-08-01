@@ -1,43 +1,62 @@
 import { Input } from '@/components/ui/input'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue
-} from '@/components/ui/select'
-import { Label } from '@/components/ui/label'
+import { useEffect, useMemo, useState } from 'react'
 
-export default function PhoneInput() {
+export default function PhoneInput({
+  value,
+  onChange
+}: {
+  value: string
+  onChange: (v: string) => void
+}) {
+  // parse initial value -> cc + local
+  const initial = useMemo(() => {
+    const m = value.match(/^(\+\d{1,3})\s?(.*)$/)
+    return { cc: m?.[1] ?? '+62', local: m?.[2] ?? '' }
+  }, [value])
+
+  const [cc, setCc] = useState(initial.cc)
+  const [local, setLocal] = useState(initial.local)
+
+  // jika parent mengganti value dari luar, sinkronkan
+  useEffect(() => {
+    setCc(initial.cc)
+    setLocal(initial.local)
+  }, [initial.cc, initial.local])
+
+  // util: gabungkan ke parent
+  const emit = (nextCc: string, nextLocal: string) => {
+    const combined = nextLocal ? `${nextCc} ${nextLocal}` : nextCc
+    onChange(combined)
+  }
+
   return (
     <div className="space-y-2">
-      <Label className="text-sm font-medium text-gray-700">
-        Phone Number *
-      </Label>
-      <div className="flex gap-2">
-        <Select>
-          <SelectTrigger
-            className="w-24 h-12 border-gray-300
-                   text-sm px-3 py-2 leading-none"
-          >
-            <SelectValue placeholder="+1" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="+1">+1</SelectItem>
-            <SelectItem value="+44">+44</SelectItem>
-            <SelectItem value="+49">+49</SelectItem>
-            <SelectItem value="+33">+33</SelectItem>
-            <SelectItem value="+61">+61</SelectItem>
-            <SelectItem value="+81">+81</SelectItem>
-            <SelectItem value="+65">+65</SelectItem>
-          </SelectContent>
-        </Select>
+      <div className="flex gap-1 justify-center items-center">
         <Input
           type="tel"
-          placeholder="Enter your phone number"
-          className="flex-1 h-9 border-gray-300 focus:border-orange-500 focus:ring-orange-500 
-                 text-sm px-3 py-2 leading-none"
+          placeholder="Country Code (e.g. +62)"
+          className="w-48 border-gray-300 text-sm px-3 py-3 "
           required
+          value={cc}
+          onChange={(e) => {
+            const next = e.target.value
+            setCc(next)
+            emit(next, local)
+          }}
+        />
+        <div>-</div>
+        {/* ✅ input menampilkan HANYA nomor lokal */}
+        <Input
+          type="tel"
+          placeholder="Phone Number"
+          className="flex-1 border-gray-300 py-3  focus:border-orange-500 focus:ring-orange-500"
+          required
+          value={local}
+          onChange={(e) => {
+            const next = e.target.value
+            setLocal(next)
+            emit(cc, next)
+          }}
         />
       </div>
     </div>

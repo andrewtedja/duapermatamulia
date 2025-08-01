@@ -7,7 +7,7 @@ export default function SalesInquiryPage() {
   return (
     <div className="flex flex-col">
       <Navbar />
-      <main className="bg-gray-50 flex-1 pt-16" >
+      <main className="bg-gray-50 flex-1 pt-16 overflow-hidden">
         <InquiryHero />
         <InquiryForm />
       </main>
