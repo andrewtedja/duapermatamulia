@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import {
   ChevronDown,
   ExternalLink,
@@ -26,10 +26,8 @@ const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [activeProductCategory, setActiveProductCategory] =
     useState('Popular Products')
-
   const [showTopBar, setShowTopBar] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
-
   const timeoutRef = useRef<null | NodeJS.Timeout>(null)
 
   // Product categories
@@ -50,13 +48,11 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
-
       if (currentScrollY === 0) {
         setShowTopBar(true)
       } else if (currentScrollY > lastScrollY && currentScrollY > 10) {
         setShowTopBar(false)
       }
-
       setLastScrollY(currentScrollY)
     }
 
@@ -123,17 +119,13 @@ const Navbar = () => {
               >
                 <Instagram size={16} />
               </a>
-
               <div className="h-4 w-px bg-white opacity-50 mx-3" />
-
               {/* Phone */}
               <div className="flex items-center space-x-1 text-sm">
                 <Phone size={16} />
                 <span className="hidden sm:inline">+62-21-2932-4647</span>
               </div>
-
               <div className="h-4 w-px bg-white opacity-50 mx-3 hidden sm:block" />
-
               {/* Email */}
               <div className="flex items-center space-x-1 text-sm">
                 <Mail size={16} />
@@ -141,22 +133,13 @@ const Navbar = () => {
                   info@duapermatamulia.com
                 </span>
               </div>
-
-              <Link
-                href="/inquiry"
-                className=" text-sm text-white border border-white px-3 py-0.5 rounded hover:bg-white hover:text-red-800 transition"
-              >
-                Inquire Now
-              </Link>
             </div>
-
             {/* Right side - Region/Language Selector */}
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-1 text-sm ">
                 <Globe className="hidden sm:inline h-4 w-4" />
                 <span className="hidden sm:inline">Indonesia</span>
               </div>
-
               {/* Close button for mobile */}
               <button
                 onClick={() => setShowTopBar(false)}
@@ -188,13 +171,11 @@ const Navbar = () => {
                     {item.hasDropdown ? (
                       <button
                         onClick={() => handleDropdownClick(item.dropdown!)}
-                        className={`relative text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium duration-200 flex items-center
-        after:absolute after:-bottom-3.5 after:left-0 after:w-full after:h-0.5 after:content-['']
-        ${
-          activeDropdown === item.dropdown
-            ? 'text-gray-900 after:bg-red-500'
-            : 'after:bg-transparent hover:after:bg-red-500'
-        }`}
+                        className={`relative text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium duration-200 flex items-center        after:absolute after:-bottom-3.5 after:left-0 after:w-full after:h-0.5 after:content-['']        ${
+                          activeDropdown === item.dropdown
+                            ? 'text-gray-900 after:bg-red-500'
+                            : 'after:bg-transparent hover:after:bg-red-500'
+                        }`}
                         onMouseEnter={() => handleDropdownEnter(item.dropdown!)}
                         onMouseLeave={handleDropdownLeave}
                       >
@@ -208,9 +189,7 @@ const Navbar = () => {
                     ) : (
                       <Link
                         href={item.href!}
-                        className={`relative text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium duration-200
-        after:absolute after:-bottom-[15px] after:left-0 after:w-full after:h-0.5 after:content-['']
-        after:bg-transparent hover:after:bg-red-500`}
+                        className={`relative text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium duration-200        after:absolute after:-bottom-[15px] after:left-0 after:w-full after:h-0.5 after:content-['']        after:bg-transparent hover:after:bg-red-500`}
                       >
                         {item.name}
                       </Link>
@@ -257,6 +236,14 @@ const Navbar = () => {
                   )}
                 </div>
               </div>
+
+              {/* Inquire Now Button */}
+              <Link
+                href="/inquiry"
+                className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 shadow-sm hover:shadow-md transform hover:scale-105 active:scale-95"
+              >
+                Inquire Now
+              </Link>
             </div>
 
             {/* Mobile menu button */}
@@ -369,7 +356,6 @@ const Navbar = () => {
                         {activeProductCategory}
                       </h2>
                     </div>
-
                     <div className="grid grid-cols-1 lg:grid-cols-3    gap-3 mb-12">
                       {filteredProducts.map((product) => (
                         <Link
@@ -380,7 +366,9 @@ const Navbar = () => {
                           <div className="flex items-center gap-4">
                             <div className="relative w-32 h-32 flex-shrink-0">
                               <Image
-                                src={product.productImagePath}
+                                src={
+                                  product.productImagePath || '/placeholder.svg'
+                                }
                                 alt={product.name}
                                 fill
                                 className="object-contain group-hover:scale-115 transition-transform duration-300"
@@ -414,7 +402,6 @@ const Navbar = () => {
                     Solutions & Partners
                   </h2>
                 </div>
-
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-12">
                   {partners.slice(0, 9).map((partner) => (
                     <a
@@ -429,7 +416,7 @@ const Navbar = () => {
                         {/* Placeholder image */}
                         <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center overflow-hidden">
                           <Image
-                            src={partner.logo}
+                            src={partner.logo || '/placeholder.svg'}
                             alt={partner.name}
                             width={100}
                             height={100}
@@ -437,14 +424,12 @@ const Navbar = () => {
                             loading="lazy"
                           />
                         </div>
-
                         <div className="flex-1  min-w-0">
                           <h4 className="text-lg font-semibold text-gray-900  transition-colors duration-200 mb-2">
                             {partner.name}
                           </h4>
                         </div>
                       </div>
-
                       <div className="space-y-2">
                         <h5 className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
                           Supported Models

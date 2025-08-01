@@ -32,7 +32,7 @@ export function ProductHero({ product }: ProductHeroProps) {
   return (
     <section
       id="hero"
-      className="relative min-h-[95vh] flex items-center overflow-hidden"
+      className="relative lg:min-h-[95vh] flex items-center overflow-hidden"
     >
       {/* Background Image */}
       <div
@@ -53,8 +53,8 @@ export function ProductHero({ product }: ProductHeroProps) {
               layout?.textAlign === 'center'
                 ? 'text-center'
                 : layout?.textAlign === 'right'
-                ? 'text-right'
-                : 'text-left'
+                  ? 'text-right'
+                  : 'text-left'
             }`}
           >
             <div
@@ -85,8 +85,8 @@ export function ProductHero({ product }: ProductHeroProps) {
               layout?.imageAlign === 'center'
                 ? 'justify-center'
                 : layout?.imageAlign === 'right'
-                ? 'justify-end'
-                : 'justify-start'
+                  ? 'justify-end'
+                  : 'justify-start'
             }`}
           >
             <div

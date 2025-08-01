@@ -27,7 +27,7 @@ const fadeInUp: Variants = {
 export function ProductFeatures({ features }: ProductFeaturesProps) {
   return (
     <section id="features" className="py-12 lg:py-20">
-      <div className="container  mx-auto px-4 max-w-6xl">
+      <div className="container  mx-auto px-8 lg:px-4 max-w-6xl">
         {features.map((feature, index) => (
           <motion.div
             key={feature.id}

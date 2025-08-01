@@ -55,17 +55,18 @@ export const products: Product[] = [
   },
   {
     id: '3',
-    name: 'PTZ211',
-    category: 'PRO AV',
-    subtitle: '12X HD AI PTZ Camera',
+    name: 'CAM570',
+    category: 'VIDEO CONFERENCING',
+    subtitle:
+      '4K Dual Lens Audio Tracking Camera\n  Perfectly Track and Capture Attendees',
     description:
-      'Advanced professional-grade PTZ camera that gives you complete control over your streaming content.',
-    imgPath: '/images/backgrounds/bg-ptz211.png',
-    slug: 'ptz-211',
-    overlay: 60,
-    productImagePath: '/images/products/ptz211/prod-ptz211-2.png',
+      '4K Dual Lens Audio Tracking Camera for Medium and Large Rooms',
+    imgPath: '/images/backgrounds/bg-cam570.png',
+    slug: 'cam-570',
+    overlay: 0,
+    productImagePath: '/images/products/cam570-1.png',
     layout: {
-      imageSize: 1000,
+      imageSize: 1200,
       imageAlign: 'center',
       textAlign: 'left',
       imageClass: 'translate-y-4 scale-105'
@@ -124,26 +125,25 @@ export const products: Product[] = [
       imageClass: 'translate-y-4 scale-105'
     }
   },
-
   {
     id: '7',
-    name: 'CAM570',
-    category: 'VIDEO CONFERENCING',
-    subtitle:
-      '4K Dual Lens Audio Tracking Camera\n  Perfectly Track and Capture Attendees',
+    name: 'PTZ211',
+    category: 'PRO AV',
+    subtitle: '12X HD AI PTZ Camera',
     description:
-      '4K Dual Lens Audio Tracking Camera for Medium and Large Rooms',
-    imgPath: '/images/backgrounds/bg-cam570.png',
-    slug: 'cam-570',
-    overlay: 0,
-    productImagePath: '/images/products/cam570-1.png',
+      'Advanced professional-grade PTZ camera that gives you complete control over your streaming content.',
+    imgPath: '/images/backgrounds/bg-ptz211.png',
+    slug: 'ptz-211',
+    overlay: 60,
+    productImagePath: '/images/products/ptz211/prod-ptz211-2.png',
     layout: {
-      imageSize: 1200,
+      imageSize: 1000,
       imageAlign: 'center',
       textAlign: 'left',
       imageClass: 'translate-y-4 scale-105'
     }
   },
+
   {
     id: '8',
     name: 'MT100',

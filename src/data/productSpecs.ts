@@ -599,42 +599,286 @@ export const productSpecs: Record<string, ProductSpec[]> = {
   ],
   'tr-615': [
     {
-      category: 'General',
-      items: [
-        { label: 'Power', value: 'DC 12V' },
-        { label: 'Weight', value: '1.5 kg' },
-        { label: 'Dimensions', value: '180 x 160 x 120 mm' }
-      ]
-    },
-    {
       category: 'Camera',
       items: [
-        { label: 'Resolution', value: '1080p / 4K' },
-        { label: 'Zoom', value: '12X Optical' },
-        { label: 'Focus', value: 'Auto / Manual' }
+        { label: 'Image Sensor', value: '1" 4K Sony Exmor R CMOS' },
+        { label: 'Total Picture Elements', value: '20.92 Megapixels' },
+        { label: 'Effective Picture Elements', value: '17.25 Megapixels' },
+        {
+          label: 'Output Resolutions',
+          value: [
+            '4K60p',
+            '4K59.94',
+            '4K30p',
+            '4K29.97',
+            '1080p60',
+            '1080p59.94',
+            '1080p30',
+            '1080p29.97',
+            '1080i60',
+            '1080i59.94',
+            '720p60'
+          ]
+        },
+        {
+          label: 'Minimum Illumination',
+          value: '1.4 lux (IR off, F2.8, 30fps)'
+        },
+        { label: 'S/N Ratio', value: '≥ 50 dB' },
+        { label: 'Gain', value: 'Auto, Manual' },
+        { label: 'TV Line', value: '1600 (Center)' },
+        { label: 'Shutter Speed', value: '1/4 to 1/10,000 sec' },
+        {
+          label: 'Exposure Control',
+          value: ['Auto', 'Manual', 'Priority AE (Shutter, IRIS)', 'BLC', 'WDR']
+        },
+        {
+          label: 'White Balance',
+          value: ['Auto', 'Manual', 'ATW', 'One Push', 'Indoor', 'Outdoor']
+        },
+        { label: 'Optical Zoom', value: '19X' },
+        { label: 'Digital Zoom', value: '12X' },
+        { label: 'Total Zoom', value: '228X' },
+        {
+          label: 'Viewing Angles',
+          value: [
+            'DFOV: 77.8° (WIDE) to 4.5° (Tele)',
+            'HFOV: 69.5° (WIDE) to 3.5° (Tele)',
+            'VFOV: 41.5° (WIDE) to 2.3° (Tele)'
+          ]
+        },
+        { label: 'Focal Length', value: 'f = 9.7mm (WIDE) to 185.3mm (Tele)' },
+        { label: 'Aperture (Iris)', value: 'F = 2.8 (WIDE) to 6.5 (Tele)' },
+        {
+          label: 'Minimum Working Distance',
+          value: ['1.5m (WIDE)', '5.0m (Tele)']
+        },
+        { label: 'Pan / Tilt Angles', value: 'Pan: ±170°, Tilt: +90°/-30°' },
+        {
+          label: 'Pan / Tilt Speed (Manual)',
+          value: 'Pan: 0.05° to 100°/sec, Tilt: 0.05° to 100°/sec'
+        },
+        { label: 'Preset Speed', value: 'Pan: 200°/sec, Tilt: 200°/sec' },
+        { label: 'Preset Positions', value: '10 (IR), 256 (RS-232/RS-422/IP)' },
+        {
+          label: 'Camera Control Interface',
+          value: ['RS-232 (DIN8)', 'RS-422 (RJ-45)', 'IR', 'USB']
+        },
+        {
+          label: 'Camera Control Protocols',
+          value: [
+            'VISCA (RS-232/RS-422/IP)',
+            'PELCO-D & PELCO-P (RS-232/RS-422)',
+            'CGI (IP)',
+            'USB',
+            'ONVIF'
+          ]
+        },
+        {
+          label: 'Image Processing',
+          value: ['Noise Reduction (2D/3D)', 'Flip', 'Mirror', 'BLC']
+        },
+        { label: 'Power Frequencies', value: ['50 Hz', '60 Hz'] }
       ]
     },
     {
-      category: 'Connectivity',
+      category: 'AI Technology',
       items: [
-        { label: 'Outputs', value: ['HDMI', 'USB', 'IP'] },
-        { label: 'Control', value: ['RS-232', 'IP'] },
-        { label: 'Streaming', value: 'RTSP, RTMP' }
+        {
+          label: 'Auto Tracking Modes',
+          value: ['Presenter Mode', 'Zone Mode', 'Hybrid Mode']
+        },
+        { label: 'AI Feature', value: 'Multi-Presenter Detection' }
       ]
     },
     {
-      category: 'Features',
+      category: 'Privacy Protection Mechanisms',
+      items: [{ label: 'Protection Mode', value: 'Sleep Mode' }]
+    },
+    {
+      category: 'Audio',
       items: [
-        { label: 'AI Tracking', value: 'Yes' },
-        { label: 'Preset Positions', value: 'Up to 255' },
-        { label: 'Control Protocols', value: ['VISCA', 'PELCO'] }
+        { label: 'Channel', value: '2ch Stereo' },
+        { label: 'Codec', value: 'AAC-LC (48 k)' },
+        { label: 'Sample Rates', value: '48 KHz' }
       ]
     },
     {
-      category: 'Environment',
+      category: 'Interface',
       items: [
-        { label: 'Operating Temp', value: '0\u00b0C to 40\u00b0C' },
-        { label: 'Humidity', value: '20% to 80%' }
+        { label: 'Video Outputs', value: ['12G-SDI x2', 'HDMI', 'IP', 'USB'] },
+        { label: 'Audio Outputs', value: ['12G-SDI x2', 'HDMI', 'IP', 'USB'] },
+        { label: 'Audio Inputs', value: ['Mic In', 'Line In', 'XLR'] },
+        { label: 'Genlock Input', value: 'BNC' }
+      ]
+    },
+    {
+      category: 'General',
+      items: [
+        { label: 'Power Requirement', value: 'AC 100–240V to DC 12V/5A' },
+        { label: 'Power Consumption', value: '32.4W' },
+        { label: 'PoE', value: 'PoE++' },
+        { label: 'Dimensions (W x H x D)', value: '202.5 x 200.5 x 231.5 mm' },
+        { label: 'Net Weight', value: '4.3 kg (±0.1 kg)' },
+        { label: 'Application', value: 'Indoor' },
+        { label: 'Tally Lamp', value: 'Yes' },
+        { label: 'Security', value: 'Kensington Slot' },
+        { label: 'Remote Control', value: 'Infrared' },
+        {
+          label: 'Operating Conditions',
+          value: 'Temperature: 0°C to 40°C; Humidity: 20% to 80%'
+        },
+        {
+          label: 'Storage Conditions',
+          value: 'Temperature: -20°C to 60°C; Humidity: 20% to 95%'
+        },
+        {
+          label: 'Sustainability',
+          value: ['Plastic Material: ABS', 'Sustainability Method: PCR-PP']
+        }
+      ]
+    },
+    {
+      category: 'IP Streaming',
+      items: [
+        { label: 'Resolution', value: '4K60p' },
+        {
+          label: 'Network Video Compress Formats',
+          value: ['H.264', 'H.265', 'MJPEG']
+        },
+        { label: 'Network Audio Compress Formats', value: 'AAC-LC (48 k)' },
+        { label: 'Maximum Frame Rate', value: '4K60p' },
+        { label: 'Bit-Rate Control Modes', value: ['VBR', 'CBR (selectable)'] },
+        { label: 'Range of Bit-Rate Setting', value: '512 Kbps to 64 Mbps' },
+        {
+          label: 'Multi-Stream Capability',
+          value: [
+            '4K60p Standard Mode',
+            'Zoom Mode',
+            'NDI Mode-S (RTSP, HDMI, USB, 12G-SDI, & NDI)',
+            'Teams Mode: 1 (USB)'
+          ]
+        },
+        { label: 'Network Interface', value: '10/100/1000 Base-T' },
+        {
+          label: 'Network Protocols',
+          value: [
+            'IPv4',
+            'TCP',
+            'UDP',
+            'ARP',
+            'ICMP',
+            'IGMP',
+            'HTTP',
+            'HTTPS',
+            'DHCP',
+            'RTSP',
+            'RTMP',
+            'SFTP',
+            'NTP',
+            'NDI',
+            'LLDP',
+            'VISCA over IP',
+            'ONVIF'
+          ]
+        },
+        { label: 'NDI® Embedded Bridge', value: 'Yes (Pre-installed)' },
+        {
+          label: 'Camera Tracking Data Output',
+          value: 'Supports Free-D Type D0/D1'
+        },
+        { label: 'Dante AV-H', value: 'Yes (available in 2H2023)' }
+      ]
+    },
+    {
+      category: 'USB',
+      items: [
+        { label: 'Connector', value: 'USB 3.2 Gen 1' },
+        { label: 'Audio Format', value: 'PCM' },
+        { label: 'USB Video Class (UVC)', value: 'UVC 1.1' },
+        { label: 'Video Format', value: ['MJPEG', 'YUY2'] },
+        { label: 'Maximum Video Resolution', value: '4K' },
+        { label: 'USB Audio Class (UAC)', value: 'UAC 1.0' }
+      ]
+    },
+    {
+      category: 'Web UI',
+      items: [
+        { label: 'Live Video Preview', value: 'Yes' },
+        {
+          label: 'Camera PTZ Control',
+          value: 'Pan, Tilt, Zoom, Focus, Preset Control'
+        },
+        {
+          label: 'Camera/Image Adjustment',
+          value: ['Exposure', 'White Balance', 'Picture']
+        },
+        {
+          label: 'Network Configuration',
+          value: ['DHCP', 'IP Address', 'Gateway', 'Subnet Mask', 'DNS']
+        },
+        { label: 'Supported Web Browsers', value: ['Chrome', 'Edge', 'Safari'] }
+      ]
+    },
+    {
+      category: 'Software Tools',
+      items: [
+        {
+          label: 'Device Utility',
+          value: 'Supports Windows® 7 or later, macOS® 10.14 or later'
+        },
+        {
+          label: 'Room Management',
+          value: 'Supports Windows® 7 or later, macOS® 11.6 or later'
+        },
+        {
+          label: 'PTZ Control Panel',
+          value: 'Supports iOS & iPadOS® 11 or later'
+        },
+        {
+          label: 'OBS Plugin for PTZ Cameras',
+          value:
+            'Supports Windows® 8 or later, macOS® High Sierra 10.13 or later'
+        },
+        {
+          label: 'Enterprise Management',
+          value: 'Supports Windows® 10 or later'
+        },
+        {
+          label: 'Cloud Management',
+          value: 'Supports Windows® 7 or later, macOS® 10.14 or later'
+        },
+        { label: 'PTZ Link', value: 'Supports Windows® 10 or later' },
+        { label: 'CaptureShare', value: 'Supports Windows® 10 or later' }
+      ]
+    },
+    {
+      category: 'Warranty',
+      items: [
+        { label: 'Camera', value: '5 Years' },
+        { label: 'Accessories', value: '1 Year' },
+        {
+          label: 'Package Contents',
+          value: [
+            'Camera',
+            'Remote Control',
+            'RS-232 Mount Cable',
+            'DIN to D-Sub9 Cable',
+            'Power Adapter',
+            'Power Cord',
+            'Cable Tie (x1)',
+            'M2.6 x 4 mm Screws (x3)',
+            'M3 x 6 mm Screws (x3)',
+            '1/4"-20 x 5.5 mm Screws (x2)',
+            'Ceiling Mount Bracket (x2)',
+            'Drilling Paper',
+            'Quick Start Guide'
+          ]
+        },
+        {
+          label: 'Optional Accessories',
+          value: ['AVer CL01 PTZ Camera Controller', 'L-Type Wall Mount']
+        }
       ]
     }
   ],
