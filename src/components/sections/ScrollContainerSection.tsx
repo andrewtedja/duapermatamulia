@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { ContainerScroll } from '../ui/container-scroll-animation'
+import { YouTubeAutoOnView } from '../youtube/LiteYoutube'
 // import Image from 'next/image'
 
 export function ScrollContainerSection() {
@@ -35,13 +36,7 @@ export function ScrollContainerSection() {
             </p>
           </div> */}
 
-          <iframe
-            src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&mute=1&loop=1&playlist=ikpEXfsA_9o"
-            title="YouTube video"
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-            className="w-full h-full object-cover"
-          ></iframe>
+          <YouTubeAutoOnView />
         </div>
       </ContainerScroll>
     </div>

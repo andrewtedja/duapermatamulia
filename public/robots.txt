@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://duapermatamulia.co.id
+
+# Sitemaps
+Sitemap: https://duapermatamulia.co.id/sitemap.xml

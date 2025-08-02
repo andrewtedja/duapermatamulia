@@ -10,11 +10,17 @@ delete (L.Icon.Default as unknown as { prototype: { _getIconUrl: unknown } })
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: '/images/map/marker-icon-2x.png',
   iconUrl: '/images/map/marker-icon.png',
-  shadowUrl: '/images/map/marker-shadow.png'
+  shadowUrl: '/images/map/marker-shadow.png',
+  alt: ''
 })
 
 const tangerangPosition: [number, number] = [-6.249992, 106.6236722]
 const surabayaPosition: [number, number] = [-7.3501833, 112.7847614]
+const markTileDecorative = (img: HTMLImageElement) => {
+  img.alt = ''
+  img.setAttribute('aria-hidden', 'true')
+  img.setAttribute('role', 'presentation')
+}
 
 export default function LeafletMap() {
   return (
@@ -28,15 +34,24 @@ export default function LeafletMap() {
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        eventHandlers={{
+          tileload: (e) => markTileDecorative(e.tile as HTMLImageElement)
+        }}
       />
-      <Marker position={tangerangPosition}>
+      <Marker
+        position={tangerangPosition}
+        title="Head Office — Gading Serpong, Tangerang"
+      >
         <Popup>
           <strong>Head Office</strong>
           <br />
           Gading Serpong, Tangerang
         </Popup>
       </Marker>
-      <Marker position={surabayaPosition}>
+      <Marker
+        position={surabayaPosition}
+        title="Surabaya — Pondok Tjandra Indah, Sidoarjo"
+      >
         <Popup>
           <strong>Surabaya</strong>
           <br />
