@@ -5,7 +5,7 @@ export default function Logo({ size = 36 }: { size?: number }) {
   return (
     <Link href="/" className="flex items-center gap-2">
       <Image
-        src="/images/logo/logo-dpm.png" // or "/logo.png", adjust as needed
+        src="/images/logo/logo-dpm.png" // or "/logo.avif", adjust as needed
         alt="Company Logo"
         width={size}
         height={size}

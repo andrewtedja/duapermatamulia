@@ -1,8 +1,5 @@
 import type { NextConfig } from 'next'
 
-const nextConfig: NextConfig = {
-  swcMinify: true, // keeps build small & fast
-  legacyBrowsers: false // stops ES5 transpilation
-}
+const nextConfig: NextConfig = {}
 
 export default nextConfig

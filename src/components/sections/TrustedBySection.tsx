@@ -4,16 +4,16 @@ import React from 'react'
 const OurUsers: React.FC = () => {
   // Partner logos with placeholder data
   const companies = [
-    { id: 1, name: 'Company 1', logo: '/images/logo/logo-dpm.png' },
-    { id: 2, name: 'Company 2', logo: '/images/logo/logo-dpm.png' },
-    { id: 3, name: 'Company 3', logo: '/images/logo/logo-dpm.png' },
-    { id: 4, name: 'Company 4', logo: '/images/logo/logo-dpm.png' },
-    { id: 5, name: 'Company 5', logo: '/images/logo/logo-dpm.png' },
-    { id: 6, name: 'Company 6', logo: '/images/logo/logo-dpm.png' },
-    { id: 7, name: 'Company 7', logo: '/images/logo/logo-dpm.png' },
-    { id: 8, name: 'Company 8', logo: '/images/logo/logo-dpm.png' },
-    { id: 9, name: 'Company 9', logo: '/images/logo/logo-dpm.png' },
-    { id: 10, name: 'Company 10', logo: '/images/logo/logo-dpm.png' }
+    { id: 1, name: 'Company 1', logo: '/images/logo/logo-dpm.avif' },
+    { id: 2, name: 'Company 2', logo: '/images/logo/logo-dpm.avif' },
+    { id: 3, name: 'Company 3', logo: '/images/logo/logo-dpm.avif' },
+    { id: 4, name: 'Company 4', logo: '/images/logo/logo-dpm.avif' },
+    { id: 5, name: 'Company 5', logo: '/images/logo/logo-dpm.avif' },
+    { id: 6, name: 'Company 6', logo: '/images/logo/logo-dpm.avif' },
+    { id: 7, name: 'Company 7', logo: '/images/logo/logo-dpm.avif' },
+    { id: 8, name: 'Company 8', logo: '/images/logo/logo-dpm.avif' },
+    { id: 9, name: 'Company 9', logo: '/images/logo/logo-dpm.avif' },
+    { id: 10, name: 'Company 10', logo: '/images/logo/logo-dpm.avif' }
   ]
 
   return (

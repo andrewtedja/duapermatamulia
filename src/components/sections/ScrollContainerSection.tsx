@@ -23,7 +23,7 @@ export function ScrollContainerSection() {
       >
         <div className="relative w-full aspect-[9/16] md:aspect-video rounded-xl overflow-hidden">
           {/* <Image
-            src={`/images/backgrounds/bg-hub30.png`}
+            src={`/images/backgrounds/bg-hub30.avif`}
             alt="hero"
             height={720}
             width={1400}

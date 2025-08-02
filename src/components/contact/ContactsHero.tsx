@@ -4,7 +4,7 @@ export default function ContactsHero() {
   return (
     <div className="relative h-64 overflow-hidden">
       <Image
-        src="/images/backgrounds/sales.png"
+        src="/images/backgrounds/sales.avif"
         alt="Sales Background"
         fill
         fetchPriority="high"
@@ -12,7 +12,7 @@ export default function ContactsHero() {
         objectPosition="center"
         placeholder="blur"
         priority
-        blurDataURL="/images/backgrounds/sales.png?height=400&width=1200&blur"
+        blurDataURL="/images/backgrounds/sales.avif?height=400&width=1200&blur"
       />
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
       <div className="relative z-10 flex items-center justify-center h-full">

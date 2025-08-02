@@ -23,7 +23,7 @@ export default function WhatsAppButton() {
             rel="noopener noreferrer"
           >
             <Image
-              src="/images/logo/logo-wa.png"
+              src="/images/logo/logo-wa.avif"
               alt="WhatsApp"
               width={72}
               height={72}

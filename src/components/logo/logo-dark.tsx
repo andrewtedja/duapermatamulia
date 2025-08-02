@@ -5,7 +5,7 @@ export default function LogoDark({ size = 36 }: { size?: number }) {
   return (
     <Link href="/" className="flex items-center gap-2">
       <Image
-        src="/images/logo/logo-dpm-dark.svg" // or "/logo.png", adjust as needed
+        src="/images/logo/logo-dpm-dark.svg" // or "/logo.avif", adjust as needed
         alt="Company Logo"
         width={size}
         height={size}

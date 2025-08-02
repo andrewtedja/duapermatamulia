@@ -22,7 +22,7 @@ export async function generateMetadata({
     openGraph: {
       title: product.name,
       description: product.subtitle,
-      images: [`/your/og-image/path/${product.id}.png`] // customize your OG path
+      images: [`/your/og-image/path/${product.id}.avif`] // customize your OG path
     }
   }
 }
