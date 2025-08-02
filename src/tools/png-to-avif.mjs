@@ -2,7 +2,7 @@
 import { globby } from 'globby'
 import sharp from 'sharp'
 import { mkdir } from 'fs/promises'
-import { dirname, join, relative } from 'path'
+import { dirname, relative } from 'path'
 
 const INPUT_DIR = 'public/images' // change if needed
 const QUALITY = 55 // 1–100 (lower = smaller file)

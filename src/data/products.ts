@@ -81,7 +81,7 @@ export const products: Product[] = [
     imgPath: '/images/backgrounds/bg-mt300n-3.avif',
     slug: 'mt-300n',
     overlay: 85,
-    productImagePath: '/images/products/prod-mt300n.svg',
+    productImagePath: '/images/products/mt300n/mt300n-1.avif',
     layout: {
       imageSize: 1400,
       imageAlign: 'center',

@@ -1,5 +1,5 @@
 import AboutHero from '@/components/about/AboutHero'
-import OfficeLocation from '@/components/about/OfficeLocation'
+// import OfficeLocation from '@/components/about/OfficeLocation'
 import Footer from '@/components/layout/Footer'
 import Navbar from '@/components/layout/Navbar'
 import AboutSection from '@/components/sections/AboutSection'
