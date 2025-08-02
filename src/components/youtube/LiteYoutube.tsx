@@ -44,7 +44,7 @@ export function YouTubeAutoOnView() {
     <iframe
       ref={ref}
       title="Company intro"
-      className="w-full aspect-video rounded-xl overflow-hidden"
+      className="w-full h-full aspect-video rounded-xl overflow-hidden"
       loading="lazy"
       allow="autoplay; encrypted-media; picture-in-picture; web-share"
       allowFullScreen

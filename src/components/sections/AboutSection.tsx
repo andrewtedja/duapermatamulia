@@ -1,6 +1,6 @@
 import React from 'react'
 import { Award, Search, Settings, Headphones } from 'lucide-react'
-import AboutOfficeLocation from '../about/AboutOfficeLocation'
+// import AboutOfficeLocation from '../about/AboutOfficeLocation'
 
 const AboutSection: React.FC = () => {
   return (
@@ -138,7 +138,7 @@ const AboutSection: React.FC = () => {
           </div>
         </div> 
         */}
-        <AboutOfficeLocation />
+        {/* <AboutOfficeLocation /> */}
       </div>
     </section>
   )
