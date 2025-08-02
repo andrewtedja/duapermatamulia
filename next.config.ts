@@ -1,7 +1,8 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  swcMinify: true, // keeps build small & fast
+  legacyBrowsers: false // stops ES5 transpilation
+}
 
-export default nextConfig;
+export default nextConfig
