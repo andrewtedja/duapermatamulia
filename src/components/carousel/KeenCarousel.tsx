@@ -102,12 +102,12 @@ export default function KeenCarousel() {
                     <h1 className="text-4xl lg:text-6xl font-bold leading-tight tracking-tight">
                       {slide.name}
                     </h1>
-                    <p className="text-xl  font-bold leading-relaxed mt-2">
+                    <h2 className="text-xl  font-bold leading-relaxed mt-2">
                       {slide.subtitle}
-                    </p>
-                    <p className="text-lg font-medium leading-relaxed mt-4 mb-6">
+                    </h2>
+                    <h3 className="text-lg font-medium leading-relaxed mt-4 mb-6">
                       {slide.description}
-                    </p>
+                    </h3>
                     <Link
                       href={`/products/${slide.slug}`}
                       className={clsx(

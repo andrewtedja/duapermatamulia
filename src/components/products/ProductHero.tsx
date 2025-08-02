@@ -72,11 +72,11 @@ export function ProductHero({ product }: ProductHeroProps) {
             >
               {product.subtitle}
             </h2>
-            <p
+            <h3
               className={`text-sm sm:text-base lg:text-lg font-mono leading-relaxed max-w-2xl ${theme.text}`}
             >
               {product.description}
-            </p>
+            </h3>
           </div>
 
           {/* Product Image */}
