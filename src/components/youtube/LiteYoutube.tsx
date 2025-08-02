@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react'
 
 export function YouTubeAutoOnView() {
   const id = 'ikpEXfsA_9o'
-  const base = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&mute=0&loop=1&playlist=${id}&playsinline=1&rel=0&modestbranding=1`
+  const base = `https://www.youtube-nocookie.com/embed/${id}?autoplay=0&mute=0&loop=1&playlist=${id}&playsinline=1&rel=0&modestbranding=1`
   const ref = useRef<HTMLIFrameElement>(null)
 
   useEffect(() => {
