@@ -8,9 +8,9 @@ const AboutSection: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex flex-col">
-          <h1 className="text-4xl font-bold text-gray-900">TENTANG KAMI</h1>
+          <h1 className="text-4xl font-bold text-gray-900">About Us</h1>
           <h2 className="text-xl font-medium text-red-700 mb-6">
-            PT. DUA PERMATA MULIA
+            PT. Dua Permata Mulia
           </h2>
         </div>
 
