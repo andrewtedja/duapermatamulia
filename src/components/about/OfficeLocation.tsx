@@ -49,7 +49,7 @@ const OfficeLocation = () => {
                 <p className="font-semibold mt-4">Contact Person:</p>
                 <ul className="pl-4 list-disc space-y-1">
                   <li>Jusak Budiman (+62-8111-7587-93)</li>
-                  <li>Zainudine (+62-8129-2754-688)</li>
+                  <li>Zainudine (+62-812-8313-584)</li>
                 </ul>
               </div>
             </div>

@@ -122,7 +122,7 @@ export default function ContactUsPage() {
                         href="tel:+1-800-987-6543"
                         className="text-gray-600 hover:text-gray-900"
                       >
-                        Zainudine (+62-8129-2754-688)
+                        Zainudine (+62-812-8313-584)
                       </a>
                     </div>
                     <div className="p-4 bg-gray-50 border border-gray-200 text-sm rounded">
